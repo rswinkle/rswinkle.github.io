@@ -1,3 +1,6 @@
+Robert's C/C++ Mistakes
+=======================
+
 I know there are a million lists of common programming mistakes (for almost every language) but I thought I'd do one myself.  Hopefully in writing about my most common mistakes I'll quit making them or at least remember to check for them first when my code doesn't work.  So  . . .
 
 <strong>1.) <em>Forgetting a semi-colon</em></strong>.
