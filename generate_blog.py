@@ -21,13 +21,13 @@ def main():
 
     header = open('header.html').read()
 
-    blog_index = open('blog/blog_index.html').read()
+    blog_index = open('blog/blog_index.template').read()
     post_list = '<ul>\n'
 
     for f in glob.glob('blog/*.md'):
         fstr = open(f).read()
         filename = f[0:-2] + 'html'
-        post_list += '\t<li><a href="' + filename + '">'
+        post_list += '\t<li><a href="' + filename[5:] + '">'
         post_list += fstr.split('\n', 1)[0] + '</li>\n'
 
 
