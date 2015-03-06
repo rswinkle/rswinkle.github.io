@@ -5,7 +5,7 @@
 # This software is MIT licensed see link for details
 # http://www.opensource.org/licenses/MIT
 
-import glob, markdown, argparse
+import glob, markdown, argparse, time
 
 
 
@@ -24,11 +24,26 @@ def main():
     blog_index = open('blog/blog_index.template').read()
     post_list = '<ul>\n'
 
-    for f in glob.glob('blog/*.md'):
+    posts = glob.glob('blog/*.md')
+    date_strs = [] #not used but if I want to add st/nd/rd/th later ...
+    dates = []
+    titles = []
+    for post in posts:
+        tmp = open(post).readlines(200)[0:3]
+        titles += [tmp[0][:-1]]
+        date_strs += tmp[2][:-1]
+        print(tmp[2])
+        dates += [time.strptime(tmp[2][:-1], '%B %d, %Y')]
+
+    sorted_lists = sorted(zip(posts, titles, date_strs, dates), reverse=True, key=lambda x: x[3])
+    posts, titles, date_strs, dates = [[x[i] for x in sorted_lists] for i in range(4)]
+
+    for i,f in enumerate(posts):
         fstr = open(f).read()
         filename = f[0:-2] + 'html'
         post_list += '\t<li><a href="' + filename[5:] + '">'
-        post_list += fstr.split('\n', 1)[0] + '</li>\n'
+        post_list += titles[i] + '</li>\n'
+
 
 
         out = open(filename, 'w')
