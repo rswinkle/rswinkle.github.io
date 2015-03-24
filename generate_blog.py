@@ -7,6 +7,8 @@
 
 import glob, markdown, argparse, time
 
+from mako.template import Template
+from mako.lookup import TemplateLookup
 
 
     #<ul>
@@ -19,6 +21,19 @@ def main():
     #in case I decide to use extensions or change output type etc.
     md = markdown.Markdown();
 
+    mylookup = TemplateLookup(directories=['templates'])
+
+
+    #First generate index page
+    index_page = mylookup.get_template('index.html')
+    open('index.html', 'w').write(index_page.render())
+
+
+
+
+
+
+    #Now generate blog
     header = open('header.html').read()
 
     blog_index = open('blog/blog_index.template').read()
