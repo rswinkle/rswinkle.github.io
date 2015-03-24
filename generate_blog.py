@@ -36,8 +36,6 @@ def main():
     #Now generate blog
     header = open('header.html').read()
 
-    blog_index = open('blog/blog_index.template').read()
-    post_list = '<ul>\n'
 
     posts = glob.glob('blog/*.md')
     date_strs = [] #not used but if I want to add st/nd/rd/th later ...
@@ -50,31 +48,24 @@ def main():
         print(tmp[2])
         dates += [time.strptime(tmp[2][:-1], '%B %d, %Y')]
 
+    #zip all together so I can sort all by date the separate back into individual lists
     sorted_lists = sorted(zip(posts, titles, date_strs, dates), reverse=True, key=lambda x: x[3])
     posts, titles, date_strs, dates = [[x[i] for x in sorted_lists] for i in range(4)]
 
+    blog_index = mylookup.get_template('blog_index.html')
+    #cut off blog/ and and replace md with html extension
+    filenames = [f[5:-2] + 'html' for f in posts]
+    file_titles = zip(filenames, titles)
+
+    #print(blog_index.render(posts=file_titles))
+    open('blog/blog_index.html', 'w').write(blog_index.render(posts=file_titles))
+
+    blog_post = mylookup.get_template('blog_post.html')
     for i,f in enumerate(posts):
-        fstr = open(f).read()
-        filename = f[0:-2] + 'html'
-        post_list += '\t<li><a href="' + filename[5:] + '">'
-        post_list += titles[i] + '</li>\n'
-
-
-
-        out = open(filename, 'w')
-        out.write('<html>\n')
-        out.write(header)
-        out.write(md.convert(open(f).read()))
-        out.write('\n</body>\n</html>\n')
+        out = open('blog/'+filenames[i], 'w')
+        out.write(blog_post.render(post=md.convert(open(f).read())))
         out.close()
     
-
-    post_list += '</ul>\n'
-    blog_index = blog_index.replace('{{posts}}', post_list)
-
-    print(post_list)
-    print(blog_index)
-    open('blog/blog_index.html', 'w').write(blog_index)
 
 
 if __name__=="__main__":
