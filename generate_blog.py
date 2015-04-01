@@ -25,8 +25,12 @@ def main():
 
 
     #First generate index page
-    index_page = mylookup.get_template('index.html')
+    index_page = mylookup.get_template('index.mako')
     open('index.html', 'w').write(index_page.render())
+
+    #Now About page ... might get rid of this later, integrate into index/home page
+    about_page = mylookup.get_template('about.mako')
+    open('about.html', 'w').write(about_page.render())
 
 
 
@@ -34,8 +38,6 @@ def main():
 
 
     #Now generate blog
-    header = open('header.html').read()
-
 
     posts = glob.glob('blog/*.md')
     date_strs = [] #not used but if I want to add st/nd/rd/th later ...
@@ -52,7 +54,7 @@ def main():
     sorted_lists = sorted(zip(posts, titles, date_strs, dates), reverse=True, key=lambda x: x[3])
     posts, titles, date_strs, dates = [[x[i] for x in sorted_lists] for i in range(4)]
 
-    blog_index = mylookup.get_template('blog_index.html')
+    blog_index = mylookup.get_template('blog_index.mako')
     #cut off blog/ and and replace md with html extension
     filenames = [f[5:-2] + 'html' for f in posts]
     file_titles = zip(filenames, titles)
@@ -60,7 +62,7 @@ def main():
     #print(blog_index.render(posts=file_titles))
     open('blog/blog_index.html', 'w').write(blog_index.render(posts=file_titles))
 
-    blog_post = mylookup.get_template('blog_post.html')
+    blog_post = mylookup.get_template('blog_post.mako')
     for i,f in enumerate(posts):
         out = open('blog/'+filenames[i], 'w')
         out.write(blog_post.render(post=md.convert(open(f).read())))

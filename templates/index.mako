@@ -1,4 +1,4 @@
-<%inherit file="base.html"/>
+<%inherit file="base.mako"/>
 <p>
 	Welcome to my website.  This site is mostly a place for me to post my projects and to learn various web technologies.
 	This site contains my blog (which I update inconsistently), various projects that I've done or am working on, and a little information about me.

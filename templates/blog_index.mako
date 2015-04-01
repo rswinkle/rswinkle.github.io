@@ -1,4 +1,4 @@
-<%inherit file="base.html"/>
+<%inherit file="base.mako"/>
 <h2>Posts</h2>
 <ul>
 % for post in posts:
