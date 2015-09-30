@@ -1,5 +1,6 @@
 Quicksort Runtimes
 ==================
+sorting
 September 26, 2015
 
 So I've resolved once again to try to post to this blog once

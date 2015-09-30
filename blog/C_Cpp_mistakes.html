@@ -1,10 +1,7 @@
-<html>
+<!DOCTYPE html>
 
 	<head>
-	<style type="text/css">
-	body {margin-left:15%; margin-right:15%; background-color:#B0C4DE; font-family:verdana;}
-	</style>
-
+	<link rel="stylesheet" type="text/css" href="/css/global.css">
 	<title>Robert Winkler's site</title>
 	</head>
 
@@ -12,21 +9,35 @@
 <body>
 
 
-	<h1 style="text-align:center">Robert Winkler</h1>
-	<table style="margin-right:auto; margin-left:auto; width:40%">
-		<tr style="text-align:center">
-			<td><a href="http://rswinkle.github.io">Home</a></td>
-			<td><a href="http://rswinkle.github.io/blog/blog_index.html">Blog</a></td>
-			<td><a href="http://rswinkle.github.io/projects.html">Projects</a></td>
-			<td><a href="http://rswinkle.github.io/about.html">About</a></td>
-		</tr>
-	</table>
+	<div class="navbar">
+		<h1>Robert Winkler</h1>
+		<table>
+			<tr>
+				<td><a href="http://rswinkle.github.io">Home</a></td>
+				<td><a href="http://rswinkle.github.io/blog/blog_index.html">Blog</a></td>
+				<td><a href="http://rswinkle.github.io/projects.html">Projects</a></td>
+				<td><a href="http://rswinkle.github.io/about.html">About</a></td>
+			</tr>
+		</table>
+	</div>
 
 
 
 <article>
-<h1>Robert's C/C++ Mistakes</h1>
-<p>November 6, 2009</p>
+<h1><a href="C_Cpp_mistakes.html">Robert's C/C++ Mistakes</a></h1>
+
+
+	<span class="datentags">
+	November 6, 2009
+	<span style="float:right;">
+	#
+		<a href="tag_C.html"> C</a>
+		<a href="tag_C++.html"> C++</a>
+	</span>
+	</span>
+
+
+
 <p>I know there are a million lists of common programming mistakes (for almost every language) but I thought I'd do one myself.  Hopefully in writing about my most common mistakes I'll quit making them or at least remember to check for them first when my code doesn't work.  So  . . .</p>
 <p><strong>1.) <em>Forgetting a semi-colon</em></strong>.</p>
 <p>I know it's the most obvious mistake in C/C++.  Whether it's at the end of a class, struct, do-while loop or just a normal statement, I always seem to forget at least one semi-colon the first time I compile something.</p>
@@ -63,6 +74,7 @@ if(x=='(') mystack.push("A");
 <p><strong><em><strong>EDIT 2: 12.) Allocating the wrong amount of memory</strong></em></strong></p>
 <p><em><em><strong>EDIT 3: 14.) Type problems (wrong conversions, underflow and overflow in </strong><span style="font-weight: 900;">arithmetic both integer and real)</span><strong> </strong></em></em></p>
 </article>
+
 
 
 
