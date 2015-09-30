@@ -20,13 +20,16 @@ def main():
     mylookup = TemplateLookup(directories=['templates'])
 
 
-    #First generate index page
+    #First generate standalone pages
     index_page = mylookup.get_template('index.mako')
     open('index.html', 'w').write(index_page.render())
 
     #Now About page ... might get rid of this later, integrate into index/home page
     about_page = mylookup.get_template('about.mako')
     open('about.html', 'w').write(about_page.render())
+
+    project_page = mylookup.get_template('projects.mako')
+    open('projects.html', 'w').write(project_page.render())
 
 
 

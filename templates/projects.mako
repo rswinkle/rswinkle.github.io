@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-
-	<head>
-	<link rel="stylesheet" type="text/css" href="/css/global.css">
-	<title>Robert Winkler's site</title>
-	</head>
-
-
-<body>
-
-
-	<div class="navbar">
-		<h1>Robert Winkler</h1>
-		<table>
-			<tr>
-				<td><a href="http://rswinkle.github.io">Home</a></td>
-				<td><a href="http://rswinkle.github.io/blog/blog_index.html">Blog</a></td>
-				<td><a href="http://rswinkle.github.io/projects.html">Projects</a></td>
-				<td><a href="http://rswinkle.github.io/about.html">About</a></td>
-			</tr>
-		</table>
-	</div>
-
-
-
+<%inherit file="base.mako"/>
 
 <h2>
 Projects
@@ -154,17 +130,3 @@ This is a very simple and limited MIPS assembler written in C++ for an honors pr
 The code must be written in a specific way because it made the parsing easier.  It is unfinished (labels not fully implemented) and minimally tested.
 I hope to finish it soon.  The source code is <a href="/projects/Assembler.cpp">here</a>
 </p>
-
-
-
-	<h4>Online Profiles:</h4>
-	<ul>
-		<li><a href="http://www.linkedin.com/pub/robert-winkler/25/605/596">LinkedIn</a></li>
-		<li><a href="https://github.com/rswinkle">Github</a></li>
-		<li><a href="https://www.openhub.net/accounts/robert_winkler">Open HUB</a></li>
-	</ul>
-
-
-</body>
-
-</html>
