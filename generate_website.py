@@ -73,6 +73,9 @@ def main():
     file_titles = [x for x in zip(filenames, titles)]
 
 
+    open('templates/sidebar.html', 'w').write(mylookup.get_template('sidebar.mako').render(link_titles=file_titles))
+
+
 
 
     rendered_posts = []
@@ -101,6 +104,7 @@ def main():
                 tag_dict[t] += [i]
 
 
+    tag_index = mylookup.get_template('tag_index.mako')
     for t in tag_dict.keys():
         tposts = [rendered_posts[i] for i in tag_dict[t]]
         tfile_titles = [file_titles[i] for i in tag_dict[t]]
@@ -118,7 +122,7 @@ def main():
         print(tag_dict[t])
 
         out = open('blog/tag_'+ t +'.html', 'w')
-        out.write(blog_index.render(posts=tposts, link_titles=tfile_titles, dates=tdate_strs, tags=t_file_tags))
+        out.write(tag_index.render(tag=t, posts=tposts, link_titles=tfile_titles, dates=tdate_strs, tags=t_file_tags))
 
 
 

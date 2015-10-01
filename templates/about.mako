@@ -1,4 +1,7 @@
 <%inherit file="base.mako"/>
+<%block name="title">
+<title>About | Robert Winkler</title>
+</%block>
 <p>
 My name is Robert Winkler. I graduated from Arizona State University in 2012 with a BS degree in Computer Science.  I live in Phoenix, AZ and have lived in the valley for most of my life.
 

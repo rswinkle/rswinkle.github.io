@@ -1,4 +1,8 @@
 <%inherit file="base.mako"/>
+<%block name="title">
+<title>Projects | Robert Winkler</title>
+</%block>
+
 
 <h2>
 Projects

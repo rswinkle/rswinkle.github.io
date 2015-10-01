@@ -2,7 +2,9 @@
 <%block name="header">
 	<head>
 	<link rel="stylesheet" type="text/css" href="/css/global.css">
-	<title>Robert Winkler's site</title>
+	<%block name="title">
+	<title>Robert Winkler</title>
+	</%block>
 	</head>
 </%block>
 
