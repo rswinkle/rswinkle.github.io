@@ -4,5 +4,19 @@
 	<li><a href="${post[0]}">${post[1]}</a></li>
 % endfor
 </ul>
-</div>
+
+<h2>Tags</h2>
+<ul>
+% for tag in tags:
+	<li><a href="${tag[0]}">${tag[1]}</a></li>
+% endfor
+</ul>
+<%doc>
+<h2>Archives</h2>
+<ul>
+% for month in months:
+	<li><a href="${post[0]}">${post[1]}</a></li>
+% endfor
+</ul>
+</%doc>
 

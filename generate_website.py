@@ -72,10 +72,18 @@ def main():
     filenames = [f[5:-2] + 'html' for f in posts]
     file_titles = [x for x in zip(filenames, titles)]
 
+    #associate posts with tags
+    #doing this now and not earlier because I want the
+    #tag pages to be sorted by date
+    for i in range(len(file_titles)):
+        for t in tags[i]:
+            if t not in tag_dict:
+                tag_dict[t] = [i]
+            else:
+                tag_dict[t] += [i]
 
-    open('templates/sidebar.html', 'w').write(mylookup.get_template('sidebar.mako').render(link_titles=file_titles))
-
-
+    tag_filenames = [('/blog/tag_'+t+'.html', t) for t in tag_dict.keys()]
+    open('templates/sidebar.html', 'w').write(mylookup.get_template('sidebar.mako').render(link_titles=file_titles, tags=tag_filenames))
 
 
     rendered_posts = []
@@ -93,17 +101,8 @@ def main():
     blog_index = mylookup.get_template('blog_index.mako')
     open('blog/blog_index.html', 'w').write(blog_index.render(posts=rendered_posts, link_titles=file_titles, dates=date_strs, tags=tfile_tags))
 
-    #generate tag pages, first associate posts with tags
-    #doing this now and not earlier because I want the
-    #tag pages to be sorted by date
-    for i in range(len(file_titles)):
-        for t in tags[i]:
-            if t not in tag_dict:
-                tag_dict[t] = [i]
-            else:
-                tag_dict[t] += [i]
 
-
+    #generate tag pages
     tag_index = mylookup.get_template('tag_index.mako')
     for t in tag_dict.keys():
         tposts = [rendered_posts[i] for i in tag_dict[t]]
