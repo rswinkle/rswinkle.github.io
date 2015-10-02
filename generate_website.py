@@ -85,7 +85,9 @@ def main():
             else:
                 tag_dict[t] += [i]
 
-    tag_filenames = [('/blog/tag_'+t+'.html', t) for t in tag_dict.keys()]
+
+    
+    tag_filenames = sorted([('/blog/tag_'+t+'.html', t) for t in tag_dict.keys()], key=lambda x: x[1])
     open('templates/sidebar.html', 'w').write(mylookup.get_template('sidebar.mako').render(link_titles=file_titles, tags=tag_filenames))
 
 
