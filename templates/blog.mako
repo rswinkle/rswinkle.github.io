@@ -1,8 +1,8 @@
 <%inherit file="base.mako"/>
 
-<div class="mainbody">
+<div class="row">
 
-<div class="maincontent">
+<div class="col-9 maincontent">
 <%block name="maincontent">
 	% for i in range(len(posts)):
 		<article>
@@ -26,9 +26,7 @@
 		<br>
 	% endfor
 </%block>
-</div>
-
-<div class="sidebar">
+</div><div class="col-3 sidebar">
 <%include file="sidebar.html" />
 </div>
 

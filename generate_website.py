@@ -31,6 +31,9 @@ def main():
     project_page = mylookup.get_template('projects.mako')
     open('projects.html', 'w').write(project_page.render())
 
+    project_page = mylookup.get_template('hist_projects.mako')
+    open('hist_projects.html', 'w').write(project_page.render())
+
 
 
 
