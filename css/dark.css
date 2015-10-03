@@ -481,6 +481,7 @@ th {
 h1, h2, h3, h4, h5, h6
 {
 	margin: 0px;
+	color: paleturquoise;
 }
 
 
@@ -493,8 +494,8 @@ h1, h2, h3, h4, h5, h6
 body
 {
 	margin: 0;
-	/*background-color:#B0C4DE; */
-	background-color:#FFFFFF;
+	background-color:#141414;
+	color: #E1E1E1;
 	font-family:verdana;
 	font-size: 16pt;
 }
@@ -507,6 +508,7 @@ img
 
 a {
 	text-decoration:none;
+	color: lightskyblue;
 }
 
 .mainbody {
@@ -600,4 +602,5 @@ article h1 {
 	font-size: 0.8em;
 	font-family: proxima-nova, sans-serif;
 }
+
 

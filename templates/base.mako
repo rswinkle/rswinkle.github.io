@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <%block name="header">
 	<head>
-	<link rel="stylesheet" type="text/css" href="/css/global.css">
 	<%block name="title">
 	<title>Robert Winkler</title>
 	</%block>
+
+	<link rel="stylesheet" type="text/css" href="/css/global.css">
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="/scripts/changetheme.js"></script>
+
 	</head>
 </%block>
 
@@ -13,7 +17,10 @@
 <%block name="navigation">
 	<div class="navbar">
 		<div class="container flex">
+			<div>
 			<h1>Robert Winkler</h1>
+			<a id="theme" href="#dark" onclick="change('/css/global.css', '/css/dark.css');">Dark Theme</a>
+			</div>
 			<table>
 				<tr>
 					<td><a href="/">Home</a></td>
