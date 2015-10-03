@@ -53,7 +53,7 @@ the test results.
 <h4>CVector</h4>
 <p>
 See Github project <a href="http://www.github.com/rswinkle/cvector">here</a>, Doxygen documentation
-<a href="/projects/cvector/index.html">here</a>, and the test results <a href="/projects/cvector/CUnitAutomated-Results.xml">here</a>.
+<a href="/projects/cvector/">here</a>, and the test results <a href="/projects/cvector/CUnitAutomated-Results.xml">here</a>.
 The test results link displays correctly in Firefox (you have to allow it if you're running noscript since it uses xsl for formatting) but
 I'm not sure about other browsers.  I was unable to correctly load it in Chrome in Ubuntu.
 Both the Doxygen documentation and the test results (and testing code) are included in the Github project.

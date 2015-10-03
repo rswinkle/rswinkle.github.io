@@ -5,7 +5,7 @@
 
 <ul class="gallery projects">
 <li class="imgblock">
-<a href="/hist_projects.html">
+<a href="/projects/hist_projects.html">
 <img alt="Historical Projects" src="/images/Constitution.jpg">
 </a>
 <h3>Old Projects</h3>

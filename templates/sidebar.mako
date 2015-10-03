@@ -11,11 +11,12 @@
 	<li><a href="${tag[0]}">${tag[1]}</a></li>
 % endfor
 </ul>
+
 <%doc>
 <h2>Archives</h2>
 <ul>
 % for month in months:
-	<li><a href="${post[0]}">${post[1]}</a></li>
+	<li><a href="${month[0]}">${month[1]}</a></li>
 % endfor
 </ul>
 </%doc>

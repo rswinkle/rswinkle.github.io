@@ -1,4 +1,7 @@
 <%inherit file="base.mako"/>
+<%block name="title">
+<title>Blog | Robert Winkler</title>
+</%block>
 
 <div class="row">
 
@@ -31,7 +34,4 @@
 </div>
 
 </div>
-
-<%block name="profiles">
-</%block>
 
