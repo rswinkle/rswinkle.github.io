@@ -26,7 +26,6 @@
 					<td><a href="/">Home</a></td>
 					<td><a href="/blog/">Blog</a></td>
 					<td><a href="/projects/">Projects</a></td>
-					<td><a href="/about.html">About</a></td>
 				</tr>
 			</table>
 		</div>

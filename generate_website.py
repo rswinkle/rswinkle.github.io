@@ -29,9 +29,9 @@ def main():
 	index_page = mylookup.get_template('index.mako')
 	open('index.html', 'w').write(index_page.render())
 
-	#Now About page ... might get rid of this later, integrate into index/home page
-	about_page = mylookup.get_template('about.mako')
-	open('about.html', 'w').write(about_page.render())
+	#Now Donations page ... might get rid of this later, integrate into index/home page
+	about_page = mylookup.get_template('donations.mako')
+	open('donations.html', 'w').write(about_page.render())
 
 	project_page = mylookup.get_template('projects.mako')
 	open('projects/index.html', 'w').write(project_page.render())
