@@ -47,6 +47,10 @@ you don't want.
 vector_short and vector_f_struct are examples of the process and
 how to add it to the testing.
 
+Download
+========
+Get the source from [Github](https://github.com/rswinkle/CVector).
+
 
 Building
 ========

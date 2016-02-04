@@ -484,10 +484,6 @@ h1, h2, h3, h4, h5, h6
 	color: paleturquoise;
 }
 
-code
-{
-	background-color: #080808;
-}
 
 * {
 	box-sizing: border-box;
@@ -513,6 +509,11 @@ img
 a {
 	text-decoration:none;
 	color: lightskyblue;
+}
+
+pre
+{
+	background-color: #080808;
 }
 
 .mainbody {

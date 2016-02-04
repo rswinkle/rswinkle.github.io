@@ -483,10 +483,6 @@ h1, h2, h3, h4, h5, h6
 	margin: 0px;
 }
 
-code
-{
-	background-color: #f7f7f7;
-}
 
 * {
 	box-sizing: border-box;
@@ -511,6 +507,11 @@ img
 
 a {
 	text-decoration:none;
+}
+
+pre
+{
+	background-color: #f7f7f7;
 }
 
 .mainbody {
