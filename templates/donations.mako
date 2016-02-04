@@ -3,6 +3,12 @@
 <title>Donate | Robert Winkler</title>
 </%block>
 
+<p>
+	I really appreciate donations so to make it easier I've collected as many different ways
+	of donating on this page, ordered by preference (bitcoin donations, and coinbase specifically,
+	are the most straightforward for me).
+</p>
+
 <a class="coinbase-button" data-code="7b85b7686d33c1d1a3d599061adcb68d" data-button-style="donation_large" href="https://www.coinbase.com/checkouts/7b85b7686d33c1d1a3d599061adcb68d">Donate Bitcoins</a><script src="https://www.coinbase.com/assets/button.js" type="text/javascript"></script>
 
 <p>In case the coinbase button doesn't work, here's <a href="https://www.coinbase.com/robertwinkler">a link to my coinbase page</a></p>

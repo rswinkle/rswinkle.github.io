@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# Copyright (c) 2015 Robert Winkler
+# Copyright (c) 2015-2016 Robert Winkler
 # 
 # This software is MIT licensed see link for details
 # http://www.opensource.org/licenses/MIT
@@ -14,6 +14,13 @@ from mako.lookup import TemplateLookup
 import json
 from urllib.request import *
 #import urllib3
+
+
+
+
+
+
+
 
 
 
@@ -36,8 +43,34 @@ def main():
 	project_page = mylookup.get_template('projects.mako')
 	open('projects/index.html', 'w').write(project_page.render())
 
-	project_page = mylookup.get_template('hist_projects.mako')
-	open('projects/hist_projects.html', 'w').write(project_page.render())
+	#project_page = mylookup.get_template('hist_projects.mako')
+	#open('projects/hist_projects.html', 'w').write(project_page.render())
+
+
+	#Now generate project pages
+	project_pages = glob.glob('projects/*.md')
+	titles = []
+	article_offsets = []
+	for page in project_pages:
+		tmp = open(page).readlines(200)[0:2]
+
+		article_offsets += [sum(len(a) for a in tmp)]
+		print(article_offsets)
+		titles += [tmp[0][:-1]]
+
+	#cut off projects/ and and replace md with html extension
+	filenames = [f[9:-2] + 'html' for f in project_pages]
+	file_titles = [x for x in zip(filenames, titles)]
+
+	project_page = mylookup.get_template('project_page.mako')
+	for i,f in enumerate(project_pages):
+		print("rendering",f)
+		rendered_page = md.convert(open(f).read()[article_offsets[i]:])
+
+		out = open('projects/'+filenames[i], 'w')
+		out.write(project_page.render(post=rendered_page, file_title=file_titles[i]))
+		out.close()
+
 
 
 
