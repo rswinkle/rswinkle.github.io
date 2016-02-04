@@ -7,8 +7,9 @@ So I've resolved once again to try to post to this blog once
 a week or so.  Hopefully it'll help motivate me to make more
 progress on my programming projects so I'll have something
 to say.  In addition, maybe I'll eventually make this site
-look like it wasn't build in the 90's.
+look like it wasn't built in the 90's.
 
+STATUS UPDATE 2/4/16: epic failure, recommitting.
 
 Anyway, I've been tinkering with my collection of sorting algorithms
 and the benchmarking program I wrote for them years ago.  I've
