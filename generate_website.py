@@ -27,7 +27,7 @@ from urllib.request import *
 def main():
 
 	#in case I decide to use extensions or change output type etc.
-	md = markdown.Markdown();
+	md = markdown.Markdown(output_format="html5");
 
 	mylookup = TemplateLookup(directories=['templates'])
 

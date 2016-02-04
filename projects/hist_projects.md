@@ -26,13 +26,6 @@ See Github project <a href="http://www.github.com/rswinkle/cskiplist">here</a>, 
 <a href="/projects/cskiplist/CUnitAutomated-Results.xml">here</a>. See CVector description for info about viewing
 the test results.
 
-## CVector
-See Github project <a href="http://www.github.com/rswinkle/cvector">here</a>, Doxygen documentation
-<a href="/projects/cvector/">here</a>, and the test results <a href="/projects/cvector/CUnitAutomated-Results.xml">here</a>.
-The test results link displays correctly in Firefox (you have to allow it if you're running noscript since it uses xsl for formatting) but
-I'm not sure about other browsers.  I was unable to correctly load it in Chrome in Ubuntu.
-Both the Doxygen documentation and the test results (and testing code) are included in the Github project.
-
 ## C PIM
 This is a simple console based contact information manager written in C using a linked list and dynamic memory allocation.  Some of its
 more interesting and (relatively) complex features are the ability to save contacts to a file (in the form of xml data) specified by the user

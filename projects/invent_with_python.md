@@ -24,9 +24,9 @@ Look [here](https://pysdl2.readthedocs.org/en/latest/tutorial/pygamers.html)
 for more details on the differences between Pygame and PySDL2
 
 In any case, I started this project as a way of learning PySDL2 and I think will
-be very useful for people trying to learn PySDL2 whether or not they have
+be useful for people trying to learn PySDL2 whether or not they have
 experience with Pygame and it'll be a convenient way for people to get a feel
-for both API's so if they're trying to pick one.
+for both API's if they're trying to pick one.
 
 
 ## Status
