@@ -29,7 +29,7 @@ def main():
 	#in case I decide to use extensions or change output type etc.
 	md = markdown.Markdown(output_format="html5");
 
-	mylookup = TemplateLookup(directories=['templates'])
+	mylookup = TemplateLookup(directories=['templates'])#, output_encoding='utf-8', encoding_errors='replace')
 
 
 	#First generate standalone pages
