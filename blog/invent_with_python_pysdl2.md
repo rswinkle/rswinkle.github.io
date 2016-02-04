@@ -15,13 +15,15 @@ Al Sweigart, if you haven't heard of him, has 4 python books
 and all of them are available for free online along with the source code.
 I encourage you to check them out,
 
-I got a little less than half way done, before I felt comfortable enough to move on,
-starting my own simple games and soon after I was on vacation with family for about
-10 days during the holidays so by the time I came back it was even less on my mind.
+I got a little less than half way done before I felt comfortable enough to move on,
+starting my own simple games.  Soon after I was on vacation with family for about
+10 days during the holidays so by the time I got back it was even less on my mind
+and I haven't touched it since.
 
-I've released what I have to Github/Bitbucket because I think it'll be useful to
-people.  I'm thinking about starting a small crowdfunding campaign, probably on
-indiegogo, to motivate me to finish it if there's enough interest.
+I've added a README and released what I have to Github/Bitbucket because
+I think it'll be useful to people.  I'm thinking about starting a small
+crowdfunding campaign, probably on indiegogo, to motivate me to finish
+it if there's enough interest.
 
 Anyway the project page is [here](/projects/invent_with_python.html) for those
 interested.
