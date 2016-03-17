@@ -17,15 +17,16 @@
 		<h3>Old Projects</h3>
 	</li>
 
+<!-- Changes these links or change generate script to work offline -->
 	<li class="imgblock">
-		<a href="/projects/cvector.html">
+		<a href="/CVector/">
 		<img alt="Cvector" src="/images/cvector.png">
 		</a>
 		<h3>CVector</h3>
 	</li>
 
 	<li class="imgblock">
-		<a href="/projects/c_interpreter.html">
+		<a href="/C_Interpreter/">
 		<img alt="C_Interpreter" src="/images/c_programming_language.png">
 		</a>
 		<h3>C_Interpreter</h3>

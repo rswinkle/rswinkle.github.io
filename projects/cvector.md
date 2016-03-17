@@ -63,7 +63,7 @@ There is no output of any kind, no errors or warnings.
 
 
 It has been relatively well tested using Cunit tests which all pass.  You can see
-the test results [here](/projects/cvector/CUnitAutomated-Results.xml),
+the test results [here](/CVector/CUnitAutomated-Results.xml),
 though they only display correctly in Firefox.  The test results and the xsl to dislpay it
 as a nice html page are in the testoutput directory.
 
@@ -107,7 +107,7 @@ behave, look at vector_tests.c
 
 Documentation
 =============
-The Doxygen generated html docs are in doc.tar.gz and [online here](http://www.robertwinkler.com/projects/cvector/index.html)
+The Doxygen generated html docs are in doc.tar.gz and [online here](http://www.robertwinkler.com/CVector/docs/)
 
 
 LICENSE
