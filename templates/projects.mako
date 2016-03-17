@@ -33,14 +33,14 @@
 	</li>
 
 	<li class="imgblock">
-		<a href="/projects/invent_with_python.html">
+		<a href="/inventwithpython_pysdl2/">
 		<img alt="Invent With Python" src="/images/makinggames.png">
 		</a>
 		<h3>Invent With Python ported to PySDL2</h3>
 	</li>
 
 	<li class="imgblock">
-		<a href="/projects/opengl_reference.html">
+		<a href="/opengl_reference/">
 		<img alt="opengl_reference" src="https://raw.githubusercontent.com/rswinkle/opengl_reference/master/media/screenshots/ex_1.png">
 		</a>
 		<h3>opengl_reference</h3>
