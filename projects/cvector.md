@@ -1,5 +1,6 @@
 CVECTOR
 =======
+[![Build Status](https://travis-ci.org/rswinkle/CVector.svg?branch=master)](https://travis-ci.org/rswinkle/CVector)
 [![Contact me on Codementor](https://cdn.codementor.io/badges/contact_me_github.svg)](https://www.codementor.io/rswinkle)
 
 This is a relatively simple ANSI compliant C vector library with specific structures and
@@ -12,15 +13,15 @@ will call destructors and copy constructors.
 
 Other modifiable parameters are at the top of vector.c
 
-	size_t VEC_I_START_SZ = 50;
-	size_t VEC_D_START_SZ = 50;
-	size_t VEC_VOID_START_SZ = 20;
-	size_t VEC_STR_START_SZ = 20;
+	size_t CVEC_I_START_SZ = 50;
+	size_t CVEC_D_START_SZ = 50;
+	size_t CVEC_STR_START_SZ = 20;
+	size_t CVEC_VOID_START_SZ = 20;
 
-	#define VEC_I_ALLOCATOR(x) ((x) * 2)
-	#define VEC_D_ALLOCATOR(x) ((x) * 2)
-	#define VEC_STR_ALLOCATOR(x) ((x) * 2)
-	#define VEC_VOID_ALLOCATOR(x) ((x) * 2)
+	#define CVEC_I_ALLOCATOR(x) ((x) * 2)
+	#define CVEC_D_ALLOCATOR(x) ((x) * 2)
+	#define CVEC_STR_ALLOCATOR(x) ((x) * 2)
+	#define CVEC_VOID_ALLOCATOR(x) ((x) * 2)
 
 The allocator macros are used in all functions that increase the size by 1.
 In others (constructors, insert_array, reserve) VEC_X_START_SZ is the amount
@@ -54,7 +55,7 @@ Get the source from [Github](https://github.com/rswinkle/CVector).
 
 Building
 ========
-I use [premake](http://premake.github.io/) so the command on linux is premake4 gmake which
+I use [premake](http://premake.github.io/) so the command on linux is premake5 gmake which
 will generate a build directory.  cd into that and run make
 or make config=release.  I have not tried it on windows though
 it should work (well I'm not sure about CUnit ...).
@@ -69,16 +70,16 @@ as a nice html page are in the testoutput directory.
 
 I've also run it under valgrind and there are no memory leaks.
 
-	valgrind --leak-check=yes ./vector
-
-	==17650== 
-	==17650== HEAP SUMMARY:
-	==17650==     in use at exit: 0 bytes in 0 blocks
-	==17650==   total heap usage: 5,146 allocs, 5,146 frees, 936,924 bytes allocated
-	==17650== 
-	==17650== All heap blocks were freed -- no leaks are possible
-	==17650== 
-	==17650== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+	valgrind --leak-check=full -v ./vector
+	==35463== 
+	==35463== HEAP SUMMARY:
+	==35463==     in use at exit: 0 bytes in 0 blocks
+	==35463==   total heap usage: 6,285 allocs, 6,285 frees, 996,013 bytes allocated
+	==35463== 
+	==35463== All heap blocks were freed -- no leaks are possible
+	==35463== 
+	==35463== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+	==35463== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
 
 
@@ -95,7 +96,7 @@ if you want to get the most up to date version of CUnit go here:
 http://cunit.sourceforge.net/index.html
 http://sourceforge.net/projects/cunit/
 
-I used version 2.1-2.
+I'm using version 2.1-3.
 
 
 Usage
@@ -107,14 +108,14 @@ behave, look at vector_tests.c
 
 Documentation
 =============
-The Doxygen generated html docs are in doc.tar.gz and [online here](http://www.robertwinkler.com/CVector/docs/)
+The Doxygen generated html docs are [online here](http://www.robertwinkler.com/CVector/docs/)
 
 
 LICENSE
 =======
 CVector is licensed under the MIT License.
 
-Copyright (c) 2011-2015 Robert Winkler
+Copyright (c) 2011-2016 Robert Winkler
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation
