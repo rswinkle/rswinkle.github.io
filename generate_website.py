@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# Copyright (c) 2015-2016 Robert Winkler
+# Copyright (c) 2015-2017 Robert Winkler
 #
 # This software is MIT licensed see link for details
 # http://www.opensource.org/licenses/MIT
