@@ -2,7 +2,7 @@
 
 	<head>
 	
-<title>New Project | Robert Winkler</title>
+<title>Web | Robert Winkler</title>
 
 
 	<link rel="stylesheet" type="text/css" href="/css/global.css">
@@ -40,41 +40,52 @@
 
 <div class="col-9 maincontent">
 
-	<article>
-	<h1><a href="invent_with_python_pysdl2.html">New Project</a></h1>
+		<article>
 
-	
+		<h1>
+			<a href="emscripten.html">Playing With Emscripten and WebAssembly</a>
+		</h1>
+
 		<span class="datentags">
-		February 4, 2016
+		December 6, 2017
 		<span style="float:right;">
 		#
-			<a href="tag_python.html"> python</a>
-			<a href="tag_pysdl2.html"> pysdl2</a>
+				<a href="tag_OpenGL.html"> OpenGL</a>
+				<a href="tag_C.html"> C</a>
+				<a href="tag_C++.html"> C++</a>
+				<a href="tag_Web.html"> Web</a>
 		</span>
 		</span>
-	
 
-
-	<p>So I updated my website yesterday(I know it still needs a lot of work I'm not
-a web developer) and I added several project pages including a new one.</p>
-<p>I've been wanting to learn PySDL2 for a while now and a couple months ago I finally
-had the motivation to start.  To learn it I decided to port all the games (and other
-programs) from <a href="http://inventwithpython.com/pygame/chapters/">"Making Games with Python &amp; Pygame"</a>
-by Al Sweigart.</p>
-<p>Al Sweigart, if you haven't heard of him, has 4 python books
-and all of them are available for free online along with the source code.
-I encourage you to check them out,</p>
-<p>I got a little less than half way done before I felt comfortable enough to move on,
-starting my own simple games.  Soon after I was on vacation with family for about
-10 days during the holidays so by the time I got back it was even less on my mind
-and I haven't touched it since.</p>
-<p>I've added a README and released what I have to Github/Bitbucket because
-I think it'll be useful to people.  I'm thinking about starting a small
-crowdfunding campaign, probably on indiegogo, to motivate me to finish
-it if there's enough interest.</p>
-<p>Anyway the project page is <a href="/projects/invent_with_python.html">here</a> for those
-interested.</p>
-	</article>
+		<p>So a little over a month ago, I thought it would be cool to try out emscripten and
+WebAssembly with one of my students.  We had previously done some "hello world"
+type graphics programs and a simple game port and I thought it'd be fun to see
+how easy (or not) it was to get those to run in the browser.</p>
+<p>While I think it was a good exercise, and emscripten is much better than it was a
+couple years ago, I don't think it's ready for primetime yet.  You <em>cannot</em> simply
+compile your existing graphics/game code and expect it to work.  If you're lucky
+you only have to make a few minor changes and with an #ifdef you can use the same
+code for your regular executable to.  If you're not, you might have to re-do your
+whole program because of the limitations emscripten (which are really the limitations
+of the browser/DOM rendering model.  These include turning infinite loops into callback
+functions and restricting yourself to OpenGL ES 2/3 which gets translated to WebGL 1/2.</p>
+<p>In any case, here are our results:</p>
+<ul>
+<li><a href="../projects/emscripten/smallest.html">sdl2_template</a></li>
+<li><a href="../projects/emscripten/smallest_sdl_gl.html">sdl2_gl_template</a></li>
+<li><a href="../projects/emscripten/testing.html">sdl2_interactive</a></li>
+</ul>
+<p>For some reason we could not get file loading to work and the movement in sdl2_interactive is very
+inconsistent for no reason that we could determine.  We originally wanted to port <a href="https://github.com/rswinkle/inventwithpython_pysdl2/blob/master/simulate_pysdl2.py">simulate</a>
+which we had previously already ported to C but due to the mainloop callback requirement, it would have required a complete redesign.</p>
+<p>Useful links:</p>
+<ul>
+<li><a href="https://kripken.github.io/emscripten-site/docs/porting/emscripten-runtime-environment.html">Execution Environment</a></li>
+<li><a href="https://kripken.github.io/emscripten-site/docs/porting/multimedia_and_graphics/OpenGL-support.html">OpenGL Support</a></li>
+<li><a href="https://lyceum-allotments.github.io/2016/06/emscripten-and-sdl-2-tutorial-part-1/">Tutorial</a></li>
+</ul>
+		</article>
+		<br>
 
 </div><div class="col-3 sidebar">
 <h2>Recent Posts</h2>

@@ -15,8 +15,6 @@
 
 <p>In case the coinbase button doesn't work, here's <a href="https://www.coinbase.com/robertwinkler">a link to my coinbase page</a></p>
 
-<p>Here's <a href="https://www.changetip.com/tipme/robert_winkler">a link to my ChangeTip TipMe page</a></p>
-
 <p>Here's a regular address that I use</p>
     <div class="blockchain stage-ready">
 
