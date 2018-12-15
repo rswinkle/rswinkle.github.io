@@ -19,11 +19,13 @@ Get the source from [Github](https://github.com/rswinkle/opengl_reference).
 
 I'll try to maintain a table/list of programs here.  Maybe
 I'll split them up by category (templates/frameworks, feature examples, demos, "games") later.
+Those listed use my own math library, rsw_math, but there are glm versions as well, ie glm_modelviewer.cpp.
 
 | Program | Description | Image |
 | --- | --- | --- |
 | ex1.c | Hello Triangle                                            | ![ex1](https://raw.githubusercontent.com/rswinkle/opengl_reference/master/media/screenshots/ex_1.png) |
 | ex2.c | Hello Interpolation                                       | ![ex2](https://raw.githubusercontent.com/rswinkle/opengl_reference/master/media/screenshots/ex_2.png) |
+| gears.c | Classic gears demo.  Switch between polygon modes with p.  | ![gears](https://raw.githubusercontent.com/rswinkle/opengl_reference/master/media/screenshots/gears.png) |
 | ex3.cpp | Load a model from ./media/models.  Switch between Gouraud and Phong shading with s.  Switch between polygon modes with p. | ![ex3](https://raw.githubusercontent.com/rswinkle/opengl_reference/master/media/screenshots/ex_3.png) |
 | ex4.cpp | Switch between textures with 1, filtering modes with f, zoom/rotate with arrow keys | ![ex4](https://raw.githubusercontent.com/rswinkle/opengl_reference/master/media/screenshots/ex_4.png) |
 | grass.cpp | Based on example in superbible, uses flying controls, WIP | ![grass](https://raw.githubusercontent.com/rswinkle/opengl_reference/master/media/screenshots/grass.png) |
