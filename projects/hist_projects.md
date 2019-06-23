@@ -54,16 +54,6 @@ and if statements with breaks and continues all over the place.  After a couple 
 on that version and started over again.  The result is the much cleaner (hopefully) and more structured (definitely)
 approach included in the zip file.
 
-<!--
-This hasn't worked in a browser for years and I hate Java and barely know it so why have this?
-<h4>Tic Tac Toe</h4>
-<p>
-This is a tic tac toe program I wrote for my CSE 205 course.  It is written in Java of course.  It is not polished
-but it works well enough (UPDATE 3/4/15: I haven't seen it work in a browser in years now).  It was pretty fun to make despite it's simplicity.  I still need to get a lot more Java practice
-The applet can be seen <a href="/projects/tictactoe.php">here</a>
-</p>
--->
-
 ## Shooter
 This is a birds-eye shooter that I made for a beginning game development class using GameMaker.
 I tried to use GML as much as possible instead of the drag and drop interface.  It is much more fun for me

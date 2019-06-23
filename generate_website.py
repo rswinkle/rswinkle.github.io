@@ -27,7 +27,7 @@ from urllib.request import *
 def main():
 
 	#in case I decide to use extensions or change output type etc.
-	md = markdown.Markdown(output_format="html5", extensions=['markdown.extensions.tables']);
+	md = markdown.Markdown(output_format="html5", extensions=['markdown.extensions.tables'])
 
 	mylookup = TemplateLookup(directories=['templates'])#, output_encoding='utf-8', encoding_errors='replace')
 
@@ -42,10 +42,6 @@ def main():
 
 	project_page = mylookup.get_template('projects.mako')
 	open('projects/index.html', 'w').write(project_page.render())
-
-	#project_page = mylookup.get_template('hist_projects.mako')
-	#open('projects/hist_projects.html', 'w').write(project_page.render())
-
 
 	#Now generate project pages
 	project_pages = glob.glob('projects/*.md')
