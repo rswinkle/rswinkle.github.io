@@ -11,14 +11,13 @@
 
 <h3>Cryptocurrency Methods</h3>
 
-<p>Here's a regular address that I use</p>
+<p>
+Here's a regular address that I use</p>
     <div class="blockchain stage-ready">
-
          <p align="center">Please Donate To Bitcoin Address: <b>1LmRgWJfhiYVf3oXfFZC4wtBrHbHLiVqVP</b></p>
-
-         <p align="center" class="qr-code"><img style="margin:5px" src="https://blockchain.info/qr?data=1LmRgWJfhiYVf3oXfFZC4wtBrHbHLiVqVP&size=200"></p>
-
+         <p align="center" class="qr-code"><img style="margin:5px" src="https://blockchain.info/qr?data=1LmRgWJfhiYVf3oXfFZC4wtBrHbHLiVqVP&size=200">
     </div>
+</p>
 
 
 <h3>Other Payment methods</h3>
