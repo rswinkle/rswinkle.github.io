@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CVector
-   &#160;<span id="projectnumber">3.1.0</span>
+   &#160;<span id="projectnumber">3.1.1</span>
    </div>
    <div id="projectbrief">A C++ style vector library in strict ANSI C (C89)</div>
   </td>
@@ -168,7 +168,7 @@ Variables</h2></td></tr>
 
 <p>Return pointer to last element. </p>
 
-<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00218">218</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00219">219</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
 
 </div>
 </div>
@@ -190,7 +190,7 @@ Variables</h2></td></tr>
 
 <p>Clears the contents of vector (frees all strings) and sets size to 0. </p>
 
-<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00396">396</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00397">397</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
 
 </div>
 </div>
@@ -229,7 +229,7 @@ Variables</h2></td></tr>
 <p>Erases strings from start to end inclusive. </p>
 <p>Example erases(myvec, 1, 3) would CVEC_FREE and remove strings at 1, 2, and 3 and the string that was at index 4 would now be at 1 etc. </p>
 
-<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00314">314</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00315">315</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
 
 </div>
 </div>
@@ -262,7 +262,7 @@ Variables</h2></td></tr>
 <p>Increase the size of the array num items. </p>
 <p>Items are memset to NULL since they will be freed when popped or the vector is freed. </p>
 
-<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00226">226</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00227">227</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
 
 </div>
 </div>
@@ -284,7 +284,7 @@ Variables</h2></td></tr>
 
 <p>Frees the internal array and sets size and capacity to 0. </p>
 
-<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00420">420</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00421">421</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
 
 </div>
 </div>
@@ -306,7 +306,7 @@ Variables</h2></td></tr>
 
 <p>Frees contents (individual strings and array) and frees vector so don't use after calling this. </p>
 
-<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00407">407</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00408">408</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
 
 </div>
 </div>
@@ -422,7 +422,7 @@ Variables</h2></td></tr>
 <p>Insert the first num elements of array a at index i. </p>
 <p>Note that it is the user's responsibility to pass in valid arguments. </p>
 
-<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00274">274</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00275">275</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
 
 </div>
 </div>
@@ -461,7 +461,7 @@ Variables</h2></td></tr>
 <p>Insert a at index i (0 based). </p>
 <p>Everything from that index and right is shifted one to the right. </p>
 
-<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00249">249</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00250">250</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
 
 </div>
 </div>
@@ -572,7 +572,7 @@ Variables</h2></td></tr>
 <p>Replace string at i with a. </p>
 <p>If ret != NULL, strcpy the old str to it. See cvec_pop_str warning </p>
 
-<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00301">301</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00302">302</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
 
 </div>
 </div>
@@ -604,7 +604,7 @@ Variables</h2></td></tr>
 
 <p>Makes sure the vector capacity is &gt;= size (parameter not member). </p>
 
-<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00327">327</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00328">328</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
 
 </div>
 </div>
@@ -637,7 +637,7 @@ Variables</h2></td></tr>
 <p>Set capacity to size. </p>
 <p>You will lose data if you shrink the capacity below the current size. If you do, the size will be set to capacity of course. </p>
 
-<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00345">345</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00346">346</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
 
 </div>
 </div>
@@ -670,7 +670,7 @@ Variables</h2></td></tr>
 <p>Fills entire allocated array (capacity) with val. </p>
 <p>Size is set to capacity in this case because strings are individually dynamically allocated. This is different from <a class="el" href="structcvector__i.html" title="Data structure for int vector. ">cvector_i</a>, <a class="el" href="structcvector__d.html" title="Data structure for double vector. ">cvector_d</a> and <a class="el" href="structcvector__void.html" title="Data structure for generic type (cast to void) vectors. ">cvector_void</a> (without a CVEC_FREE function) where the size stays the same. TODO Remove this function? even more unnecessary than for <a class="el" href="structcvector__i.html" title="Data structure for int vector. ">cvector_i</a> and <a class="el" href="structcvector__d.html" title="Data structure for double vector. ">cvector_d</a> and different behavior </p>
 
-<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00382">382</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00383">383</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
 
 </div>
 </div>
@@ -702,7 +702,7 @@ Variables</h2></td></tr>
 
 <p>Sets all size elements to val. </p>
 
-<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00367">367</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cvector__str_8c_source.html#l00368">368</a> of file <a class="el" href="cvector__str_8c_source.html">cvector_str.c</a>.</p>
 
 </div>
 </div>
@@ -853,7 +853,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 14 2018 16:53:25 for CVector by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 28 2019 14:38:32 for CVector by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
