@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: robertwinkler.com
+Token: 70e16a1184d27ad9805d0d81e55dd59f2f856f981baf94628c90062dc0e98331
