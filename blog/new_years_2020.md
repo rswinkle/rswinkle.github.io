@@ -1,7 +1,7 @@
 New Years Resolutions 2020
 ==========================
 general
-January 7, 2020
+January 5, 2020
 
 So it's that time of year again and I figured I'd publicly join in and hope that helps
 keep me honest.  I've split the goals into Primary and Secondary.  Secondary is a catchall for
