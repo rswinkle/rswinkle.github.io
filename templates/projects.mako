@@ -47,6 +47,13 @@
 	</li>
 
 	<li class="imgblock">
+		<a href="https://bitbucket.org/rswinkle/project_euler">
+		<img alt="Project Euler" src="https://projecteuler.net/profile/rob121618.png">
+		</a>
+		<h3>Project Euler</h3>
+	</li>
+
+	<li class="imgblock">
 		<a href="">
 		<img alt="Works On My Machine" src="/images/say-works-on-my-machine.jpg">
 		</a>
