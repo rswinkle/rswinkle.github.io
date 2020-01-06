@@ -32,8 +32,7 @@ ${posts[i]}
 
 	% endfor
 	</%block>
-	</div>
-	<div class="col-3 sidebar">
+	</div><div class="col-3 sidebar">
 	<%include file="sidebar.html" />
 	</div>
 </div>
