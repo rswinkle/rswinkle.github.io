@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<head>
+
+<title>Repl.it projects | Robert Winkler</title>
+
+
+<link rel="stylesheet" type="text/css" href="/css/global.css">
+<meta charset="utf-8" />
+<script type="text/javascript" src="/scripts/changetheme.js"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+	<div class="container flex">
+		<div>
+		<h1>Robert Winkler</h1>
+		<a id="theme" href="#dark" onclick="change('/css/global.css', '/css/dark.css');">Dark Theme</a>
+		</div>
+		<table>
+			<tr>
+				<td><a href="/">Home</a></td>
+				<td><a href="/blog/">Blog</a></td>
+				<td><a href="/projects/">Projects</a></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+<div class="container">
+
+
+
+<h1>Repl.it projects</h1>
+
+
+<p>
+<select id="repl2display">
+	<option value=0>none</option>
+	<option value=1>Goodreads + SQL</option>
+<!--
+	<option value=2>Spelling Game</option>
+	<option value=3>CPIM 2</option>
+-->
+</select>
+
+<button id="button" type="submit">Submit</button>
+</p>
+
+
+<p id="linkp" style="display:none">
+Here are links to the <a id="repl_litelink" href="">lite</a> and
+<a id="repl_link" href="">full</a> versions in case the embedded version isn't working.
+</p>
+
+<iframe id="repl_iframe" frameborder="0" width="100%" height="1000px" src=""></iframe>
+
+
+</div>
+
+
+<div class="footer">
+	<div class="container flex">
+		<a href="https://github.com/rswinkle">
+			<img alt="github" src="/images/icons/github.svg">
+		</a>
+		<a href="https://www.linkedin.com/in/rswinkle">
+			<img alt="linkedin" src="/images/icons/linkedin.svg">
+		</a>
+		<a href="https://www.goodreads.com/user/show/909505-robert">
+			<img alt="goodreads" src="/images/icons/goodreads.svg">
+		</a>
+		<a href="https://stackoverflow.com/users/2624136/rswinkle">
+			<img alt="stackoverflow" src="/images/icons/stackoverflow.svg">
+		</a>
+		<a href="http://www.youtube.com/c/RobertWinkler25">
+			<img alt="youtube" src="/images/icons/youtube.svg">
+		</a>
+		<a href="https://www.reddit.com/user/robert_winkler/">
+			<img alt="reddit" src="/images/icons/reddit.svg">
+		</a>
+	</div>
+</div>
+<p class="container" style="font-size:0.75em;color:#b3b3b3;text-align:center;">
+	© Robert Winkler, 2010 - 2019. Site design based on an old version of
+	<a href="http://www.michaelfogleman.com/">Michael Fogelman's awesome site</a>.
+</p>
+
+
+	<script>
+	
+	var button = document.getElementById("button");
+	var onClick = function(e) {
+		var repl = parseInt(document.getElementById("repl2display").value);
+
+		// TODO create spelling game and cpim 2 repls (and more)
+		var repl_links =[
+			"",
+			"https://repl.it/@rswinkle/Goodreads-Data",
+			"",
+			""
+		]
+
+		var p = document.getElementById("linkp");
+
+		// Hmm better to have 2 arrays one with lite one without so I don't need anything but the p
+		// hiding in the if else?
+		var litelink = document.getElementById("repl_litelink");
+		var link = document.getElementById("repl_link");
+		var iframe = document.getElementById("repl_iframe");
+		if (repl === 0) {
+			p.style.display = "none";
+			litelink.href = "";
+			link.href = ""
+			iframe.src = "";
+		//	iframe.style.display = "none";
+			console.log("repl was 0!");
+		} else {
+			p.style.display = "block";
+			litelink.href = repl_links[repl] + "?lite=true";
+			link.href = repl_links[repl];
+		//	iframe.style.display = "block";
+			iframe.src = repl_links[repl] + "?lite=true";
+			console.log("repl was not 0!");
+		}
+	}
+
+	button.addEventListener("click", onClick);
+
+	
+
+	</script>
+</body>
+
+</html>
+

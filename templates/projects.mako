@@ -54,6 +54,13 @@
 	</li>
 
 	<li class="imgblock">
+		<a href="/projects/repls.html">
+		<img alt="Repl.it Projects" src="/images/replit_light.png">
+		</a>
+		<h3>Repl.it Projects</h3>
+	</li>
+
+	<li class="imgblock">
 		<a href="">
 		<img alt="Works On My Machine" src="/images/say-works-on-my-machine.jpg">
 		</a>
