@@ -61,6 +61,13 @@
 	</li>
 
 	<li class="imgblock">
+		<a href="/projects/javascript.html">
+		<img alt="Learning Javascript" src="/images/javascript.png">
+		</a>
+		<h3>Learning Javascript</h3>
+	</li>
+
+	<li class="imgblock">
 		<a href="">
 		<img alt="Works On My Machine" src="/images/say-works-on-my-machine.jpg">
 		</a>
