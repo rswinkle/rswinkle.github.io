@@ -55,7 +55,7 @@
 
 	<li class="imgblock">
 		<a href="/projects/repls.html">
-		<img alt="Repl.it Projects" src="/images/replit_light.png">
+		<img alt="Repl.it Projects" src="/images/replit_dark.jpg">
 		</a>
 		<h3>Repl.it Projects</h3>
 	</li>
