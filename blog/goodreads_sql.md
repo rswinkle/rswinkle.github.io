@@ -37,12 +37,15 @@ precludes some more interesting analysis I wanted to do for the last few years.
 
 Without further ado, here are some statistics:
 
-| total_items | 515 |
-| total_pages | 197367.0 |
+| Statistic   | Result           |
+| ----------- | ---------------- |
+| total_items | 515              |
+| total_pages | 197367.0         |
 | avg(pages)  | 383.982490272374 |
 
+And here is a break down by binding (aka format):
 
-| binding                  |   count(binding)   |
+| binding                  | count(binding)     |
 | -----------------------  | ------------------ |
 | Paperback                |                211 |
 | Kindle Edition           |                152 |

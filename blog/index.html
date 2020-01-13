@@ -41,6 +41,116 @@
 	
 		<article>
 			<h1>
+				<a href="goodreads_sql.html">Goodreads + SQL = Fun</a>
+			</h1>
+			<span class="datentags">
+			January 12, 2020
+			<span style="float:right;">
+					<a href="tag_books.html"> books</a>
+					<a href="tag_reading.html"> reading</a>
+					<a href="tag_SQL.html"> SQL</a>
+			</span>
+			</span>
+
+<!-- The actual post content isn't indented because it's dumped
+as a block of markdown->html rendered text into the mako template.
+see the source code on github -->
+
+<p>I've been learning SQL (and particularly SQLite) slowly and casually over the
+last couple months and as I mentioned in my New Year's post, I want to continue
+that and use it in more ways and in more projects.  Thus far I've read through
+a lot of SQLite documentation, done a decent number of Hackerrank problems, gone
+through the W3Schools questions, and more importantly used SQLite in some random
+Python scripts and added a SQLite based implementation to
+<a href="https://github.com/rswinkle/CPIM2/tree/sqlite">CPIM2</a>.</p>
+<p>I realized soon after starting with SQL that one dataset that would be fun to play with
+would be my Goodreads library.  Using their export function which gives you a csv file
+and a relatively simple Python script, I could create a SQLite3 database.  Since I had
+another few books I wanted to read before the end of the year and plenty more SQL exercises
+and such to occupy me I decided to wait so I could have all of 2019 available for analysis
+and statistics, and finally it's time.</p>
+<p>I've been using Goodreads for several years now and while I've probably missed a book
+here and there, I've been reasonably consistent about adding books since I first created
+an account.  When I first started I added 100's of books immediately in a futile attempt
+to create a definitive list of every book (or at least every fictional one) I've ever read.</p>
+<p>Given that, take my ratings for the first couple hundred or so books with a grain of salt.
+I have gone back and adjusted some occasionally to be more inline with my current ratings
+but even if I remembered all of them it's impossible to rate things perfectly, especially
+years or decades after you experienced it.</p>
+<p>There are a few multi-book items in there, so items is not quite equivalent to books.</p>
+<p>One last thing; unfortunately the goodreads export system is not perfect and for some reason
+does not export date_read reliably at all (just leaves it blank most of the time) so that
+precludes some more interesting analysis I wanted to do for the last few years.</p>
+<p>Without further ado, here are some statistics:</p>
+<table>
+<thead>
+<tr>
+<th>Statistic</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total_items</td>
+<td>515</td>
+</tr>
+<tr>
+<td>total_pages</td>
+<td>197367.0</td>
+</tr>
+<tr>
+<td>avg(pages)</td>
+<td>383.982490272374</td>
+</tr>
+</tbody>
+</table>
+<p>And here is a break down by binding (aka format):</p>
+<table>
+<thead>
+<tr>
+<th>binding</th>
+<th>count(binding)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paperback</td>
+<td>211</td>
+</tr>
+<tr>
+<td>Kindle Edition</td>
+<td>152</td>
+</tr>
+<tr>
+<td>Hardcover</td>
+<td>70</td>
+</tr>
+<tr>
+<td>Mass Market Paperback</td>
+<td>58</td>
+</tr>
+<tr>
+<td>ebook</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Audible Audio</td>
+<td>3</td>
+</tr>
+<tr>
+<td></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>If you want to see the data and perform some SQL queries of your own (in the browser!),
+I put the project up on REPL so you can see it <a href="/projects/repls.html">here</a>.  Just
+select which repl "Goodreads + SQL".</p>
+		</article>
+		<br>
+
+		<article>
+			<h1>
 				<a href="new_years_2020.html">New Year's Resolutions 2020</a>
 			</h1>
 			<span class="datentags">
@@ -402,6 +512,7 @@ see the source code on github -->
 	</div><div class="col-3 sidebar">
 	<h2>Recent Posts</h2>
 <ul>
+	<li><a href="goodreads_sql.html">Goodreads + SQL = Fun</a></li>
 	<li><a href="new_years_2020.html">New Year's Resolutions 2020</a></li>
 	<li><a href="emscripten.html">Playing With Emscripten and WebAssembly</a></li>
 	<li><a href="opengl_reference.html">New OpenGL Project: opengl_reference</a></li>
@@ -419,10 +530,13 @@ see the source code on github -->
 	<li><a href="/blog/tag_C.html">C</a></li>
 	<li><a href="/blog/tag_C++.html">C++</a></li>
 	<li><a href="/blog/tag_OpenGL.html">OpenGL</a></li>
+	<li><a href="/blog/tag_SQL.html">SQL</a></li>
 	<li><a href="/blog/tag_Web.html">Web</a></li>
+	<li><a href="/blog/tag_books.html">books</a></li>
 	<li><a href="/blog/tag_general.html">general</a></li>
 	<li><a href="/blog/tag_pysdl2.html">pysdl2</a></li>
 	<li><a href="/blog/tag_python.html">python</a></li>
+	<li><a href="/blog/tag_reading.html">reading</a></li>
 	<li><a href="/blog/tag_sorting.html">sorting</a></li>
 	<li><a href="/blog/tag_untagged.html">untagged</a></li>
 </ul>

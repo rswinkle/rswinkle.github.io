@@ -602,6 +602,19 @@ article h1 {
 	margin-bottom: 3px;
 }
 
+article table {
+	width: 100%;
+}
+
+article th {
+	border: 1px solid white;
+}
+
+article td {
+	border: 1px solid white;
+	text-align: right;
+}
+
 .datentags {
 	color: rgb(25, 25, 25);
 	font-size: 0.8em;
