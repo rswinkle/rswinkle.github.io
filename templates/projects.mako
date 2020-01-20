@@ -47,7 +47,7 @@
 	</li>
 
 	<li class="imgblock">
-		<a href="https://bitbucket.org/rswinkle/project_euler">
+		<a href="https://github.com/rswinkle/project_euler">
 		<img alt="Project Euler" src="https://projecteuler.net/profile/rob121618.png">
 		</a>
 		<h3>Project Euler</h3>
