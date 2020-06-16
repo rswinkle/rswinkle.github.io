@@ -19,28 +19,28 @@
 
 <!-- Changes these links or change generate script to work offline -->
 	<li class="imgblock">
-		<a href="/CVector/">
+		<a href="/projects/cvector.html">
 		<img alt="Cvector" src="/images/cvector.png">
 		</a>
 		<h3>CVector</h3>
 	</li>
 
 	<li class="imgblock">
-		<a href="/C_Interpreter/">
+		<a href="/projects/c_interpreter.html">
 		<img alt="C_Interpreter" src="/images/c_programming_language.png">
 		</a>
 		<h3>C_Interpreter</h3>
 	</li>
 
 	<li class="imgblock">
-		<a href="/inventwithpython_pysdl2/">
+		<a href="/projects/invent_with_python.html">
 		<img alt="Invent With Python" src="/images/makinggames.png">
 		</a>
 		<h3>Invent With Python ported to PySDL2</h3>
 	</li>
 
 	<li class="imgblock">
-		<a href="/opengl_reference/">
+		<a href="/projects/opengl_reference.html">
 		<img alt="opengl_reference" src="https://raw.githubusercontent.com/rswinkle/opengl_reference/master/media/screenshots/ex_1.png">
 		</a>
 		<h3>opengl_reference</h3>
@@ -68,7 +68,7 @@
 	</li>
 
 	<li class="imgblock">
-		<a href="https://github.com/rswinkle/sdl_img">
+		<a href="/projects/sdl_img.html">
 		<img alt="sdl_img" src="/images/sdl_img.png">
 		</a>
 		<h3>sdl_img</h3>

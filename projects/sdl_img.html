@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<head>
+
+<title>sdl_img | Robert Winkler</title>
+
+
+<link rel="stylesheet" type="text/css" href="/css/global.css">
+<meta charset="utf-8" />
+<script type="text/javascript" src="/scripts/changetheme.js"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+	<div class="container flex">
+		<div>
+		<h1>Robert Winkler</h1>
+		<a id="theme" href="#dark" onclick="change('/css/global.css', '/css/dark.css');">Dark Theme</a>
+		</div>
+		<table>
+			<tr>
+				<td><a href="/">Home</a></td>
+				<td><a href="/blog/">Blog</a></td>
+				<td><a href="/projects/">Projects</a></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+<div class="container">
+
+
+
+<h1>sdl_img</h1>
+
+<p><a href="https://travis-ci.org/rswinkle/sdl_img"><img alt="Build Status" src="https://travis-ci.org/rswinkle/sdl_img.svg?branch=master"></a>
+<a href="https://scan.coverity.com/projects/rswinkle-sdl_img"><img alt="Coverity Scan Build Status" src="https://scan.coverity.com/projects/15740/badge.svg"></a></p>
+<p>A "simple" image viewer based on <a href="https://github.com/nothings/stb/blob/master/stb_image.h">stb_image.h</a> (with the suggested animated GIF API extension).</p>
+<p>It's "simple" in that it would work fine as a drop in replacement for most people since all the normal/expected behavior is there,
+but it has tons of extra and unique features for power users, especially on Linux/Unix and if you're comfortable with the terminal.</p>
+<h1>Download</h1>
+<p>Get the latest <a href="https://github.com/rswinkle/sdl_img">source</a> or the latest
+<a href="https://github.com/rswinkle/sdl_img/releases">release</a> from Github</p>
+<h1>Goals / Focus</h1>
+<ul>
+<li>Implement features I've always wanted in an image viewer</li>
+<li>Relatively simple, short, readable code</li>
+<li>Learn/Practice/Fun</li>
+<li>Not really focused on speed, if it's fast enough on my chromebook it's good enough</li>
+</ul>
+<h1>Controls/Basic Usage</h1>
+<pre><code>./sdl_img image_name.jpg
+./sdl_img -f image_name.jpg  (to start in full screen mode)
+</code></pre>
+<p>Will open image_name.jpg.  On Windows that would be <code>sdl_img.exe</code>, but better
+to just right click on an image of each type and change the default application
+to be sdl_img.exe and then double clicking any image of that type will open it
+with sdl_img.  Left and right will go through images in the same directory in
+alphabetical order.</p>
+<table>
+<thead>
+<tr>
+<th>Controls</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left (or Up)</td>
+<td>Previous image(s) or pan if appropriate</td>
+</tr>
+<tr>
+<td>Right (or Down)</td>
+<td>Next image(s) or pan if appropriate</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Next image(s)</td>
+</tr>
+<tr>
+<td>CTRL+Space</td>
+<td>Previous image(s)</td>
+</tr>
+<tr>
+<td>+/-</td>
+<td>Zoom in/out</td>
+</tr>
+<tr>
+<td>CTRL + +/-</td>
+<td>Speed up or slow down an animated gif</td>
+</tr>
+<tr>
+<td>CTRL + Direction</td>
+<td>Next or previous image(s) even when zoomed in</td>
+</tr>
+<tr>
+<td>Mouse Wheel</td>
+<td>Zoom in/out</td>
+</tr>
+<tr>
+<td>Left click + drag</td>
+<td>Pan around a zoomed in image</td>
+</tr>
+<tr>
+<td>A</td>
+<td>Actual size</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Toggle fill screen mode</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Shuffle (Mix) the images (only in single mode)</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Sort the images by file name (only in single mode)</td>
+</tr>
+<tr>
+<td>CTRL+N</td>
+<td>Sort the images by file path (only in single mode)</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Sort the images by size (only in single mode)</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Sort the images by last modified (only in single mode)</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Pause/Unpause gif</td>
+</tr>
+<tr>
+<td>CTRL + F or F11</td>
+<td>Toggle Fullscreen</td>
+</tr>
+<tr>
+<td>ESC</td>
+<td>Exit or "Back" similar to Android</td>
+</tr>
+<tr>
+<td>L/R</td>
+<td>Rotate the current image left/right</td>
+</tr>
+<tr>
+<td>H/V</td>
+<td>Flip the current image horizontally/vertically</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>Delete the current image and move to the next (only in single mode)</td>
+</tr>
+<tr>
+<td>Backspace</td>
+<td>Remove the current image and move to the next (only in single mode)</td>
+</tr>
+<tr>
+<td>CTRL + 1</td>
+<td>Single image mode</td>
+</tr>
+<tr>
+<td>CTRL + 2</td>
+<td>Double image mode</td>
+</tr>
+<tr>
+<td>CTRL + 4</td>
+<td>Quad image mode</td>
+</tr>
+<tr>
+<td>CTRL + 8</td>
+<td>8 image mode</td>
+</tr>
+<tr>
+<td>CTRL + U</td>
+<td>Thumbnail mode</td>
+</tr>
+<tr>
+<td>CTRL + I</td>
+<td>List mode</td>
+</tr>
+<tr>
+<td>F1 - F10</td>
+<td>Start a slideshow with 1 - 10 second delay</td>
+</tr>
+</tbody>
+</table>
+<p>The most obvious unique features are the multi-image modes but others include
+slowing/speeding/pausing gifs, vim inspired thumbnail mode, shuffle/sort etc.</p>
+<p>Within each image mode the basic controls work on all images simultaneously
+unless a specific image is selected by hitting 1-n and then they operate only
+on that image, ie cycling, zooming, fit will only effect that image.
+To return to "all at once" mode, hit 0.  In this way you can compare multiple
+images simultaneously with a single viewer instance (even if they aren't sequential
+alphabetically).  Switching from a higher mode to a lower will show the first n images
+of the higher mode where n is the lower number.  An exception is if you have an
+image selected and go to single mode, that is the image that will be used.</p>
+<p>The slideshow feature is smart enough to wait long enough to finish any gif being
+displayed even if that takes longer than the specificed delay.  ESC ends the slideshow.
+All other controls work while in slideshow mode, meaning starting a slideshow does not
+automatically toggle to fullscreen, it will run in double, quad or oct-image mode, or
+even on a single image selected within those modes.</p>
+<p>Something to note about the rotation functionality are that while it will rotate any
+image, it will only ask whether you're sure you want to save single frame images because
+stb_image_write does not support gifs at all, let alone animated gifs.  It will try to
+detect the type from the extension and output that type if possible, otherwise jpg is
+the default.</p>
+<h1>Advanced Usage</h1>
+<pre><code>./sdl_img -l list_of_images (urls or local paths or mixed, doesn't matter)
+./sdl_img image1.jpg image2.png
+./sdl_img image1.jpg -s 4
+./sdl_img -l list_of_urls -c ./custom_cache_dir
+</code></pre>
+<p>Or any combination of those options, ie</p>
+<pre><code>./sdl_img image.jpg -l list1 -s 8 example.com/image.jpg -l list3 image4.gif -f
+</code></pre>
+<p>The option -s [delay] means start in slideshow mode with the given delay in seconds.
+If delay is not 1-10 or is missing, delay will be set to 3 seconds.</p>
+<p>When using any of these modes, all the images will be collected in a list in the
+order they're given (not sorted like basic usage).  For now, if you have multiple
+url images with the same name, downloaded on the same day, the one downloaded last
+will simply overwrite the earlier ones in the cache.  This is because the cache does
+create subdirectories by date of the form YYYY-MM-DD for easy browsing/cleaning.</p>
+<p>There is also the -c/--cache option which allows you to specify a custom cache
+location (only for this instance) which can be useful if you know you want to
+save these images and don't want to bother copying them from the normal cache later.</p>
+<h1>Building</h1>
+<p>On Linux, just run <code>./build.sh</code> for debug, <code>./build_release.sh</code> for release.</p>
+<p>On Windows I use <a href="https://github.com/msys2/msys2/wiki/MSYS2-installation">MSYS2</a>.  I don't
+like/use IDE's and I can't stand the Window's command line.  MSYS2 allows me to have the
+same environment and tools as Linux.  So it's basically the same, <code>./build_win.sh</code> and
+<code>./build_win_release.sh</code>.</p>
+<h1>Packaging</h1>
+<p>I'll expand this section later, once I get to 1.0 and have packages and
+more finalized packaging processes but I'm using
+<a href="http://nsis.sourceforge.net/Main_Page">NSIS</a> to create my windows installer and
+<a href="https://github.com/jordansissel/fpm">fpm</a> on linux to create linux packages.  Maybe
+I'll even try something like AppImage or Flatpak long term just for fun.</p>
+<h1>Naming Issues</h1>
+<p>So I know there are some issues with the name.</p>
+<p>Originally sdl_img only used SDL2 and stb_image; <a href="https://github.com/nothings/stb">stb_image</a>
+and <a href="https://github.com/nothings/stb-imv">stb_imv</a> already exist,
+so I chose sdl_img rather than stb_img.  Unfortunately, SDL_image and SDL2_image
+(libsdl-image1.2 and libsdl2-image in repos) also exist so there's a minor clash there too.</p>
+<p>Now I'm using the following libraries:
+<a href="https://www.libsdl.org">SDL2</a>, <a href="http://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/">SDL2_gfx</a>
+stb_image, stb_image_write, stb_image_resize
+<a href="https://curl.haxx.se/libcurl/">libcurl</a>
+<a href="https://github.com/vurtun/nuklear">nuklear</a> (immediate mode GUI library)
+<a href="https://github.com/WaterJuice/WjCryptLib">WjCryptLibMd5</a></p>
+<p>So potential names are stb_img, sdl_img, sdl2_img, sdl_imv, nuklear_img, or
+some cool original name that I'm not creative enough to think of.  I'm open to
+suggestions.</p>
+<h1>TODO/IDEAS</h1>
+<ul>
+<li>[x] Let user adjust gif delay up/down with ALT + +/-</li>
+<li>[x] Make initial window size based on initial image dimensions</li>
+<li>[x] Take a text list of image paths as an arg and browse those</li>
+<li>[x] Same as above, but allow URL's (download into a tmp/cache directory)</li>
+<li>[x] Don't waste CPU cycles/battery when viewing static images</li>
+<li>[x] Can delete current image in single image mode</li>
+<li>[x] Can rotate images (and save the changes if not animated gifs)</li>
+<li>[x] Handle quoted paths/urls in -l files</li>
+<li>[x] Handle being given a directory as an argument(s)</li>
+<li>[x] Add argument -s [1-10] to start in slideshow mode</li>
+<li>[ ] Add window icon (either static or based on current image(s))</li>
+<li>[x] Thumbnail generating and browsing</li>
+<li>[ ] Install icon in deb package</li>
+<li>[ ] WebM support with mbew?</li>
+<li>[ ] MP4 support?</li>
+<li>[x] Speed up initial startup when a directory has a large number of images</li>
+<li>[x] Change sorting to use strcmp for humans (could use gnu strverscmp)</li>
+<li>[x] Recursive directory scanning with -r/-R</li>
+<li>[x] shuffle/sort (m / o for mix/order)</li>
+<li>[x] Use image extensions as a filter most common use cases</li>
+<li>[x] Nuklear GUI</li>
+<li>[ ] save to favorites or more general "collection" saving</li>
+<li>[ ] Clean up code a bit (ongoing)</li>
+<li>[ ] Save memory by aliasing when viewing the same image more than once in multimode</li>
+<li>[ ] Save memory by having the main thread update images as they're loaded</li>
+<li>[ ] AppImage and/or Flatpak</li>
+<li>[ ] Automatic updating</li>
+<li>[x] Travis-CI</li>
+<li>[x] Coverity</li>
+<li>[x] Figure out why certain rare animated gifs don't load all the frames</li>
+</ul>
+
+
+</div>
+
+
+<div class="footer">
+	<div class="container flex">
+		<a href="https://github.com/rswinkle">
+			<img alt="github" src="/images/icons/github.svg">
+		</a>
+		<a href="https://www.linkedin.com/in/rswinkle">
+			<img alt="linkedin" src="/images/icons/linkedin.svg">
+		</a>
+		<a href="https://www.goodreads.com/user/show/909505-robert">
+			<img alt="goodreads" src="/images/icons/goodreads.svg">
+		</a>
+		<a href="https://stackoverflow.com/users/2624136/rswinkle">
+			<img alt="stackoverflow" src="/images/icons/stackoverflow.svg">
+		</a>
+		<a href="http://www.youtube.com/c/RobertWinkler25">
+			<img alt="youtube" src="/images/icons/youtube.svg">
+		</a>
+		<a href="https://www.reddit.com/user/robert_winkler/">
+			<img alt="reddit" src="/images/icons/reddit.svg">
+		</a>
+	</div>
+</div>
+<p class="container" style="font-size:0.75em;color:#b3b3b3;text-align:center;">
+	© Robert Winkler, 2010 - 2019. Site design based on an old version of
+	<a href="http://www.michaelfogleman.com/">Michael Fogelman's awesome site</a>.
+</p>
+
+
+</body>
+
+</html>

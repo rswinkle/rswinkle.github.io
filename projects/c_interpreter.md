@@ -209,17 +209,26 @@ It also of course supports actually using the macros.
 	mult_op                         -> one of '*' '/' '%'
 
 	unary_expr                      -> postfix_expr
+	                                   sizeof_expr
 	                                   bit_negation_expr
 	                                   logical_negation_expr
+	                                   unary_minus_expr
+	                                   unary_plus_expr
 	                                   preincrement_expr
 	                                   predecrement_expr
 
 	preincrement_expr               -> '++' unary_expr
 	predecrement_expr               -> '--' unary_expr
 
+	unary_plus_expr                 -> '+' unary_expr
+	unary_minus_expr                -> '-' unary_expr
+
 	logical_negation_expr           -> '!' unary_expr
 
 	bit_negation_expr               -> '~' unary_expr
+
+	sizeof_expr                     -> sizeof '(' type-name ')'
+	                                -> sizeof unary-expr
 
 	postfix_expr                    -> function_call
 	                                   primary_expr
@@ -267,21 +276,9 @@ all my tests at once.
 	Usage: ./cinterpreter [-E] script
 	~/C_Interpreter/build $ ./cinterpreter ../tests/switch.txt
 	[ouhput from switch.txt here]
-	~/C_Interpreter/build $ ../runtests.sh
-	running normal tests
-	==================
-	executing ../tests/backslash.txt
-	executing ../tests/break_continue.txt
-	executing ../tests/problem6.txt
-	...
-	comparing output of ../tests/backslash.txt
-	comparing output of ../tests/break_continue.txt
-	comparing output of ../tests/problem6.txt
-	...
-	~/C_Interpreter/build $ ../runtests_valgrind.sh | grep ERROR
-	==30652== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
-	==30652== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
-	==30655== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
-	...
+	~/C_Interpreter/build $ ../runtests.py
+	Should be nothing here, only failures produce output
+	~/C_Interpreter/build $ ../run_valgrind_tests.py
+	Same here.  Note this may take a minute, valgrind makes things slow
 	~/C_Interpreter/build $
 
