@@ -41,6 +41,45 @@
 	
 		<article>
 			<h1>
+				<a href="cvector_4_0.html">CVector 4.0</a>
+			</h1>
+			<span class="datentags">
+			June 15, 2020
+			<span style="float:right;">
+					<a href="tag_C.html"> C</a>
+					<a href="tag_libraries.html"> libraries</a>
+			</span>
+			</span>
+
+<!-- The actual post content isn't indented because it's dumped
+as a block of markdown->html rendered text into the mako template.
+see the source code on github -->
+
+<p>I recently finished some relatively major changes and improvements to <a href="/projects/cvector.html">CVector</a>.</p>
+<p>Since the most recent changes involved actual changes to the API, both adding new functions and modifing a few existing ones,
+I've bumped the version up to 4.0.</p>
+<p>Since I've never done an update post like this, and you can look at the main project page and documentation
+etc. for all the details I'll just sum up some changes from about the last year (since about 3.1.0 give or take):</p>
+<ul>
+<li>Changing elem_init to return an int to indicate failure/success (and adding that checking where it's called)</li>
+<li>Renaming copy functions to match type-as-suffix convention</li>
+<li>Adding a copyc function that does initialization first, ie copy constructor</li>
+<li>Adding a CVEC_STRDUP macro wrapper which defaults to internal cvec_strdup if user doesn't set it</li>
+<li>Adding "move" function varieties (m suffix) for non-POD vectors that <em>do not</em> call elem_init/elem_free or CVEC_STRDUP/free.</li>
+<li>Adding a remove function that doesn't call elem_free/free (predates "move" functions... should I add an m even though the normal
+"remove" is called erase?  Or rename remove to erasem for consistency?)</li>
+<li>Fixing several bugs and semi-bugs/QOL issues</li>
+<li>Adding lots of new tests to cover most if not all new functionality</li>
+<li>probably more that I'm forgetting</li>
+</ul>
+<p>Renaming remove to erasem occurred to me briefly, and I do appreciate the consistency, but I already had remove and theoretically
+not breaking existing code (even if it's just mine) is a worthy goal and I feel the english connotations of erase vs remove are
+appropriate here.  Sigh, now I've pretty much talked myself into adding an erasem wrapper macro that calls remove.</p>
+		</article>
+		<br>
+
+		<article>
+			<h1>
 				<a href="goodreads_sql.html">Goodreads + SQL = Fun</a>
 			</h1>
 			<span class="datentags">
@@ -512,6 +551,7 @@ see the source code on github -->
 	</div><div class="col-3 sidebar">
 	<h2>Recent Posts</h2>
 <ul>
+	<li><a href="cvector_4_0.html">CVector 4.0</a></li>
 	<li><a href="goodreads_sql.html">Goodreads + SQL = Fun</a></li>
 	<li><a href="new_years_2020.html">New Year's Resolutions 2020</a></li>
 	<li><a href="emscripten.html">Playing With Emscripten and WebAssembly</a></li>
@@ -534,6 +574,7 @@ see the source code on github -->
 	<li><a href="/blog/tag_Web.html">Web</a></li>
 	<li><a href="/blog/tag_books.html">books</a></li>
 	<li><a href="/blog/tag_general.html">general</a></li>
+	<li><a href="/blog/tag_libraries.html">libraries</a></li>
 	<li><a href="/blog/tag_pysdl2.html">pysdl2</a></li>
 	<li><a href="/blog/tag_python.html">python</a></li>
 	<li><a href="/blog/tag_reading.html">reading</a></li>

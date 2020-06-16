@@ -2,7 +2,7 @@
 
 <head>
 
-<title>sorting | Robert Winkler</title>
+<title>libraries | Robert Winkler</title>
 
 
 <link rel="stylesheet" type="text/css" href="/css/global.css">
@@ -41,12 +41,13 @@
 	
 		<article>
 			<h1>
-				<a href="quicksort_runtimes.html">Quicksort Runtimes</a>
+				<a href="cvector_4_0.html">CVector 4.0</a>
 			</h1>
 			<span class="datentags">
-			September 26, 2015
+			June 15, 2020
 			<span style="float:right;">
-					<a href="tag_sorting.html"> sorting</a>
+					<a href="tag_C.html"> C</a>
+					<a href="tag_libraries.html"> libraries</a>
 			</span>
 			</span>
 
@@ -54,41 +55,26 @@
 as a block of markdown->html rendered text into the mako template.
 see the source code on github -->
 
-<p>So I've resolved once again to try to post to this blog once
-a week or so.  Hopefully it'll help motivate me to make more
-progress on my programming projects so I'll have something
-to say.  In addition, maybe I'll eventually make this site
-look like it wasn't built in the 90's.</p>
-<p>STATUS UPDATE 2/4/16: epic failure, recommitting.</p>
-<p>Anyway, I've been tinkering with my collection of sorting algorithms
-and the benchmarking program I wrote for them years ago.  I've
-also been looking at how to display the timing results in a pretty
-graph.  For now I'm playing with <a href="http://matplotlib.org">matplotlib</a> in python.</p>
-<p>On to the coding!  I wanted to see how my algorithms stacked up against
-the C stdlib qsort function (and C++'s std::sort but I only made a graph
-for C).  Since it uses a C style generic quicksort I decided to write
-my own version with the same interface and compare all my quicksort
-variations.</p>
-<ol>
-<li>qsort, standard recursive implementation</li>
-<li>qsortlib, C's qsort function</li>
-<li>genericqsort, my version of above</li>
-<li>iterqsort, iterative version of qsort</li>
-<li>qinssort, same as 1 but switches to insertion sort &lt;=25 elements</li>
-</ol>
-<p><img alt="Quicksort graph" src="./quicksort_times.png"></p>
-<p>As you can see, the 3 non-generic implementations 1, 4 and 5 all
-perform roughly the same, especially at higher N, while the 2
-generic versions are about half as fast due to the extra overhead
-involved.  My generic version is a tad slower but I think I'll try
-adding insertion sort for smaller groups and see if that makes the
-difference.</p>
-<p>You can see the code I used <a href="https://github.com/rswinkle/sorting/commit/8c8c1f2d980dfe069b0dcc2350ca0ecb4b0f46ac">here</a>.
-I compiled it as is but am only talking about main.c, or benchmark, not cppbenchmark.</p>
-<p>Running this from the build directry (after build and running benchmark)
-will generate the graph.  I had to expand and save it manually ...
-I need to figure out sizing the whole image programmatically.
-<code>python3 ../plotbarchart.py</code></p>
+<p>I recently finished some relatively major changes and improvements to <a href="/projects/cvector.html">CVector</a>.</p>
+<p>Since the most recent changes involved actual changes to the API, both adding new functions and modifing a few existing ones,
+I've bumped the version up to 4.0.</p>
+<p>Since I've never done an update post like this, and you can look at the main project page and documentation
+etc. for all the details I'll just sum up some changes from about the last year (since about 3.1.0 give or take):</p>
+<ul>
+<li>Changing elem_init to return an int to indicate failure/success (and adding that checking where it's called)</li>
+<li>Renaming copy functions to match type-as-suffix convention</li>
+<li>Adding a copyc function that does initialization first, ie copy constructor</li>
+<li>Adding a CVEC_STRDUP macro wrapper which defaults to internal cvec_strdup if user doesn't set it</li>
+<li>Adding "move" function varieties (m suffix) for non-POD vectors that <em>do not</em> call elem_init/elem_free or CVEC_STRDUP/free.</li>
+<li>Adding a remove function that doesn't call elem_free/free (predates "move" functions... should I add an m even though the normal
+"remove" is called erase?  Or rename remove to erasem for consistency?)</li>
+<li>Fixing several bugs and semi-bugs/QOL issues</li>
+<li>Adding lots of new tests to cover most if not all new functionality</li>
+<li>probably more that I'm forgetting</li>
+</ul>
+<p>Renaming remove to erasem occurred to me briefly, and I do appreciate the consistency, but I already had remove and theoretically
+not breaking existing code (even if it's just mine) is a worthy goal and I feel the english connotations of erase vs remove are
+appropriate here.  Sigh, now I've pretty much talked myself into adding an erasem wrapper macro that calls remove.</p>
 		</article>
 		<br>
 
