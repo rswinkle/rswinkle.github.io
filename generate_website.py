@@ -31,17 +31,7 @@ def main():
 
 	mylookup = TemplateLookup(directories=['templates'])#, output_encoding='utf-8', encoding_errors='replace')
 
-
-	#First generate standalone pages
-	index_page = mylookup.get_template('index.mako')
-	open('index.html', 'w').write(index_page.render())
-
-	#Now Donations page ... might get rid of this later, integrate into index/home page
-	about_page = mylookup.get_template('donations.mako')
-	open('donations.html', 'w').write(about_page.render())
-
-	project_page = mylookup.get_template('projects.mako')
-	open('projects/index.html', 'w').write(project_page.render())
+	# moved standalone pages to later so I could have access to blog/project content when rendering if needed
 
 	#Now generate project pages
 	project_pages = glob.glob('projects/*.md')
@@ -215,6 +205,16 @@ def main():
 		out.write(tag_index.render(tag=t, posts=tposts, link_titles=tfile_titles, dates=tdate_strs, tags=t_file_tags))
 
 
+	#Lastly generate standalone pages
+	index_page = mylookup.get_template('index.mako')
+	open('index.html', 'w').write(index_page.render(link_titles=file_titles))
+
+	#Now Donations page ... might get rid of this later, integrate into index/home page
+	about_page = mylookup.get_template('donations.mako')
+	open('donations.html', 'w').write(about_page.render())
+
+	project_page = mylookup.get_template('projects.mako')
+	open('projects/index.html', 'w').write(project_page.render())
 
 	
 
