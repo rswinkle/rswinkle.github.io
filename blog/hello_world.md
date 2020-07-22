@@ -1,12 +1,11 @@
-Hello World!
-============
+# Hello World!
 C
 August 25, 2009
 
-<pre>#include &lt;stdio.h&gt;
+	#include <stdio.h>
 
-int main()
-{
-      printf("Hello World");
-      return 0;
-}</pre>
+	int main()
+	{
+	    printf("Hello World");
+	    return 0;
+	}

@@ -1,5 +1,4 @@
-Goodreads + SQL = Fun
-=====================
+# Goodreads + SQL = Fun
 books reading SQL
 January 12, 2020
 
@@ -56,7 +55,7 @@ And here is a break down by binding (aka format):
 |                          |                1   |
 
 If you want to see the data and perform some SQL queries of your own (in the browser!),
-I put the project up on REPL so you can see it [here](/projects/repls.html).  Just
+I put the project up on REPL so you can see it [here](http://www.robertwinkler.com/projects/repls.html).  Just
 select which repl "Goodreads + SQL".
 
 

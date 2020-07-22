@@ -1,5 +1,4 @@
-New Year's Resolutions 2020
-==========================
+# New Year's Resolutions 2020
 general
 January 5, 2020
 

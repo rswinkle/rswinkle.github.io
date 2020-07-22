@@ -1,5 +1,4 @@
-Test Post 3
-===========
+# Test Post 3
 
 August 15, 2009
 

@@ -1,5 +1,4 @@
-CVector 4.0
-===========
+# CVector 4.0
 C libraries
 June 15, 2020
 

@@ -1,5 +1,4 @@
-New OpenGL Project: opengl_reference
-==================
+# New OpenGL Project: opengl_reference
 OpenGL C C++
 March 7, 2016
 

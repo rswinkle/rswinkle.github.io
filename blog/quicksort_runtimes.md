@@ -1,6 +1,5 @@
-Quicksort Runtimes
-==================
-sorting
+# Quicksort Runtimes
+sorting C
 September 26, 2015
 
 So I've resolved once again to try to post to this blog once
@@ -30,7 +29,7 @@ variations.
 
 
 
-![Quicksort graph](./quicksort_times.png)
+![Quicksort graph](http://www.robertwinkler.com/blog/quicksort_times.png)
 
 As you can see, the 3 non-generic implementations 1, 4 and 5 all
 perform roughly the same, especially at higher N, while the 2

@@ -1,5 +1,4 @@
-Playing With Emscripten and WebAssembly
-==================
+# Playing With Emscripten and WebAssembly
 OpenGL C C++ Web
 December 6, 2017
 

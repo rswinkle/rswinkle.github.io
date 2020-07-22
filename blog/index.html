@@ -213,7 +213,7 @@ precludes some more interesting analysis I wanted to do for the last few years.<
 </tbody>
 </table>
 <p>If you want to see the data and perform some SQL queries of your own (in the browser!),
-I put the project up on REPL so you can see it <a href="/projects/repls.html">here</a>.  Just
+I put the project up on REPL so you can see it <a href="http://www.robertwinkler.com/projects/repls.html">here</a>.  Just
 select which repl "Goodreads + SQL".</p>
 		</article>
 		<br>
@@ -396,6 +396,7 @@ interested.</p>
 			September 26, 2015
 			<span style="float:right;">
 					<a href="tag_sorting.html"> sorting</a>
+					<a href="tag_C.html"> C</a>
 			</span>
 			</span>
 
@@ -425,7 +426,7 @@ variations.</p>
 <li>iterqsort, iterative version of qsort</li>
 <li>qinssort, same as 1 but switches to insertion sort &lt;=25 elements</li>
 </ol>
-<p><img alt="Quicksort graph" src="./quicksort_times.png"></p>
+<p><img alt="Quicksort graph" src="http://www.robertwinkler.com/blog/quicksort_times.png"></p>
 <p>As you can see, the 3 non-generic implementations 1, 4 and 5 all
 perform roughly the same, especially at higher N, while the 2
 generic versions are about half as fast due to the extra overhead
@@ -458,40 +459,37 @@ as a block of markdown->html rendered text into the mako template.
 see the source code on github -->
 
 <p>I know there are a million lists of common programming mistakes (for almost every language) but I thought I'd do one myself.  Hopefully in writing about my most common mistakes I'll quit making them or at least remember to check for them first when my code doesn't work.  So  . . .</p>
-<p><strong>1.) <em>Forgetting a semi-colon</em></strong>.</p>
+<p><strong>1.) <em>Forgetting a semi-colon.</em></strong></p>
 <p>I know it's the most obvious mistake in C/C++.  Whether it's at the end of a class, struct, do-while loop or just a normal statement, I always seem to forget at least one semi-colon the first time I compile something.</p>
 <p><strong>2.) <em>Adding a semi-colon to the end of an if statement.</em></strong></p>
-<p>I think one time I made this mistake was in my Watering Lawn project.  I think I had the following (lines 100-104 in wateringlawn.cpp):
-<pre><code>
-if(temp1==temp2);
+<p>I think one time I made this mistake was in my Watering Lawn project.  I think I had the following (lines 100-104 in wateringlawn.cpp):</p>
+<pre><code>if(temp1==temp2);
 {
-minsprinks=0;
-break;
+    minsprinks=0;
+    break;
 }
 </code></pre>
-which of course drove me crazy because my program was compiling and I knew I had written it right but it wasn't doing what I wanted.  Weird how your eyes can travel over the same place over and over again and you just get used to the semi-colon and totally ignore it.  Unconsciously you just accept that it should be there.  Fortunately I figured it out without too much head banging.</p>
+<p>which of course drove me crazy because my program was compiling and I knew I had written it right but it wasn't doing what I wanted.  Weird how your eyes can travel over the same place over and over again and you just get used to the semi-colon and totally ignore it.  Unconsciously you just accept that it should be there.  Fortunately I figured it out without too much head banging.</p>
 <p><strong>3.) <em>Putting one equal sign in an if statement.</em></strong></p>
 <p>Yes I recently commited this mistake for I think the first time ever.  I was just typing too quickly and without really focusing.  I realize that there may be some edge cases where you might actually want an equal sign in if statement but I can't think of any and I haven't had any so far.</p>
-<p><strong>4.) <em>Not looking at the <em>entire</em> line.</em></strong></p>
-<p>This is especially annoying if I've spent quite a bit of time staring at the line trying to figure it out after already having spent time isolating which line it is.  I had the following line and of course was getting an error.  Thing is I had already fixed the quotes (double to single) for the '('.  I was so focused and frustrated that the compiler was complaining about something I'd already fixed I didn't notice the ones around the A.
-<pre><code>
-if(x=='(') mystack.push("A");
-</code></pre>
-<strong>5.) <em>Using double quotes when I need single quotes.</em></strong></p>
+<p><strong>4.) <em>Not looking at the </em>entire<em> line.</em></strong></p>
+<p>This is especially annoying if I've spent quite a bit of time staring at the line trying to figure it out after already having spent time isolating which line it is.  I had the following line and of course was getting an error.  Thing is I had already fixed the quotes (double to single) for the '('.  I was so focused and frustrated that the compiler was complaining about something I'd already fixed I didn't notice the ones around the A.</p>
+<p><code>if(x=='(') mystack.push("A");</code></p>
+<p><strong>5.) <em>Using double quotes when I need single quotes.</em></strong></p>
 <p>See above.  Sometimes I'm just not paying attention and typing to fast.</p>
-<p><strong>6.) <em>Using gcc when I'm coding in C++</em>.</strong></p>
+<p><strong>6.) <em>Using gcc when I'm coding in C++.</em></strong></p>
 <p>Duh.</p>
-<p><strong>7.) <em>Not keep track of exactly where my pointers are pointing</em></strong></p>
+<p><strong>7.) <em>Not keep track of exactly where my pointers are pointing.</em></strong></p>
 <p>(and realizing when things are pointing at the same thing instead of different things passing C strings around etc.)</p>
-<p><strong>8.) <em>Not using sizeof when using memory functions in C</em>.</strong></p>
+<p><strong>8.) <em>Not using sizeof when using memory functions in C.</em></strong></p>
 <p>(I know you can leave it out for primitives like char and int but I should just always use it so I won't forget for the complex structures).</p>
 <p><strong>9.) <em>Forgetting a break statement.</em></strong></p>
-<p><strong>10.) <em>Forgetting to increment a counter</em>.</strong></p>
+<p><strong>10.) <em>Forgetting to increment a counter.</em></strong></p>
 <p>Or similarly forgetting to set the pointer to the next one while looping through a linked list.</p>
-<p>Most of these (especially 7-10) I made while writing <a title="projects" href="http://www.robertwinkler.com/projects.php" target="_self">C PIM</a>.  Hopefully I can use these as a self checklist or something.</p>
-<p><strong>EDIT: 11.) <em>Forgetting to close a file stream</em></strong></p>
-<p><strong><em><strong>EDIT 2: 12.) Allocating the wrong amount of memory</strong></em></strong></p>
-<p><em><em><strong>EDIT 3: 14.) Type problems (wrong conversions, underflow and overflow in </strong><span style="font-weight: 900;">arithmetic both integer and real)</span><strong> </strong></em></em></p>
+<p>Most of these (especially 7-10) I made while writing <a href="http://www.robertwinkler.com/projects.php">C PIM</a>.  Hopefully I can use these as a self checklist or something.</p>
+<p><strong>EDIT: 11.) <em>Forgetting to close a file stream.</em></strong></p>
+<p><strong><em>EDIT 2: 12.) Allocating the wrong amount of memory.</em></strong></p>
+<p><strong><em>EDIT 3: 14.) Type problems (wrong conversions, underflow and overflow in arithmetic both integer and real).</em></strong></p>
 		</article>
 		<br>
 
@@ -510,13 +508,14 @@ if(x=='(') mystack.push("A");
 as a block of markdown->html rendered text into the mako template.
 see the source code on github -->
 
-<pre>#include &lt;stdio.h&gt;
+<pre><code>#include &lt;stdio.h&gt;
 
 int main()
 {
-      printf("Hello World");
-      return 0;
-}</pre>
+    printf("Hello World");
+    return 0;
+}
+</code></pre>
 		</article>
 		<br>
 

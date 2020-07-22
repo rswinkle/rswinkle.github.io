@@ -80,18 +80,18 @@ def main():
 
 
 	for post in posts:
-		tmp = open(post).readlines(200)[0:4]
+		tmp = open(post).readlines(200)[0:3]
 		#print('opening',post)
 
 		article_offsets += [sum(len(a) for a in tmp)]
 		print(article_offsets)
-		titles += [tmp[0][:-1]]
-		tags += [tmp[2].split()]
+		titles += [tmp[0][2:-1]]
+		tags += [tmp[1].split()]
 		if not tags[-1]:
 			tags[-1] += ['untagged']
 
-		date_strs += [tmp[3][:-1]]
-		dates += [time.strptime(tmp[3][:-1], '%B %d, %Y')]
+		date_strs += [tmp[2][:-1]]
+		dates += [time.strptime(tmp[2][:-1], '%B %d, %Y')]
 
 
 

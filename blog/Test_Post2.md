@@ -1,5 +1,4 @@
-Test Post 2
-===========
+# Test Post 2
 
 March 10, 2000
 

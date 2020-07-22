@@ -1,5 +1,4 @@
-New Project
-============
+# New Project
 python pysdl2
 February 4, 2016
 
