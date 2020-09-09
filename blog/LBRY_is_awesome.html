@@ -2,7 +2,7 @@
 
 <head>
 
-<title>Web | Robert Winkler</title>
+<title>LBRY is Awesome | Robert Winkler</title>
 
 
 <link rel="stylesheet" type="text/css" href="/css/global.css">
@@ -39,55 +39,26 @@
 <div class="row">
 	<div class="col-9 maincontent">
 	
-		<article>
-			<h1>
-				<a href="emscripten.html">Playing With Emscripten and WebAssembly</a>
-			</h1>
-			<span class="datentags">
-			December 6, 2017
-			<span style="float:right;">
-					<a href="tag_OpenGL.html"> OpenGL</a>
-					<a href="tag_C.html"> C</a>
-					<a href="tag_C++.html"> C++</a>
-					<a href="tag_Web.html"> Web</a>
-			</span>
-			</span>
+<article>
+<h1><a href="LBRY_is_awesome.html">LBRY is Awesome</a></h1>
 
-<!-- The actual post content isn't indented because it's dumped
-as a block of markdown->html rendered text into the mako template.
-see the source code on github -->
 
-<p>So a little over a month ago, I thought it would be cool to try out emscripten and
-WebAssembly with one of my students.  We had previously done some "hello world"
-type graphics programs and a simple game port and I thought it'd be fun to see
-how easy (or not) it was to get those to run in the browser.</p>
-<p>While I think it was a good exercise, and emscripten is much better than it was a
-couple years ago, I don't think it's ready for primetime yet.  You <em>cannot</em> simply
-compile your existing graphics/game code and expect it to work.  If you're lucky
-you only have to make a few minor changes and with an #ifdef you can use the same
-code for your regular executable to.  If you're not, you might have to re-do your
-whole program because of the limitations emscripten (which are really the limitations
-of the browser/DOM rendering model.  These include turning infinite loops into callback
-functions and restricting yourself to OpenGL ES 2/3 which gets translated to WebGL 1/2.</p>
-<p>In any case, here are our results:</p>
-<ul>
-<li><a href="../projects/emscripten/smallest.html">sdl2_template</a></li>
-<li><a href="../projects/emscripten/smallest_sdl_gl.html">sdl2_gl_template</a></li>
-<li><a href="../projects/emscripten/testing.html">sdl2_interactive</a></li>
-</ul>
-<p>For some reason we could not get file loading to work and the movement in sdl2_interactive is very
-inconsistent for no reason that we could determine.  We originally wanted to port <a href="https://github.com/rswinkle/inventwithpython_pysdl2/blob/master/simulate_pysdl2.py">simulate</a>
-which we had previously already ported to C but due to the mainloop callback requirement, it would have required a complete redesign.</p>
-<p>Useful links:</p>
-<ul>
-<li><a href="https://kripken.github.io/emscripten-site/docs/porting/emscripten-runtime-environment.html">Execution Environment</a></li>
-<li><a href="https://kripken.github.io/emscripten-site/docs/porting/multimedia_and_graphics/OpenGL-support.html">OpenGL Support</a></li>
-<li><a href="https://lyceum-allotments.github.io/2016/06/emscripten-and-sdl-2-tutorial-part-1/">Tutorial</a></li>
-</ul>
-		</article>
-		<br>
+<span class="datentags">
+September 10, 2020
+<span style="float:right;">
+#
+	<a href="tag_general.html"> general</a>
+	<a href="tag_LBRY.html"> LBRY</a>
+</span>
+</span>
 
-	
+
+
+<p>I've been using LBRY for a while now and it's made amazing proress in the last couple years in terms of the user experience both of the desktop app (which I use on linux), the android app, and of course <a href="lbry.tv">lbry.tv</a> which is how most people first experience lbry.  If you haven't heard of LBRY or don't know what it is, I recommend you read <a href="https://lbry.com/faq/what-is-lbry">their answer</a>, but in a nutshell it's both a protocol for sharing files (not just videos, that's just what most use it for) in a decentralized way and also the open source applications built by the company to access those files on the network.</p>
+<p>The reason, I'm talking about it (besides it's awesome and I want it to continue to grow and want more creators to post to it in addition, or even instead of Youtube), is that I've been experimenting with <a href="https://lbry.tv/@RobertWinkler:a/quicksort_runtimes:3">posting</a> <a href="https://lbry.tv/@RobertWinkler:a/C_Cpp_mistakes:2">blog</a> <a href="https://lbry.tv/@RobertWinkler:a/goodreads_sql:8">posts</a> there.  Their markdown syntax is slightly different that the python library I use to generate my static site and it renders a little differently (most annoyingly paragraphs have to be all on one line, at least in the desktop app, the result looks better on lbry.tv) but it's worth the minor changes to get the automatic handling of light and dark modes.  If I posted a <a href="https://lbry.tv/@RobertWinkler:a/c_interpreter:5">raw html</a> file one or the other would not look good since there's no way to detect the mode and change css dynamically afaik.</p>
+<p>Eventually, I may even start posting videos or other content on LBRY, but for now I'll just try to mirror blog posts and maybe some project READMEs.</p>
+</article>
+
 	</div><div class="col-3 sidebar">
 	<h2>Recent Posts</h2>
 <ul>
