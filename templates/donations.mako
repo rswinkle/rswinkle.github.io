@@ -13,8 +13,13 @@
 <h3>Subscriptions</h3>
 
 <p>
-<a href="https://liberapay.com/rswinkle/">Liberapay</a> is an open source subscription service similar to Patreon.
+<script src="https://liberapay.com/rswinkle/widgets/button.js"></script>
+<noscript><a href="https://liberapay.com/rswinkle/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 </p>
+
+#<p>
+#<a href="https://liberapay.com/rswinkle/">Liberapay</a> is an open source subscription service similar to Patreon.
+#</p>
 
 ##<p>
 ##<div id="paypal-button-container"></div>
@@ -73,7 +78,9 @@ The first two buttons use Coinbase Merchant which (as of June 2020) supports BTC
 The only difference between the buttons is if you want to provide your email.  While I don't currently have
 any reason for a mailing list, in the future if I started one (never more than once a month and likely less)
 you would be automatically on it.  Of course, if I really had a serious need for one, I'd probably end up
-using a service that streamlines the process anyway.
+using a service that streamlines the process anyway.  Update September 2020, for whatever reason the buttons
+might not work the way they should (load forever in my browser), so I've included equivalent links below
+(or just right click the buttons and open in new tab).
 </p>
 
 ## Collects email
@@ -88,10 +95,9 @@ using a service that streamlines the process anyway.
 	</div>
 </p>
 
-##<p>
-##Donate via Coinbase Merchant which supports BTC, ETH, LTC etc.
-##<a href="https://commerce.coinbase.com/checkout/dc1ce380-fe61-44f0-8cc6-c54e414efd76">here</a>
-##</p>
+<p>
+<a href="https://commerce.coinbase.com/checkout/dc1ce380-fe61-44f0-8cc6-c54e414efd76">With email</a>
+</p>
 
 
 ## collects no info
@@ -106,10 +112,9 @@ using a service that streamlines the process anyway.
 	</div>
 </p>
 
-##<p>
-##Donate via Coinbase Merchant which supports BTC, ETH, LTC etc.
-##<a href="https://commerce.coinbase.com/checkout/170324ef-fcf6-4dcc-91b9-8614cc0a3bb5">here</a>
-##</p>
+<p>
+<a href="https://commerce.coinbase.com/checkout/170324ef-fcf6-4dcc-91b9-8614cc0a3bb5">No email</a>
+</p>
 
 
 <p>
