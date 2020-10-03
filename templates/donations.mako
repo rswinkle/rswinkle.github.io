@@ -17,9 +17,9 @@
 <noscript><a href="https://liberapay.com/rswinkle/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 </p>
 
-#<p>
-#<a href="https://liberapay.com/rswinkle/">Liberapay</a> is an open source subscription service similar to Patreon.
-#</p>
+##<p>
+##<a href="https://liberapay.com/rswinkle/">Liberapay</a> is an open source subscription service similar to Patreon.
+##</p>
 
 ##<p>
 ##<div id="paypal-button-container"></div>
