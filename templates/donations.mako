@@ -152,10 +152,8 @@ Here's a regular address that I use</p>
 <h3>Free Methods (affiliate and referral links)</h3>
 <ul>
 	<li>
-		Install and start using the <a href="https://brave.com/rob778">Brave Browser</a>.  I'm also a registered Brave Creator so if you already
-		use Brave you can support me with BAT tips.
+		If you use the <a href="https://brave.com/">Brave</a> you can support me with BAT tips.
 	</li>
-
 	<li>
 		Get $50 of free tutoring by signing up via my <a href="http://www.wyzant.com/tutorrobert">Wyzant referral link</a>.
 		You can get more details at the link or from <a href="/images/flyer.pdf">here</a>
