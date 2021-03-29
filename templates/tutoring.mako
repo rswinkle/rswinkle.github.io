@@ -58,6 +58,11 @@ have changed since I took them.
 
 <h3>Reviews</h3>
 
+
+"I can call him "THE GOAT""
+- Sarah Cupertino, CA on 3/7/2021
+Hardworking and professional tutor, doesn't waste your time, knows what he is doing! I always feel reassured when I contact him for a lesson. Trust The Goat.
+
 "best c programming tutor ever"
 - David Egg Harbor Township, NJ on 12/2/2020
 Best of the best. He explains concept really well. I highly recommend him to everyone. Also, he has great personality.
@@ -191,6 +196,11 @@ Another session with Robert, very helpful and full of useful tips. Finished my w
 =======================
 Same reviews below but without date or location info and with number of sessions (at the time of copying)
 =======================
+
+I can call him "THE GOAT"
+Hardworking and professional tutor, doesn't waste your time, knows what he is doing! I always feel reassured when I contact him for a lesson. Trust The Goat.
+
+Sarah, 5 lessons with Robert
 
 best c programming tutor ever
 Best of the best. He explains concept really well. I highly recommend him to everyone. Also, he has great personality.
