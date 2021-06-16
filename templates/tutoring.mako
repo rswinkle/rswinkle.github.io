@@ -58,6 +58,9 @@ have changed since I took them.
 
 <h3>Reviews</h3>
 
+"Great teacher!"
+- Jean Wesley Chapel, FL on 6/7/2021
+Very patient and knowledgeable. We reviewed C++ issues I was having. I will use him again in the future. Thank you.
 
 "I can call him "THE GOAT""
 - Sarah Cupertino, CA on 3/7/2021
@@ -196,6 +199,11 @@ Another session with Robert, very helpful and full of useful tips. Finished my w
 =======================
 Same reviews below but without date or location info and with number of sessions (at the time of copying)
 =======================
+
+Great teacher!
+Very patient and knowledgeable. We reviewed C++ issues I was having. I will use him again in the future. Thank you.
+
+Jean, 1 lesson with Robert
 
 I can call him "THE GOAT"
 Hardworking and professional tutor, doesn't waste your time, knows what he is doing! I always feel reassured when I contact him for a lesson. Trust The Goat.
