@@ -77,7 +77,7 @@
 		<a href="/projects/mips_book/mips_book.html">
 		<img alt="MIPS Assembly Programming" src="/images/mips_book.png">
 		</a>
-		<h3>sdl_img</h3>
+		<h3>MIPS Assembly Book</h3>
 	</li>
 
 	<li class="imgblock">
