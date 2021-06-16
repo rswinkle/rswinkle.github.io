@@ -11,4 +11,4 @@ In a nutshell, it's a portable, single header library, written in clean-C
 entirely on the CPU and its only dependency is C99, though all the
 examples and demos use SDL2.
 
-You can read more about it and look at the examples [here](portablegl.com).
+You can read more about it and look at the examples [here](http://portablegl.com).
