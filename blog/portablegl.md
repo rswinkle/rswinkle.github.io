@@ -3,8 +3,8 @@ OpenGL C libraries
 June 16, 2021
 
 So, it's only 9 months past when I initially released it, but I'm finally
-[posting]() it to my projects page and writing this perfunctory blog post
-about it.
+[posting](http://www.robertwinkler.com/projects/portablegl.html) it to my projects
+page and writing this perfunctory blog post about it.
 
 In a nutshell, it's a portable, single header library, written in clean-C
 (ie C++ safe), implementing OpenGL 3.x ish.  In other words, it runs
