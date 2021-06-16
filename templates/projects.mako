@@ -74,6 +74,13 @@
 	</li>
 
 	<li class="imgblock">
+		<a href="/projects/portablegl.html">
+		<img alt="PortableGL" src="/images/portablegl.png">
+		</a>
+		<h3>PortableGL</h3>
+	</li>
+
+	<li class="imgblock">
 		<a href="/projects/mips_book/mips_book.html">
 		<img alt="MIPS Assembly Programming" src="/images/mips_book.png">
 		</a>
