@@ -10,5 +10,10 @@ by RISC-V which is growing).  Secondly, because it was an excuse to learn
 
 I've just released the first draft which you can access [here](http://www.robertwinkler.com/projects/mips_book/mips_book.html).
 
+It also comes in [pdf form](http://www.robertwinkler.com/projects/mips_book/mips_book.pdf).
+
+Lastly, you can see the repo (which includes some example code that is referenced in the book)
+[here](https://github.com/rswinkle/mips_book)
+
 
 
