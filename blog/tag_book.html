@@ -2,7 +2,7 @@
 
 <head>
 
-<title>Quicksort Runtimes | Robert Winkler</title>
+<title>book | Robert Winkler</title>
 
 
 <link rel="stylesheet" type="text/css" href="/css/global.css">
@@ -39,58 +39,37 @@
 <div class="row">
 	<div class="col-9 maincontent">
 	
-<article>
-<h1><a href="quicksort_runtimes.html">Quicksort Runtimes</a></h1>
+		<article>
+			<h1>
+				<a href="mips_assembly_book.html">MIPS Assembly Book</a>
+			</h1>
+			<span class="datentags">
+			June 27, 2021
+			<span style="float:right;">
+					<a href="tag_MIPS.html"> MIPS</a>
+					<a href="tag_assembly.html"> assembly</a>
+					<a href="tag_book.html"> book</a>
+					<a href="tag_asciidoctor.html"> asciidoctor</a>
+			</span>
+			</span>
 
+<!-- The actual post content isn't indented because it's dumped
+as a block of markdown->html rendered text into the mako template.
+see the source code on github -->
 
-<span class="datentags">
-September 26, 2015
-<span style="float:right;">
-#
-	<a href="tag_sorting.html"> sorting</a>
-	<a href="tag_C.html"> C</a>
-</span>
-</span>
+<p>Over the last month and a half I've been working on a book on MIPS assembly programming
+book targeted primarily at college students.  I did this for two reasons.  First
+because MIPS is one of the most in-demand subjects in my tutoring (followed
+by RISC-V which is growing).  Secondly, because it was an excuse to learn
+<a href="https://asciidoctor.org/">asciidoctor</a>, a more powerful alternative to markdown.</p>
+<p>I've released the latest beta, which you can access <a href="http://www.robertwinkler.com/projects/mips_book/mips_book.html">here</a>.</p>
+<p>It also comes in <a href="http://www.robertwinkler.com/projects/mips_book/mips_book.pdf">pdf form</a>.</p>
+<p>Lastly, you can see the repo (which includes some example code that is referenced in the book)
+<a href="https://github.com/rswinkle/mips_book">here</a></p>
+		</article>
+		<br>
 
-
-
-<p>So I've resolved once again to try to post to this blog once
-a week or so.  Hopefully it'll help motivate me to make more
-progress on my programming projects so I'll have something
-to say.  In addition, maybe I'll eventually make this site
-look like it wasn't built in the 90's.</p>
-<p>STATUS UPDATE 2/4/16: epic failure, recommitting.</p>
-<p>Anyway, I've been tinkering with my collection of sorting algorithms
-and the benchmarking program I wrote for them years ago.  I've
-also been looking at how to display the timing results in a pretty
-graph.  For now I'm playing with <a href="http://matplotlib.org">matplotlib</a> in python.</p>
-<p>On to the coding!  I wanted to see how my algorithms stacked up against
-the C stdlib qsort function (and C++'s std::sort but I only made a graph
-for C).  Since it uses a C style generic quicksort I decided to write
-my own version with the same interface and compare all my quicksort
-variations.</p>
-<ol>
-<li>qsort, standard recursive implementation</li>
-<li>qsortlib, C's qsort function</li>
-<li>genericqsort, my version of above</li>
-<li>iterqsort, iterative version of qsort</li>
-<li>qinssort, same as 1 but switches to insertion sort &lt;=25 elements</li>
-</ol>
-<p><img alt="Quicksort graph" src="http://www.robertwinkler.com/blog/quicksort_times.png"></p>
-<p>As you can see, the 3 non-generic implementations 1, 4 and 5 all
-perform roughly the same, especially at higher N, while the 2
-generic versions are about half as fast due to the extra overhead
-involved.  My generic version is a tad slower but I think I'll try
-adding insertion sort for smaller groups and see if that makes the
-difference.</p>
-<p>You can see the code I used <a href="https://github.com/rswinkle/sorting/commit/8c8c1f2d980dfe069b0dcc2350ca0ecb4b0f46ac">here</a>.
-I compiled it as is but am only talking about main.c, or benchmark, not cppbenchmark.</p>
-<p>Running this from the build directry (after build and running benchmark)
-will generate the graph.  I had to expand and save it manually ...
-I need to figure out sizing the whole image programmatically.
-<code>python3 ../plotbarchart.py</code></p>
-</article>
-
+	
 	</div><div class="col-3 sidebar">
 	<h2>Recent Posts</h2>
 <ul>
