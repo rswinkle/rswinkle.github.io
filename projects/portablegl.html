@@ -69,9 +69,8 @@ and energy on API design since I'd just be implementing an existing good API (th
 and potentially others.  Also, at the time Mesa3D was still years away from full 3.x support, not that I'm really competing but just the fact that there
 was no finished implementation was a little motivating.  I made a lot of progress that year and had a few bursts here and there since, but once I got it
 mostly working, I was less motivated and when I did work on it I spent my time on creating new demos/examples and tweaking or fixing minor things.  I
-could have released an MVP back in 2014 at the earliest but late 2016 would have been the best compromise.  Anyway after somewhere between 400 and 1200+
-hours (depending on what/how you count) spread out over 9 years, I've finally finished the the last 90% or at least enough to justify sharing it.
-Software is never finished, and I'll be the first to admit PortableGL could use more polish.</p>
+could have released an MVP back in 2014 at the earliest but late 2016 would have been the best compromise.  Anyway, after somewhere over 2000
+hours spread out over 10 years, it is as you see it today. Software is never finished, and I'll be the first to admit PortableGL could use more polish.</p>
 <h1>Why</h1>
 <p>Aside from the fact that I just wrote it for fun and because I thought it was cool (maybe others will too), I can think of a few semi-practical purposes.</p>
 <h3>Educational</h3>
@@ -97,22 +96,32 @@ useful alternative to Mesa3D or similar.</p>
 <p>Another special case is hobby OS's.  The hardware they run on might have a GPU but it might be impossible or more trouble than it's worth to get Mesa3D
 to run on some systems.  If they have a C99 compliant compiler and standard library, they could use PortableGL to get at least some OpenGL-ish 3D support.</p>
 <h1>Documentation</h1>
-<p>TODO</p>
 <p>There is the documentation in the comments at the top of the file (from src/header_docs.txt) but there is currently
 no formal documentation.  Looking at the examples and demos (and comparing them to
-<a href="https://github.com/rswinkle/opengl_reference">opengl_reference</a>) should be helpful.  Honestly, the official OpenGL docs
+<a href="https://github.com/rswinkle/opengl_reference">opengl_reference</a>) should be helpful.</p>
+<p>I've also started porting the <a href="https://learnopengl.com/">learnopengl</a> tutorial code <a href="https://github.com/rswinkle/LearnPortableGL">here</a>
+which is or will be the best resource, combining his tutorials explaining the OpenGL aspects and my comments in the ported code
+explaining the differences ond PGL limitations (at least in the first time they appear).</p>
+<p>Honestly, the official OpenGL docs
 and <a href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/">reference pages</a> are good for 90-95% of it as far as basic usage:</p>
 <p><a href="https://www.khronos.org/opengl/wiki/Category:Core_API_Reference">4.6 Core reference</a>
 <a href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/">4.5 comprehensive reference</a>
 <a href="https://www.khronos.org/opengl/wiki/Getting_Started#Tutorials_and_How_To_Guides">tutorials and guides</a></p>
 <h1>Building</h1>
-<p>If you have SDL2 installed you should be able to cd into examples, demos, or testing and just run <code>make</code> or <code>make config=release</code> for optimized builds.
+<p>If you have SDL2 installed you should be able to cd into examples, demos, or testing, and just run <code>make</code> or <code>make config=release</code> for optimized builds.
 I use premake generated makefiles that I include in the repo, but you should be able to compile it on Windows or Mac too, there's nothing Linux
 specific about the code.  I'll fill out this section more later.</p>
 <h1>Modifying</h1>
 <p>portablegl.h (and portablegl_unsafe.h) is generated in the src subdirectory with the python script generate_gl_h.py.
 You can see how it's put together and either modify the script to leave out or add files, or actually edit any of the code.
-Just make sure if you edit gl_impl.c that you also edit gl_impl_unsafe.c.</p>
+Make sure if you edit gl_impl.c that you also edit gl_impl_unsafe.c.</p>
+<p>Additionally, there is a growing set of more formal tests in /testing, one set of regression/feature tests, and one for
+performance.  If you make any changes to core algorithms or data structures, you should definitely run those and make
+sure nothing broke or got drastically slower.  The demos can also function as performance tests, so if one of those
+would be especially affected by a change, it might be worth comparing its before/after performance too.</p>
+<p>On the other hand, if you're adding a function or feature that doesn't really affect anything else, it might be worth
+adding your own test if applicable.  You can see how they work from looking at the code, but I'll add more details and
+documentation about the testing system later when it's more mature.</p>
 <h1>References</h1>
 <p>While I often used the official OpenGL documentation to make sure I was matching the spec as closely as realistically
 possible, what I used most, especially early on were a few textbooks.</p>
@@ -129,7 +138,7 @@ your own classes to your own preferences.  I still use a
 <a href="https://raw.githubusercontent.com/rswinkle/PortableGL/master/glcommon/rsw_glframe.h">class</a>
 based on his <a href="https://raw.githubusercontent.com/rswinkle/oglsuperbible5/master/Src/GLTools/include/GLFrame.h">GLFrame</a>
 class for example.</p>
-<p>In any case, that's the book I actually learned OpenGL, from and still use as a reference sometimes.  I have a fork of
+<p>In any case, that's the book I actually learned OpenGL from, and still use as a reference sometimes.  I have a fork of
 the <a href="https://github.com/rswinkle/oglsuperbible5">book repo</a> too that I occasionally look at/update.  Of course they've come
 out with a <a href="https://amzn.to/3qF0iOZ">6th</a> and a <a href="https://amzn.to/2UBRbCt">7th edition</a> in the last decade.</p>
 <p>Lastly, while I haven't used it as much since I got it years later, the
@@ -161,6 +170,7 @@ algorithm from the data it operates on.</p>
 <p><a href="https://github.com/graphitemaster/bbgl">bbgl</a> is just a very interesting concept.  When I first saw it soon after it was published I was very frightened that it was exactly what PortableGL is but far more polished and from a better programmer.  Fortunately, it is not.</p>
 <p><a href="http://pixman.org/">pixman</a> I feel like you could use them together or combine useful parts of pixman with PortableGL.</p>
 <p><a href="https://github.com/fogleman/fauxgl">fauxgl</a> "3D software rendering in pure Go.  No OpenGL, no C extensions, no nothin'."</p>
+<p><a href="https://github.com/h0MER247/swGL">swGL</a> A GPL2 multithreaded software implementation of OpenGL 1.3(ish) in C++. x86 and Windows only.</p>
 <h1>LICENSE</h1>
 <p>PortableGL is licensed under the MIT License (MIT)</p>
 <p>The code used for clipping is copyright (c) Fabrice Bellard from TinyGL under the
@@ -170,15 +180,18 @@ BSD License, see LICENSE.</p>
 <li>[ ] Render to texture; do I bother with FBOs/Renderbuffers/PixelBuffers etc.? See ch 8 of superbible 5</li>
 <li>[x] Multitexture (pointsprites and shadertoy) and texture array (Texturing) examples</li>
 <li>[ ] Render to texture example program</li>
-<li>[ ] Mapped buffers according to API and...</li>
-<li>[ ] Extension functions that avoid unecessary copying, ie user owns buffer/texture data and gl doesn't free</li>
+<li>[x] Mapped buffers according to API (just wraps extensions; it's free and everything is really read/write)</li>
+<li>[x] Extension functions that avoid unecessary copying, ie user owns buffer/texture data and gl doesn't free</li>
 <li>[x] Unsafe mode (ie no gl error checking for speedup)</li>
-<li>[ ] Finish duplicating NeHe style tutorial programs from <a href="https://github.com/rswinkle/webgl-lessons">learningwebgl</a> to <a href="https://github.com/rswinkle/opengl_reference">opengl_reference</a> and then porting those to use PortableGL</li>
+<li>[ ] ~~Finish duplicating NeHe style tutorial programs from <a href="https://github.com/rswinkle/webgl-lessons">learningwebgl</a> to <a href="https://github.com/rswinkle/opengl_reference">opengl_reference</a> and then porting those to use PortableGL~~ Port <a href="https://learnopengl.com/">learnopengl</a> instead, repo <a href="https://github.com/rswinkle/LearnPortableGL">here</a>.</li>
 <li>[x] Port medium to large open source game project as correctness/performance/API coverage test (Craft done)</li>
-<li>[ ] Fix cubemapping skybox texture bug</li>
+<li>[ ] Fix bug in cubemap demo</li>
 <li>[ ] More texture and render target formats</li>
+<li>[ ] Logo</li>
+<li>[x] Formal regression testing (WIP)</li>
+<li>[x] Formal performance testing (WIP)</li>
 <li>[ ] Formal/organized documentation</li>
-<li>[x] Integrated documentation, license etc. a la stb libraries [UPDATE: WIP]</li>
+<li>[x] Integrated documentation, license etc. a la stb libraries</li>
 </ul>
 
 
