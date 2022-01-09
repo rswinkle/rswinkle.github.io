@@ -5,7 +5,7 @@
 # This software is MIT licensed see link for details
 # http://www.opensource.org/licenses/MIT
 
-import glob, markdown, argparse, time
+import glob, markdown, argparse, time, os
 import itertools
 
 from mako.template import Template
@@ -56,6 +56,10 @@ def main():
 		out = open('projects/'+filenames[i], 'w')
 		out.write(project_page.render(post=rendered_page, file_title=file_titles[i]))
 		out.close()
+
+	# move/rename projects/mips_book.html to project/mips_book/index.html?
+	# redirect mips.robertwinkler.com to project/mips_book/?
+	os.rename('projects/mips_book.html', 'projects/mips_book/index.html')
 
 
 

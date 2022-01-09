@@ -11,7 +11,7 @@
 
 <ul class="gallery projects">
 	<li class="imgblock">
-		<a href="/projects/mips_book/mips_book.html">
+		<a href="/projects/mips_book/">
 		<img alt="MIPS Assembly Programming" src="/images/mips_book.png">
 		</a>
 		<h3>MIPS Assembly Book</h3>
