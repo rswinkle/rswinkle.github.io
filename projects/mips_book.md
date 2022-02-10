@@ -2,7 +2,7 @@ MIPS Assembly Programming
 =========================
 
 "MIPS Assembly Programming" is a free book teaching MIPS assembly targeted primarily at
-college students taking a classes that use MIPS and commonly use SPIM, QtSpim, or MARS
+college students taking classes that use MIPS and commonly use SPIM, QtSpim, or MARS
 simulators.  It covers all the basics: data declaration, syscalls, branching, looping, the
 calling convention and recursive functions, even floating point numbers.  It should
 make the programming portion of the class much easier.  Lastly, it might also
