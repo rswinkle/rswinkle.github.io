@@ -26,6 +26,11 @@ Support the book and buy the solutions to the chapter exercises
 [here](https://store.robertwinkler.com/) where the first 250 can get them for
 almost 40% off!
 
+## Contact Me/Tutoring
+
+If you're interested in contacting me regarding MIPS tutoring or any other
+business request related to the book, you can reach me at mips@robertwinkler.com.
+
 ## License
 
 The book (all adoc files and final generated pdf/html) is under a
