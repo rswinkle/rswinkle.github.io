@@ -5,7 +5,7 @@ MIPS Assembly Programming
 college students taking classes that use MIPS and commonly use SPIM, QtSpim, or MARS
 simulators.  It covers all the basics: data declaration, syscalls, branching, looping, the
 calling convention and recursive functions, even floating point numbers.  It should
-make the programming portion of the class much easier.  Lastly, it might also
+make the programming portion of such classes much easier.  It might also
 be helpful to those taking a similar class using RISC-V as it is very similar to MIPS
 and the general assembly programming concepts are universal.
 
@@ -20,14 +20,11 @@ Read the latest version in html or pdf:
 
 Get the asciidoc source from [Github](https://github.com/rswinkle/mips_book)
 
-<!---
-Support
-=======
-Support the book and buy the solutions to the chapter exercises [here](TODO)
-where they're currently on sale (almost 40% off) till February 15th for the initial
-release.
--->
+## Exercise Solutions
 
+Support the book and buy the solutions to the chapter exercises
+[here](https://store.robertwinkler.com/) where the first 250 can get them for
+almost 40% off!
 
 ## License
 
