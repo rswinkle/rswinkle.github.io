@@ -29,7 +29,7 @@ almost 40% off!
 ## Contact Me/Tutoring
 
 If you're interested in contacting me regarding MIPS tutoring or any other
-business request related to the book, you can reach me at mips@robertwinkler.com.
+business request related to the book, you can reach me at mips at robertwinkler dot com.
 
 ## License
 
