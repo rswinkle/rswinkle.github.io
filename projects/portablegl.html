@@ -51,22 +51,25 @@
 <li>Speed</li>
 </ol>
 <p>Obviously there are tradeoffs between several of those.  An example where 4 trumps 2 (and arguably 3) is with shaders.  Rather than
-write or include a glsl parser and have a built in compiler or interpreter, shaders are just special C functions that match a specific prototype.
-Uniforms are another example where 3 and 4 beat 2 because it made no sense to match the API because we can do things so much simpler by just
+write or include a GLSL parser and have a built in compiler or interpreter, shaders are special C functions that match a specific prototype.
+Uniforms are another example where 3 and 4 beat 2 because it made no sense to match the API because we can do things so much simpler by
 passing a pointer to a user defined struct (see the examples).</p>
 <h1>Download</h1>
 <p>Get the source from <a href="https://github.com/rswinkle/PortableGL">Github</a>.</p>
 <h1>Gallery</h1>
 <p><img alt="gears" src="https://raw.githubusercontent.com/rswinkle/PortableGL/master/media/screenshots/gears.png">
-<img alt="pointsprites" src="https://raw.githubusercontent.com/rswinkle/PortableGL/master/media/screenshots/pointsprites.png">
-<img alt="modelviewer" src="https://raw.githubusercontent.com/rswinkle/PortableGL/master/media/screenshots/modelviewer.png">
+<img alt="sphereworld" src="https://raw.githubusercontent.com/rswinkle/PortableGL/master/media/screenshots/sphereworld.png">
+<a href="https://github.com/rswinkle/LearnPortableGL/blob/main/src/3.model_loading/model_loading.cpp"><img alt="backpack" src="https://raw.githubusercontent.com/rswinkle/PortableGL/master/media/screenshots/backpack_model.png"></a>
 <img alt="craft" src="https://raw.githubusercontent.com/rswinkle/PortableGL/master/media/screenshots/craft.png"></p>
-<p>The last is a <a href="https://github.com/rswinkle/Craft/tree/portablegl">PortableGL port</a> of Michael Fogleman's Craft.</p>
+<p>The last is a <a href="https://github.com/rswinkle/Craft/tree/portablegl">PortableGL port</a> of Michael Fogleman's <a href="https://www.michaelfogleman.com/projects/craft/">Craft</a>.</p>
+<p>See the <a href="https://github.com/rswinkle/PortableGL/tree/master/demos">demos README.md</a>
+for more screenshots, or look in the
+<a href="https://github.com/rswinkle/PortableGL/tree/master/media/screenshots">screenshots directory</a>.</p>
 <h1>History</h1>
-<p>PortableGL started as a very simple wireframe software renderer based on a tutorial in summer 2011.  I kept playing with it and adding minor features
-over the next year and then in early 2013 I decided I should turn it into a software implementation of OpenGL.  This would save me a huge amount of time
+<p>PortableGL started as a very simple wireframe software renderer based on a tutorial in summer 2011.  I kept playing with it, adding minor features
+over the next year, until in early 2013 I decided I should turn it into a software implementation of OpenGL.  This would save me a huge amount of time
 and energy on API design since I'd just be implementing an existing good API (though some disagree) and also make the project more useful both to me
-and potentially others.  Also, at the time Mesa3D was still years away from full 3.x support, not that I'm really competing but just the fact that there
+and potentially others.  Also, at the time Mesa3D was still years away from full 3.x support, not that I'm really competing, and the fact that there
 was no finished implementation was a little motivating.  I made a lot of progress that year and had a few bursts here and there since, but once I got it
 mostly working, I was less motivated and when I did work on it I spent my time on creating new demos/examples and tweaking or fixing minor things.  I
 could have released an MVP back in 2014 at the earliest but late 2016 would have been the best compromise.  Anyway, after somewhere over 2000
@@ -76,22 +79,21 @@ hours spread out over 10 years, it is as you see it today. Software is never fin
 <h3>Educational</h3>
 <p>I took a 400 level 3D Graphics course in college in fall 2010 months after OpenGL 3.3/4.0 was released.  It was taught based on the original
 Red Book using OpenGL 1.1.  Fortunately, the professor let me use OpenGL 3.3 as long as I met the assignment requirements.  Sadly, college graphics
-professors still teach 1.x and 2.x OpenGL today in 2020 far more commonly than 3.x/4.x (or Vulkan).  A few are using WebGL 2.0 which I kind of
-consider 1 step forward 2 steps back.</p>
-<p>While Vulkan is the newest thing (already 4 years old time flies), it really is overkill for learning 3D graphics.  There is rarely anything that students
-make in your standard intro to 3D graphics that remotely stresses the performance of any laptop built in the last decade plus.  Using modern OpenGL
+professors still teach 1.x and 2.x OpenGL today in 2022 more commonly than 3.x/4.x (or Vulkan).  A few are using WebGL 2.0 which I kind of
+consider 1 step forward, 2 steps back.</p>
+<p>While Vulkan is the newest thing (already 5 years old time flies), it really is overkill for learning 3D graphics.  There is rarely anything that students
+make in your standard intro to 3D graphics that remotely stresses the performance of any laptop built in the last decade plus.  Using modern OpenGL (ie 3.3+ core profile)
 to introduce all the standard concepts, vertices, triangles, textures, shaders, fragments/pixels, the transformation pipeline etc. first is much better
-than trying to teach them Vulkan and graphics at the same time and obviously better than teaching OpenGL API's that are decades old.</p>
+than trying to teach them Vulkan and graphics at the same time, and obviously better than teaching OpenGL API's that are decades old.</p>
 <p>PortableGL could be a very convenient base for such a class.  It's easy to walk through the code and see the pipeline and how all the steps flow together.
 For more advanced classes or graduate students in a shared class, modifying PortableGL in some way would be a good project.  It could be some
-optimization or algorithm, maybe a new feature.  Theoretically it could be used as a base for actual research into new graphics algorithms or techniques
-just because it's such a convenient small base to change and share, vs trying to modify a project the size and complexity of Mesa3D or create a software
+optimization or algorithm, maybe a new feature.  Theoretically it could be used as starter code for actual research into new graphics algorithms or techniques because it's such a convenient small foundation to change and share, vs trying to modify a project the size and complexity of Mesa3D or create a software
 renderer from scratch.</p>
 <h3>Special Cases</h3>
 <p>It's hard to imagine any hardware today that has a CPU capable of running software rendered 3D graphics at any respectable speed (especially with full
 IEEE floating point) that doesn't <em>also</em> have some kind of dedicated GPU.  The GPU might only support OpenGL 2.0 give or take but for performance it'd
 be better to stick to whatever the hardware supported than use PortableGL.  However, theoretically, there could be some platform somewhere where the CPU
-is relatively powerful that doesn't have GPU.  Maybe some of the current and future RISC SoC's for example?  In such a case PortableGL might be a
+is relatively powerful that doesn't have a GPU.  Maybe some of the current and future RISC SoC's for example?  In such a case PortableGL might be a
 useful alternative to Mesa3D or similar.</p>
 <p>Another special case is hobby OS's.  The hardware they run on might have a GPU but it might be impossible or more trouble than it's worth to get Mesa3D
 to run on some systems.  If they have a C99 compliant compiler and standard library, they could use PortableGL to get at least some OpenGL-ish 3D support.</p>
@@ -129,7 +131,7 @@ possible, what I used most, especially early on were a few textbooks.</p>
 extensively early on to understand all the math involved, including the matrix transformation pipeline, barycentric coordinates
 and interpolation, texture mapping and more.  There is now a <a href="https://amzn.to/3quOj69">4th Edition</a> and a soon to be released
 <a href="https://amzn.to/2U6nEkh">5th Edition</a>.</p>
-<p>The second was the 5th edition of the <a href="https://amzn.to/3hcbLAS">OpenGL Superbible 5th Edition</a>.  I got this in 2010, right
+<p>The second was the 5th edition of the <a href="https://amzn.to/3hcbLAS">OpenGL Superbible</a>.  I got this in 2010, right
 after OpenGL 3.3/4.0 was released, and used it for my college graphics course mentioned above.  A lot of people didn't like
 this book because they thought it relied too much on the author`s helper libraries but I had no problems.  It was my first
 exposure to any kind of OpenGL so I didn't have to unlearn the old stuff and all his code was free and available online so
@@ -144,12 +146,17 @@ out with a <a href="https://amzn.to/3qF0iOZ">6th</a> and a <a href="https://amzn
 <p>Lastly, while I haven't used it as much since I got it years later, the
 <a href="https://amzn.to/3h7P0hI">OpenGL 4.0 Shading Language Cookbook</a> has been useful in specific OpenGL topics occasionally.
 Once again, you can now get the expanded <a href="https://amzn.to/3qtatWr">3rd edition</a>.</p>
+<h1>Bindings/Ports</h1>
+<p><a href="https://github.com/TotallyGamerJet/pgl">pgl</a> is a Go port using <a href="https://github.com/gotranspile/cxgo">CXGO</a>, and hand
+translating the individual examples/demos.</p>
 <h1>Similar/Related Projects</h1>
 <p>I'll probably add others to this list as I find them.</p>
-<p><a href="https://bellard.org/TinyGL/">TinyGL</a> is Fabrice Bellard's implementation of a subset of of OpenGL 1.x.  If you want something like PortableGL
+<p><a href="https://bellard.org/TinyGL/">TinyGL</a> is Fabrice Bellard's implementation of a subset of OpenGL 1.x.  If you want something like PortableGL
 but don't want to write shaders, just want old style glBegin/glEnd/glVertex etc. this is the closest I know of.  Also I shamelessly copied his
 clipping code because I'm not 1/10th the programmer Bellard was even as an undergrad and I knew it would "just work".  I've included his copyright
 and BSD license in LICENSE just in case.</p>
+<p><a href="https://github.com/C-Chads/tinygl">TinyGL Updated</a>: An updated and cleaned up version of TinyGL that adds several fixes and features, including performance
+tuning and limited multithreading.</p>
 <p><a href="http://www.radgametools.com/cn/pixofeat.htm">Pixomatic</a> is/was a software implementation of D3D 7 and 9 written in C and assembly by Michael Abrash
 and Mike Sartain.  You can read a <a href="https://www.drdobbs.com/architecture-and-design/optimizing-pixomatic-for-x86-processors/184405765">series</a>
 <a href="https://www.drdobbs.com/optimizing-pixomatic-for-modern-x86-proc/184405807">of</a>
@@ -183,7 +190,7 @@ BSD License, see LICENSE.</p>
 <li>[x] Mapped buffers according to API (just wraps extensions; it's free and everything is really read/write)</li>
 <li>[x] Extension functions that avoid unecessary copying, ie user owns buffer/texture data and gl doesn't free</li>
 <li>[x] Unsafe mode (ie no gl error checking for speedup)</li>
-<li>[ ] ~~Finish duplicating NeHe style tutorial programs from <a href="https://github.com/rswinkle/webgl-lessons">learningwebgl</a> to <a href="https://github.com/rswinkle/opengl_reference">opengl_reference</a> and then porting those to use PortableGL~~ Port <a href="https://learnopengl.com/">learnopengl</a> instead, repo <a href="https://github.com/rswinkle/LearnPortableGL">here</a>.</li>
+<li>[ ] ~~Finish duplicating NeHe style tutorial programs from <a href="https://github.com/rswinkle/webgl-lessons">learningwebgl</a> to <a href="https://github.com/rswinkle/opengl_reference">opengl_reference</a> and then porting those to use PortableGL~~ Port <a href="https://learnopengl.com/">learnopengl</a> instead, repo <a href="https://github.com/rswinkle/LearnPortableGL">here</a> WIP.</li>
 <li>[x] Port medium to large open source game project as correctness/performance/API coverage test (Craft done)</li>
 <li>[ ] Fix bug in cubemap demo</li>
 <li>[ ] More texture and render target formats</li>
