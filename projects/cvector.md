@@ -78,10 +78,11 @@ see how I used to test them.
 
 Building
 ========
-I use [premake](http://premake.github.io/) so the command on linux is premake5 gmake which
-will generate a build directory.  cd into that and run make
-or make config=release.  I have not tried it on windows though
-it should work (well I'm not sure about CUnit ...).
+I use [premake](http://premake.github.io/) generated makefiles which are
+included in the build subdirectory.  However if you modified premake4.lua
+the command to regenerate them is `premake4 gmake`.  cd into the build
+directory and run `make` or `make config=release`. I have not tried it on
+windows though it should work (well I'm not sure about CUnit ...).
 
 There is no output of any kind, no errors or warnings.
 
@@ -123,7 +124,8 @@ examples, you can look at my other projects that use cvector like [C_Interpreter
 
 Documentation
 =============
-The Doxygen generated html docs are [online here](http://www.robertwinkler.com/CVector/docs/)
+The Doxygen documentation is generated with the command `doxygen Doxyfile` in the root directory.
+The Doxygen generated html docs are [online here](http://www.robertwinkler.com/projects/cvector/)
 
 LICENSE
 =======
