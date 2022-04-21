@@ -88,16 +88,15 @@ There is no output of any kind, no errors or warnings.
 It has been relatively well tested using CUnit tests which all pass.
 I've also run it under valgrind and there are no memory leaks.
 
-	valgrind --leak-check=full -v ./cvector
-	==8600==
-	==8600== HEAP SUMMARY:
-	==8600==     in use at exit: 0 bytes in 0 blocks
-	==8600==   total heap usage: 9,501 allocs, 9,501 frees, 1,067,878 bytes allocated
-	==8600==
-	==8600== All heap blocks were freed -- no leaks are possible
-	==8600==
-	==8600== For lists of detected and suppressed errors, rerun with: -s
-	==8600== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+       valgrind --leak-check=full -v ./cvector
+       ==116175==
+       ==116175== HEAP SUMMARY:
+       ==116175==     in use at exit: 0 bytes in 0 blocks
+       ==116175==   total heap usage: 10,612 allocs, 10,612 frees, 1,151,748 bytes allocated
+       ==116175==
+       ==116175== All heap blocks were freed -- no leaks are possible
+       ==116175==
+       ==116175== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
 
 I plan to continue to improve/modify it but probably only in minor ways and
@@ -130,7 +129,7 @@ LICENSE
 =======
 CVector is licensed under the MIT License.
 
-Copyright (c) 2011-2020 Robert Winkler
+Copyright (c) 2011-2022 Robert Winkler
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation
