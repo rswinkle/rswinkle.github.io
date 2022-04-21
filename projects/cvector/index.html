@@ -105,7 +105,7 @@ Design Notes</h1>
 <p>The insert functions (insert_i and insert_array_i for example) do allow you to insert at the end. The CVEC_MEMMOVE inside the functions will simply move 0 bytes if you pass the current size as the index. C99 and C11 guarrantee this behavior in the standard (and thus C++ does as well). Though I wrote this library to be compliant with C89, which does not guarrantee this behavior, I think it's safe to assume they'd use the same implementation since it doesn't contradict C89 and it just makes sense.</p>
 <h1><a class="anchor" id="Building"></a>
 Building</h1>
-<p>I use premake generated makefiles which are included in the build subdirectory. However if you modified premake4.lua the command to regenerate them is <code>premake4 gmake</code>. cd into the build directory and run <code>make</code> or <code>make config=release</code>. I have not tried it on windows though it should work (well I'm not sure about CUnit ...).</p>
+<p>I use premake generated makefiles which are included in the build subdirectory. However, if you modified premake4.lua the command to regenerate them is <code>premake4 gmake</code>. cd into the build directory and run <code>make</code> or <code>make config=release</code>. I have not tried it on windows though it should work (well I'm not sure about CUnit ...).</p>
 <p>There is no output of any kind, no errors or warnings.</p>
 <p>It has been relatively well tested using CUnit tests which all pass. I've also run it under valgrind and there are no memory leaks.</p>
 <pre>
@@ -135,7 +135,7 @@ LICENSE</h1>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 21 2022 13:37:38 for CVector by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Apr 21 2022 14:19:29 for CVector by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

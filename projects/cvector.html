@@ -109,15 +109,15 @@ windows though it should work (well I'm not sure about CUnit ...).</p>
 <p>There is no output of any kind, no errors or warnings.</p>
 <p>It has been relatively well tested using CUnit tests which all pass.
 I've also run it under valgrind and there are no memory leaks.</p>
-<pre><code>   valgrind --leak-check=full -v ./cvector
-   ==116175==
-   ==116175== HEAP SUMMARY:
-   ==116175==     in use at exit: 0 bytes in 0 blocks
-   ==116175==   total heap usage: 10,612 allocs, 10,612 frees, 1,151,748 bytes allocated
-   ==116175==
-   ==116175== All heap blocks were freed -- no leaks are possible
-   ==116175==
-   ==116175== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+<pre><code>valgrind --leak-check=full -v ./cvector
+==116175==
+==116175== HEAP SUMMARY:
+==116175==     in use at exit: 0 bytes in 0 blocks
+==116175==   total heap usage: 10,612 allocs, 10,612 frees, 1,151,748 bytes allocated
+==116175==
+==116175== All heap blocks were freed -- no leaks are possible
+==116175==
+==116175== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 </code></pre>
 <p>I plan to continue to improve/modify it but probably only in minor ways and
 only if I think something should be changed.  This library is mostly
@@ -136,8 +136,16 @@ examples, you can look at my other projects that use cvector like <a href="https
 <a href="https://github.com/rswinkle/cpim2">CPIM2</a>, <a href="https://github.com/rswinkle/sdl_img">sdl_img</a>,
 <a href="https://github.com/rswinkle/c_bigint">c_bigint</a> and <a href="https://github.com/rswinkle/spelling_game">spelling_game</a>.</p>
 <h1>Documentation</h1>
-<p>The Doxygen documentation is generated with the command <code>doxygen Doxyfile</code> in the root directory.
-The Doxygen generated html docs are <a href="http://www.robertwinkler.com/projects/cvector/">online here</a></p>
+<p>The Doxygen documentation is generated with the command</p>
+<pre><code>doxygen Doxyfile`
+</code></pre>
+<p>in the root directory.  The Doxygen generated html docs are
+<a href="http://www.robertwinkler.com/projects/cvector/">online here</a></p>
+<h1>Test Results</h1>
+<p>The automated Travis build also runs the tests and fails if any tests fail.
+If you want a pretty visualization of the test results (updated with every release
+not every commit), you can see it
+<a href="http://www.robertwinkler.com/projects/cvector/CUnitAutomated-Results.xml">here</a>.</p>
 <h1>LICENSE</h1>
 <p>CVector is licensed under the MIT License.</p>
 <p>Copyright (c) 2011-2022 Robert Winkler</p>

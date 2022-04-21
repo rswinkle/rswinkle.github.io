@@ -89,15 +89,15 @@ There is no output of any kind, no errors or warnings.
 It has been relatively well tested using CUnit tests which all pass.
 I've also run it under valgrind and there are no memory leaks.
 
-       valgrind --leak-check=full -v ./cvector
-       ==116175==
-       ==116175== HEAP SUMMARY:
-       ==116175==     in use at exit: 0 bytes in 0 blocks
-       ==116175==   total heap usage: 10,612 allocs, 10,612 frees, 1,151,748 bytes allocated
-       ==116175==
-       ==116175== All heap blocks were freed -- no leaks are possible
-       ==116175==
-       ==116175== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+	valgrind --leak-check=full -v ./cvector
+	==116175==
+	==116175== HEAP SUMMARY:
+	==116175==     in use at exit: 0 bytes in 0 blocks
+	==116175==   total heap usage: 10,612 allocs, 10,612 frees, 1,151,748 bytes allocated
+	==116175==
+	==116175== All heap blocks were freed -- no leaks are possible
+	==116175==
+	==116175== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 
 
 I plan to continue to improve/modify it but probably only in minor ways and
@@ -124,8 +124,19 @@ examples, you can look at my other projects that use cvector like [C_Interpreter
 
 Documentation
 =============
-The Doxygen documentation is generated with the command `doxygen Doxyfile` in the root directory.
-The Doxygen generated html docs are [online here](http://www.robertwinkler.com/projects/cvector/)
+The Doxygen documentation is generated with the command
+
+	doxygen Doxyfile`
+
+in the root directory.  The Doxygen generated html docs are
+[online here](http://www.robertwinkler.com/projects/cvector/)
+
+Test Results
+============
+The automated Travis build also runs the tests and fails if any tests fail.
+If you want a pretty visualization of the test results (updated with every release
+not every commit), you can see it
+[here](http://www.robertwinkler.com/projects/cvector/CUnitAutomated-Results.xml).
 
 LICENSE
 =======
