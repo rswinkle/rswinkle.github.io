@@ -23,8 +23,7 @@ Get the asciidoc source from [Github](https://github.com/rswinkle/mips_book)
 ## Exercise Solutions
 
 Support the book and buy the solutions to the chapter exercises
-[here](https://store.robertwinkler.com/) where the first 250 can get them for
-almost 40% off!
+[here](https://store.robertwinkler.com/).
 
 ## Contact Me/Tutoring
 

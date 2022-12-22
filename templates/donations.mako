@@ -15,6 +15,8 @@
 You can support me directly with subscriptions through my store <a href="https://store.robertwinkler.com/?page_id=18">here</a>.
 </p>
 <p>
+You can also tip me directly using Cash App <a href="https://cash.app/$robwink">here</a>.
+<p>
 <script src="https://liberapay.com/rswinkle/widgets/button.js"></script>
 <noscript><a href="https://liberapay.com/rswinkle/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 </p>

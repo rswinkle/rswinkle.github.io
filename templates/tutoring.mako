@@ -58,6 +58,27 @@ have changed since I took them.
 
 <h3>Reviews</h3>
 
+"Very thorough, nice"
+- Terrell Fredericksburg, TX on 12/5/2022
+Robert helped me with a really nasty (not to him so much) project that was due same day. He got through the whole thing in a couple of sessions. Well done and thanks Robert!
+
+"Very thorough, easy to follow along"
+- Sofia San Luis Obispo, CA on 11/2/2022
+We worked through a joint two program RISC-V assignment which we had to translate directly from C. I had no trouble understanding what he was explaining, and I came out of the lesson understanding more approaches to programming in assembly!
+
+"Very Efficient and Responsive!"
+- Geneva San Luis Obispo, CA on 10/31/2022
+I had a RISC-V assignment due and Robert helped me complete it super quickly. On top of being knowledgeable about the topic, he could also explain in an efficient way and he was able to follow the strict guidelines that my professor tied into the assignment. Overall a great experience and I'll definitely contact him again!
+
+"Extremely knowledgeable"
+- Shawn Rochester, MN on 10/14/2022
+Robert helped me figure out exactly what i needed in a timely manner! He walked me through all that was required to know, and added in comments so I would not forget later with my code.
+
+"so willing to help and very smart"
+- Jake Brooklyn, NY on 6/1/2022
+i hired robert to help my godson with some antiquated homework projects for college. robert is very knowledgeable, readily available, and kind. robert taught my godson in a way that his professor wasn’t. he greatly reduced stress and provided new solution-solving techniques. thank you so much!
+
+
 "Great teacher!"
 - Jean Wesley Chapel, FL on 6/7/2021
 Very patient and knowledgeable. We reviewed C++ issues I was having. I will use him again in the future. Thank you.
@@ -199,6 +220,32 @@ Another session with Robert, very helpful and full of useful tips. Finished my w
 =======================
 Same reviews below but without date or location info and with number of sessions (at the time of copying)
 =======================
+Very thorough, nice
+Robert helped me with a really nasty (not to him so much) project that was due same day. He got through the whole thing in a couple of sessions. Well done and thanks Robert!
+
+Terrell, 4 lessons with Robert
+Very thorough, easy to follow along
+We worked through a joint two program RISC-V assignment which we had to translate directly from C. I had no trouble understanding what he was explaining, and I came out of the lesson understanding more approaches to programming in assembly!
+
+Sofia, 2 lessons with Robert
+Very Efficient and Responsive!
+I had a RISC-V assignment due and Robert helped me complete it super quickly. On top of being knowledgeable about the topic, he could also explain in an efficient way and he was able to follow the strict guidelines that my professor tied into the assignment. Overall a great experience and I'll definitely contact him again!
+
+Geneva , 2 lessons with Robert
+Extremely knowledgeable
+Robert helped me figure out exactly what i needed in a timely manner! He walked me through all that was required to know, and added in comments so I would not forget later with my code.
+
+Shawn, 9 lessons with Robert
+so willing to help and very smart
+i hired robert to help my godson with some antiquated homework projects for college. robert is very knowledgeable, readily available, and kind. robert taught my godson in a way that his professor wasn’t. he greatly reduced stress and provided new solution-solving techniques. thank you so much!
+
+Jake, 7 lessons with Robert
+Great teacher!
+Very patient and knowledgeable. We reviewed C++ issues I was having. I will use him again in the future. Thank you.
+
+Jean, 1 lesson with Robert
+
+
 
 Great teacher!
 Very patient and knowledgeable. We reviewed C++ issues I was having. I will use him again in the future. Thank you.
@@ -213,15 +260,18 @@ Sarah, 5 lessons with Robert
 best c programming tutor ever
 Best of the best. He explains concept really well. I highly recommend him to everyone. Also, he has great personality.
 
-David, 2 lessons with Robert
+David, 8 lessons with Robert
+
 Very Knowledgeable
 Helped with my lab for programming in C. He was able to explain everything in a way that I could understand. I was able to complete my project on time. I would highly recommend him.
 
-Sandra, 16 lessons with Robert
+Sandra, 18 lessons with Robert
+
 Excellent tutor
 Robert is extremely knowledgeable and experienced. He quickly understood the assignment I had to do. He knows exactly how to explain the material in a clear and efficient manner. He's a great tutor, and I would definitely recommend him.
 
 Liselotte, 3 lessons with Robert
+
 greatest teacher you can ask for
 He’s helping me finish a 4 weeks project in a week, with an explaining from A-Z the steps that we are taking, and dont be shy to ask him anything he will break it down to make it understandable. You would never go wrong with Mr. Robert
 
