@@ -514,8 +514,8 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 <div class="details">
 <span id="author" class="author">Robert Winkler</span><br>
 <span id="email" class="email"><a href="mailto:mips@robertwinkler.com">mips@robertwinkler.com</a></span><br>
-<span id="revnumber">version 0.9.18,</span>
-<span id="revdate">2022-07-17</span>
+<span id="revnumber">version 0.9.21,</span>
+<span id="revdate">2023-1-1</span>
 <br><span id="revremark">Beta</span>
 </div>
 <div id="toc" class="toc">
@@ -606,7 +606,7 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 <h2 id="_info">Info</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Copyright &#169; 2021-2022 <a href="http://robertwinkler.com">Robert Winkler</a></p>
+<p>Copyright &#169; 2021-2023 <a href="http://robertwinkler.com">Robert Winkler</a></p>
 </div>
 <div class="paragraph">
 <p>Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons</a>.</p>
@@ -627,7 +627,7 @@ any errors (submit an issue or even a pull request) is
 </div>
 <div class="paragraph">
 <p>If you&#8217;re interested in contacting me regarding MIPS tutoring or any other
-business request related to the book, you can reach me at <a href="mailto:mips@robertwinkler.com">mips@robertwinkler.com</a>.</p>
+business request related to the book, you can reach me at <a href="mailto:books@robertwinkler.com">books@robertwinkler.com</a>.</p>
 </div>
 </div>
 </div>
@@ -744,7 +744,7 @@ I highly recommend you use Linux. It&#8217;s easier in every way to do dev work
 on Linux vs Windows or Mac.  Many assignments require it, which often necessitates
 using a virtual machine (which is painful, especially on laptops) and/or ssh-ing
 into a school Linux server, which is also less than ideal.  In general, you&#8217;ll have
-to learn how to use the unix terminal eventually and will probably use it to some
+to learn how to use the Unix terminal eventually and will probably use it to some
 extent in your career so it also makes sense to get used to it asap.</p>
 </div>
 <div class="paragraph">
@@ -1188,8 +1188,8 @@ the characters individually.</p>
 </div>
 <div class="paragraph">
 <p>However, if you want an array with all elements initialized to the same value there
-is a more convenient option that I learned very recently.  After the type you
-put the value you want, a colon, and then the number of elements.  So <code>a: .word 123 : 10</code>
+is a more convenient option.  After the type you put the value you want, a colon,
+and then the number of elements.  So <code>a: .word 123 : 10</code>
 would declare a 10 integer array with all elements set to 123.  This works for all
 types in MARS, but SPIM does not support this syntax for floats and doubles.  Since
 you&#8217;ll probably not have to deal with floating point types at all, let alone arrays
@@ -1295,7 +1295,7 @@ packed and defined like this:</p>
 going over our "Hello World" program, but what exactly are they?</p>
 </div>
 <div class="paragraph">
-<p>Essentially, they are the built in functions of a operating system; in this case,
+<p>Essentially, they are the built in functions of an operating system; in this case,
 the simple operating system of the MIPS simulators.  They provide access to all the
 fundamental features, like input and output to/from both the console and files,
 allocating memory, and exiting.  That covers all the 17 syscalls supported by spim,
@@ -1677,7 +1677,7 @@ main:
 </div>
 <div class="paragraph">
 <p>We don&#8217;t declare global variables for age or height.  We could, but there&#8217;s no reason
-to since we have to have them in registers to do the addition anyway.  Instead, we
+to since we need them in registers to perform the addition anyway.  Instead, we
 copy/save age to <code>$t0</code> so we can use <code>$v0</code>  for 2 more syscalls,
 then add height to <code>$t0</code>.</p>
 </div>
@@ -1764,7 +1764,7 @@ prints "Hello [user&#8217;s name]!"</p>
 <h2 id="_chapter_3_branches_and_logic">Chapter 3: Branches and Logic</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>We can&#8217;t go much farther in our MIPS programming journey without covering branching.
+<p>We can&#8217;t go much further in our MIPS programming journey without covering branching.
 Almost every non-trivial program requires some logic, even if it&#8217;s only a few <code>if</code> or
 <code>if-else</code> statements.  In other words, almost every program requires branching, a way
 to do a instead of b, or to do a only if certain conditions are met.</p>
@@ -1849,8 +1849,8 @@ relevant instructions are listed in the following table:</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Set Less Than Unsigned</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sltu</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sltu rd, rs, imm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rd = (rs &lt; imm) ? 1 : 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sltu rd, rs, rt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rd = (rs &lt; rt) ? 1 : 0</p></td>
 </tr>
 </tbody>
 </table>
@@ -2246,8 +2246,8 @@ the whole expression is false the second a single false term is found.</p>
 
 <span class="tok-nl">dont_do_something</span><span class="tok-p">:</span><span class="tok-w"></span>
 
-<span class="tok-w">	</span><span class="tok-c1">// You can see how the first success is all you need:</span>
-<span class="tok-w">	</span><span class="tok-c1">// Compare that with and below</span>
+<span class="tok-w">	</span><span class="tok-c1">// You can see how the first success is all you need</span>
+<span class="tok-w">	</span><span class="tok-c1">// Compare that with and below:</span>
 
 <span class="tok-w">	</span><span class="tok-k">if</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">a</span><span class="tok-w"> </span><span class="tok-o">&amp;&amp;</span><span class="tok-w"> </span><span class="tok-n">b</span><span class="tok-w"> </span><span class="tok-o">&amp;&amp;</span><span class="tok-w"> </span><span class="tok-n">c</span><span class="tok-p">)</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-w"></span>
 <span class="tok-w">		</span><span class="tok-n">something</span><span class="tok-p">;</span><span class="tok-w"></span>
@@ -2536,7 +2536,21 @@ set somewhere before.</p>
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><pre><span></span><span class="tok-w">	</span><span class="tok-kt">char</span><span class="tok-w"> </span><span class="tok-n">letter_grade</span><span class="tok-p">;</span><span class="tok-w"></span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><pre><span></span><span class="tok-cp">#include</span><span class="tok-w"> </span><span class="tok-cpf">&lt;stdio.h&gt;</span><span class="tok-cp"></span>
+
+<span class="tok-kt">int</span><span class="tok-w"> </span><span class="tok-nf">main</span><span class="tok-p">()</span><span class="tok-w"></span>
+<span class="tok-p">{</span><span class="tok-w"></span>
+<span class="tok-w">	</span><span class="tok-kt">int</span><span class="tok-w"> </span><span class="tok-n">score</span><span class="tok-p">;</span><span class="tok-w"></span>
+<span class="tok-w">	</span><span class="tok-kt">char</span><span class="tok-w"> </span><span class="tok-n">letter_grade</span><span class="tok-p">;</span><span class="tok-w"></span>
+<span class="tok-w">	</span><span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;Enter your score: &quot;</span><span class="tok-p">);</span><span class="tok-w"></span>
+<span class="tok-w">	</span><span class="tok-n">scanf</span><span class="tok-p">(</span><span class="tok-s">&quot;%d&quot;</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-o">&amp;</span><span class="tok-n">score</span><span class="tok-p">);</span><span class="tok-w"></span>
 <span class="tok-w">	</span><span class="tok-k">if</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">score</span><span class="tok-w"> </span><span class="tok-o">&gt;=</span><span class="tok-w"> </span><span class="tok-mi">90</span><span class="tok-p">)</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-w"></span>
 <span class="tok-w">		</span><span class="tok-n">letter_grade</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-sc">&#39;A&#39;</span><span class="tok-p">;</span><span class="tok-w"></span>
 <span class="tok-w">	</span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-k">else</span><span class="tok-w"> </span><span class="tok-k">if</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">score</span><span class="tok-w"> </span><span class="tok-o">&gt;=</span><span class="tok-w"> </span><span class="tok-mi">80</span><span class="tok-p">)</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-w"></span>
@@ -2548,8 +2562,8 @@ set somewhere before.</p>
 <span class="tok-w">	</span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-k">else</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-w"></span>
 <span class="tok-w">		</span><span class="tok-n">letter_grade</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-sc">&#39;F&#39;</span><span class="tok-p">;</span><span class="tok-w"></span>
 <span class="tok-w">	</span><span class="tok-p">}</span><span class="tok-w"></span>
-
 <span class="tok-w">	</span><span class="tok-n">printf</span><span class="tok-p">(</span><span class="tok-s">&quot;You got a %c</span><span class="tok-se">\n</span><span class="tok-s">&quot;</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-n">letter_grade</span><span class="tok-p">);</span><span class="tok-w"></span>
+<span class="tok-w">	</span><span class="tok-k">return</span><span class="tok-w"> </span><span class="tok-mi">0</span><span class="tok-p">;</span><span class="tok-w"></span>
 <span class="tok-p">}</span><span class="tok-w"></span>
 </pre></td></tr></table></code></pre>
 </div>
@@ -2598,12 +2612,35 @@ looking like this (assuming score is <code>$t0</code> and letter_grade is <code>
 <span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span>
-<span class="normal">39</span></pre></div></td><td class="code"><pre><span></span>.data
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span></pre></div></td><td class="code"><pre><span></span>.data
+prompt:    .asciiz &quot;Enter your score: &quot;
 grade_str: .asciiz &quot;You got a &quot;
 
 .text
-	li     $t1, 70   # letter_grade default to &#39;F&#39; ascii value
+main:
+	li     $v0, 4    # print str
+	la     $a0, prompt
+	syscall
 
+	li     $v0, 5    # read int
+	syscall
+
+	move   $t0, $v0  # move score into t0
+	li     $t1, 70   # letter_grade default to &#39;F&#39; ascii value
+	
 	li     $t2, 90
 	blt    $t0, $t2, not_a   # if (score &lt; 90) goto not_a
 	li     $t1, 65           # leter_grade = &#39;A&#39;
@@ -2635,7 +2672,10 @@ grade_done:
 	move   $a0, $t1    # char to print
 	syscall
 
-	move   $a0, 10     # print &#39;\n&#39;
+	li     $a0, 10     # print &#39;\n&#39;
+	syscall
+
+	li     $v0, 10     # exit
 	syscall
 </pre></td></tr></table></code></pre>
 </div>
@@ -2877,7 +2917,7 @@ only one jump + label, rather than 2 since you can forgo the the initial <code>i
 <span class="tok-nl">loop</span><span class="tok-p">:</span><span class="tok-w"></span>
 <span class="tok-w">	</span><span class="tok-n">do_something</span><span class="tok-p">;</span><span class="tok-w"></span>
 <span class="tok-w">	</span><span class="tok-n">i</span><span class="tok-o">++</span><span class="tok-w"></span>
-<span class="tok-w">	</span><span class="tok-k">if</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">i</span><span class="tok-w"> </span><span class="tok-o">&lt;</span><span class="tok-w"> </span><span class="tok-n">a</span><span class="tok-p">)</span><span class="tok-w"></span>
+<span class="tok-w">	</span><span class="tok-k">if</span><span class="tok-w"> </span><span class="tok-p">(</span><span class="tok-n">i</span><span class="tok-w"> </span><span class="tok-o">&lt;</span><span class="tok-w"> </span><span class="tok-mi">10</span><span class="tok-p">)</span><span class="tok-w"></span>
 <span class="tok-w">		</span><span class="tok-k">goto</span><span class="tok-w"> </span><span class="tok-n">loop</span><span class="tok-p">;</span><span class="tok-w"></span>
 </pre></td></tr></table></code></pre>
 </div>
@@ -2930,8 +2970,8 @@ are most often used for, looping through data structures, most commonly arrays.<
 variables of the same type, almost always related in some way.  Naturally, you
 want to operate on them all together in various ways; sorting, searching,
 accumulating, etc.  Given that the only way to do that is with loops, in this
-section we&#8217;ll cover different ways of looping through arrays, and dealing with
-multi-dimentional arrays.</p>
+section we&#8217;ll cover different ways of looping through arrays, including
+multidimensional arrays.</p>
 </div>
 <div class="sect3">
 <h4 id="_1d_arrays">1D Arrays</h4>
@@ -2982,7 +3022,7 @@ sum_loop:
 </div>
 </div>
 <div class="paragraph">
-<p>We initialize the relevant variables beforehand (<code>numbers</code> and <code>$t3</code> could be set
+<p>We initialize the relevant variables beforehand (<code>numbers</code> and <code>10</code> could be loaded
 every iteration but that&#8217;s less efficient).  Now what&#8217;s with the <code>i*4</code>?  We already
 discussed using shifts to multiply and divide by powers of 2 in a previous chapter,
 but here we&#8217;re doing something that higher level languages do automatically for you
@@ -3157,9 +3197,13 @@ to a 1D array with rows*cols elements in the same order:</p>
 <div class="content">
 <pre class="pygments highlight"><code data-lang="c"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><pre><span></span><span class="tok-w">	</span><span class="tok-c1">// The memory of these two arrays are identical</span>
-<span class="tok-w">	</span><span class="tok-kt">int</span><span class="tok-w"> </span><span class="tok-n">array2d</span><span class="tok-p">[</span><span class="tok-mi">2</span><span class="tok-p">][</span><span class="tok-mi">4</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-w"> </span><span class="tok-mi">1</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">2</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">3</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">4</span><span class="tok-w"> </span><span class="tok-p">},</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-w"> </span><span class="tok-mi">5</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">6</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">7</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">8</span><span class="tok-w"> </span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-p">};</span><span class="tok-w"></span>
-<span class="tok-w">	</span><span class="tok-kt">int</span><span class="tok-w"> </span><span class="tok-n">array1d</span><span class="tok-p">[</span><span class="tok-mi">8</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-w"> </span><span class="tok-mi">1</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">2</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">3</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">4</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">5</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">6</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">7</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">8</span><span class="tok-w"> </span><span class="tok-p">};</span><span class="tok-w"></span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><pre><span></span><span class="tok-w">	</span><span class="tok-cp">#define ROWS 2</span>
+<span class="tok-w">	</span><span class="tok-cp">#define COLS 4</span>
+<span class="tok-w">	</span><span class="tok-c1">// The memory of these two arrays are identical</span>
+<span class="tok-w">	</span><span class="tok-kt">int</span><span class="tok-w"> </span><span class="tok-n">array</span><span class="tok-p">[</span><span class="tok-n">ROWS</span><span class="tok-p">][</span><span class="tok-n">COLS</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-w"> </span><span class="tok-mi">1</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">2</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">3</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">4</span><span class="tok-w"> </span><span class="tok-p">},</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-w"> </span><span class="tok-mi">5</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">6</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">7</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">8</span><span class="tok-w"> </span><span class="tok-p">}</span><span class="tok-w"> </span><span class="tok-p">};</span><span class="tok-w"></span>
+<span class="tok-w">	</span><span class="tok-kt">int</span><span class="tok-w"> </span><span class="tok-n">array1d</span><span class="tok-p">[</span><span class="tok-n">ROWS</span><span class="tok-o">*</span><span class="tok-n">COLS</span><span class="tok-p">]</span><span class="tok-w"> </span><span class="tok-o">=</span><span class="tok-w"> </span><span class="tok-p">{</span><span class="tok-w"> </span><span class="tok-mi">1</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">2</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">3</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">4</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">5</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">6</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">7</span><span class="tok-p">,</span><span class="tok-w"> </span><span class="tok-mi">8</span><span class="tok-w"> </span><span class="tok-p">};</span><span class="tok-w"></span>
 </pre></td></tr></table></code></pre>
 </div>
 </div>
@@ -3169,7 +3213,7 @@ to a 1D array with rows*cols elements in the same order:</p>
 </div>
 <div class="paragraph">
 <p>What this means is that when we declare a 2D array, it&#8217;s basically a 1D array with
-the size equal to the rows * columns.  Also, when we loop through a 2D array, we can
+the size equal to rows * columns.  Also, when we loop through a 2D array, we can
 often treat it like a 1D array with a single loop.  So everything that we learned
 before applies.</p>
 </div>
@@ -3292,7 +3336,7 @@ loopcols:
 </div>
 </div>
 <div class="paragraph">
-<p>It&#8217;s a bit shorter but again, how much are those extra labels and branching worth?
+<p>It&#8217;s a bit shorter but again, how much are the extra label and branch worth?
 For me, this one&#8217;s a toss up.  On the other hand, either of the last 2 versions are
 better than the literal translation below:</p>
 </div>
@@ -3431,7 +3475,7 @@ a "random" number between 0 and 100.</p>
 </li>
 <li>
 <p>Write a MIPS program to find and print the average of the following array.
-Just use integer division.</p>
+Use integer division.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="mips"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
@@ -3453,9 +3497,9 @@ array:        .word 93,8,78,-6,51,49,3,2,128,0
 <h2 id="_chapter_5_functions_and_the_mips_calling_convention">Chapter 5: Functions and the MIPS Calling Convention</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While I&#8217;m sure everyone here probably knows what functions are, and we&#8217;ll cover
-them in assembly shortly, you might be wondering what a "Calling Convention" is.
-In short, it is an agreement between the caller and callee about how to treat/use
+<p>While I&#8217;m sure everyone here probably knows what functions are, you might
+be wondering what a "Calling Convention" is.  In short, it is an
+agreement between the caller and callee about how to treat/use
 certain registers.  We&#8217;ll get to the why and how later.</p>
 </div>
 <div class="sect2">
@@ -3584,7 +3628,7 @@ different operating systems on the same architecture.  This is because different
 architectures have different numbers of registers, and some registers like <code>$ra</code>
 have hardcoded uses.  The op <code>jal</code> modifies <code>$ra</code>, and <code>$0</code> is a constant 0 and
 there&#8217;s no way to change either of those facts.  That still leaves a lot of
-flexibility about designing a calling convention.  While they mostly match,
+flexibility when designing a calling convention.  While they mostly match,
 you&#8217;ll find several variations of MIPS calling conventions online.  They
 usually differ in how they setup a stack frame.  The convention covered
 in this chapter is consistent with, and sufficient for, almost every college
@@ -6392,8 +6436,8 @@ which case it continues counting up from there).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 0.9.18<br>
-Last updated 2022-07-17 21:14:32 -0700
+Version 0.9.21<br>
+Last updated 2023-01-01 15:08:38 -0700
 </div>
 </div>
 </body>

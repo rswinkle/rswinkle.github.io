@@ -28,7 +28,7 @@ Support the book and buy the solutions to the chapter exercises
 ## Contact Me/Tutoring
 
 If you're interested in contacting me regarding MIPS tutoring or any other
-business request related to the book, you can reach me at mips at robertwinkler dot com.
+business request related to the book, you can reach me at books at robertwinkler dot com.
 
 ## License
 
