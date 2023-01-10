@@ -60,6 +60,7 @@ def main():
 	# move/rename projects/mips_book.html to project/mips_book/index.html?
 	# redirect mips.robertwinkler.com to project/mips_book/?
 	os.rename('projects/mips_book.html', 'projects/mips_book/index.html')
+	os.rename('projects/riscv_book.html', 'projects/riscv_book/index.html')
 
 
 
