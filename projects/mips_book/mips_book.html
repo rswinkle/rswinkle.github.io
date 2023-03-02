@@ -514,9 +514,8 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 <div class="details">
 <span id="author" class="author">Robert Winkler</span><br>
 <span id="email" class="email"><a href="mailto:mips@robertwinkler.com">mips@robertwinkler.com</a></span><br>
-<span id="revnumber">version 0.9.21,</span>
-<span id="revdate">2023-1-1</span>
-<br><span id="revremark">Beta</span>
+<span id="revnumber">version 1.0.0,</span>
+<span id="revdate">2023-3-1</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
@@ -780,7 +779,7 @@ sugar and features like graphics, memory mapped I/O, etc.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash"><span></span>$ sudo apt install qtspim spim</code></pre>
+<pre class="pygments highlight"><code data-lang="console"><span></span><span class="tok-gp">$ </span>sudo apt install qtspim spim</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -859,9 +858,9 @@ can substitute clang or another compiler for gcc if you want.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash"><span></span>$ gcc -o hello hello.c
-$ ./hello
-Hello World!</code></pre>
+<pre class="pygments highlight"><code data-lang="console"><span></span><span class="tok-gp">$ </span>gcc -o hello hello.c
+<span class="tok-gp">$ </span>./hello
+<span class="tok-go">Hello World!</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -925,13 +924,13 @@ this for spim:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash"><span></span>$ spim -file hello.s
-SPIM Version <span class="tok-m">8</span>.0 of January <span class="tok-m">8</span>, <span class="tok-m">2010</span>
-Copyright <span class="tok-m">1990</span>-2010, James R. Larus.
-All Rights Reserved.
-See the file README <span class="tok-k">for</span> a full copyright notice.
-Loaded: /usr/lib/spim/exceptions.s
-Hello World!</code></pre>
+<pre class="pygments highlight"><code data-lang="console"><span></span><span class="tok-gp">$ </span>spim -file hello.s
+<span class="tok-go">SPIM Version 8.0 of January 8, 2010</span>
+<span class="tok-go">Copyright 1990-2010, James R. Larus.</span>
+<span class="tok-go">All Rights Reserved.</span>
+<span class="tok-go">See the file README for a full copyright notice.</span>
+<span class="tok-go">Loaded: /usr/lib/spim/exceptions.s</span>
+<span class="tok-go">Hello World!</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -939,10 +938,10 @@ Hello World!</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash"><span></span>$ java -jar ~/Mars4_5.jar hello.s
-MARS <span class="tok-m">4</span>.5  Copyright <span class="tok-m">2003</span>-2014 Pete Sanderson and Kenneth Vollmar
+<pre class="pygments highlight"><code data-lang="console"><span></span><span class="tok-gp">$ </span>java -jar ~/Mars4_5.jar hello.s
+<span class="tok-go">MARS 4.5  Copyright 2003-2014 Pete Sanderson and Kenneth Vollmar</span>
 
-Hello World!</code></pre>
+<span class="tok-go">Hello World!</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -967,7 +966,7 @@ Whereas with QtSpim you only have to hit "run".</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash"><span></span>$ qtspim hello.s</code></pre>
+<pre class="pygments highlight"><code data-lang="console"><span></span><span class="tok-gp">$ </span>qtspim hello.s</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -5080,7 +5079,7 @@ likely the programmer is to choose a <code>switch-case</code> statement instead.
 <span class="tok-w">	</span><span class="tok-k">case</span><span class="tok-w"> </span><span class="tok-sc">&#39;C&#39;</span><span class="tok-o">:</span><span class="tok-w"> </span><span class="tok-n">puts</span><span class="tok-p">(</span><span class="tok-s">&quot;At least you passed?&quot;</span><span class="tok-p">);</span><span class="tok-w"> </span><span class="tok-k">break</span><span class="tok-p">;</span><span class="tok-w"></span>
 <span class="tok-w">	</span><span class="tok-k">case</span><span class="tok-w"> </span><span class="tok-sc">&#39;D&#39;</span><span class="tok-o">:</span><span class="tok-w"> </span><span class="tok-n">puts</span><span class="tok-p">(</span><span class="tok-s">&quot;Probably should have dropped it...&quot;</span><span class="tok-p">);</span><span class="tok-w"> </span><span class="tok-k">break</span><span class="tok-p">;</span><span class="tok-w"></span>
 <span class="tok-w">	</span><span class="tok-k">case</span><span class="tok-w"> </span><span class="tok-sc">&#39;F&#39;</span><span class="tok-o">:</span><span class="tok-w"> </span><span class="tok-n">puts</span><span class="tok-p">(</span><span class="tok-s">&quot;Did you even know you were signed up for the class?&quot;</span><span class="tok-p">);</span><span class="tok-w"> </span><span class="tok-k">break</span><span class="tok-p">;</span><span class="tok-w"></span>
-<span class="tok-w">	</span><span class="tok-k">default</span><span class="tok-o">:</span><span class="tok-w"> </span><span class="tok-n">puts</span><span class="tok-p">(</span><span class="tok-s">&quot;You entered and invalid grade!&quot;</span><span class="tok-p">);</span><span class="tok-w"></span>
+<span class="tok-w">	</span><span class="tok-k">default</span><span class="tok-o">:</span><span class="tok-w"> </span><span class="tok-n">puts</span><span class="tok-p">(</span><span class="tok-s">&quot;You entered an invalid grade!&quot;</span><span class="tok-p">);</span><span class="tok-w"></span>
 <span class="tok-w">	</span><span class="tok-p">}</span><span class="tok-w"></span>
 </pre></td></tr></table></code></pre>
 </div>
@@ -5430,16 +5429,16 @@ like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="bash"><span></span>$ ./args <span class="tok-m">3</span> random arguments
-There are <span class="tok-m">4</span> <span class="tok-nb">command</span> line arguments:
-./args
-<span class="tok-m">3</span>
-random
-arguments</code></pre>
+<pre class="pygments highlight"><code data-lang="console"><span></span><span class="tok-gp">$ </span>./args <span class="tok-m">3</span> random arguments
+<span class="tok-go">There are 4 command line arguments:</span>
+<span class="tok-go">./args</span>
+<span class="tok-go">3</span>
+<span class="tok-go">random</span>
+<span class="tok-go">arguments</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Notice that the first argument is the what you actually typed to invoke the program,
+<p>Notice that the first argument is what you actually typed to invoke the program,
 so you always have at least one argument.</p>
 </div>
 <div class="paragraph">
@@ -5487,16 +5486,12 @@ is in <code>$a1</code> when main starts.  So the same program in MIPS looks like
 <span class="normal">37</span>
 <span class="normal">38</span>
 <span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><pre><span></span>.data
+<span class="normal">40</span></pre></div></td><td class="code"><pre><span></span>.data
 
 there_are:  .asciiz &quot;There are &quot;
 arguments:  .asciiz &quot; command line arguments:\n&quot;
 
-
 .text
-
 main:
 	move    $t0, $a0  # save argc
 
@@ -5891,16 +5886,12 @@ here for convenience) to bare mode:</p>
 <span class="normal">37</span>
 <span class="normal">38</span>
 <span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><pre><span></span>.data
+<span class="normal">40</span></pre></div></td><td class="code"><pre><span></span>.data
 
 there_are:  .asciiz &quot;There are &quot;
 arguments:  .asciiz &quot; command line arguments:\n&quot;
 
-
 .text
-
 main:
 	move    $t0, $a0  # save argc
 
@@ -6436,8 +6427,8 @@ which case it continues counting up from there).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 0.9.21<br>
-Last updated 2023-01-01 15:08:38 -0700
+Version 1.0.0<br>
+Last updated 2023-03-01 21:43:09 -0700
 </div>
 </div>
 </body>
