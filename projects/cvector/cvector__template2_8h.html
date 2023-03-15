@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CVector
-   &#160;<span id="projectnumber">4.0.1</span>
+   &#160;<span id="projectnumber">4.1.0</span>
    </div>
    <div id="projectbrief">A C++ style vector library in strict ANSI C (C89)</div>
   </td>
@@ -65,6 +65,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -81,16 +83,28 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure for TYPE vector.  <a href="structcvector___t_y_p_e.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ae18e53794b433f6d3b970aa240ed2937"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#ae18e53794b433f6d3b970aa240ed2937">CVEC_SIZE_T</a>&#160;&#160;&#160;size_t</td></tr>
+<tr class="separator:ae18e53794b433f6d3b970aa240ed2937"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a074664af3128f7e8318739754a51d9c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a074664af3128f7e8318739754a51d9c8">CVEC_SZ</a></td></tr>
+<tr class="separator:a074664af3128f7e8318739754a51d9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:aab4c685d088225e2c59c4c91833d93ab"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="cvector__void_8h.html#ae18e53794b433f6d3b970aa240ed2937">CVEC_SIZE_T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a></td></tr>
+<tr class="separator:aab4c685d088225e2c59c4c91833d93ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab5121a077902b3b29eb7d532d59ecfbd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#ab5121a077902b3b29eb7d532d59ecfbd">cvec_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, size_t size, size_t capacity, void(*elem_free)(void *), int(*elem_init)(void *, void *))</td></tr>
-<tr class="separator:ab5121a077902b3b29eb7d532d59ecfbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9e1a4767cddd5f74a1ac80512a68e9b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#aa9e1a4767cddd5f74a1ac80512a68e9b">cvec_init_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, TYPE *vals, size_t num, void(*elem_free)(void *), int(*elem_init)(void *, void *))</td></tr>
-<tr class="separator:aa9e1a4767cddd5f74a1ac80512a68e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac09eebc951e58aa1cb46cded79a6e353"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#ac09eebc951e58aa1cb46cded79a6e353">cvec_TYPE_heap</a> (size_t size, size_t capacity, void(*elem_free)(void *), int(*elem_init)(void *, void *))</td></tr>
-<tr class="separator:ac09eebc951e58aa1cb46cded79a6e353"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac76d85dd820ac4cf433ba91d780b60a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#ac76d85dd820ac4cf433ba91d780b60a0">cvec_init_TYPE_heap</a> (TYPE *vals, size_t num, void(*elem_free)(void *), int(*elem_init)(void *, void *))</td></tr>
-<tr class="separator:ac76d85dd820ac4cf433ba91d780b60a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa76f10e30b6482dedf50c0529671a822"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#aa76f10e30b6482dedf50c0529671a822">cvec_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> size, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> capacity, void(*elem_free)(void *), int(*elem_init)(void *, void *))</td></tr>
+<tr class="separator:aa76f10e30b6482dedf50c0529671a822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6091e88ca1c42081cb71d697376c088a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a6091e88ca1c42081cb71d697376c088a">cvec_init_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, TYPE *vals, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> num, void(*elem_free)(void *), int(*elem_init)(void *, void *))</td></tr>
+<tr class="separator:a6091e88ca1c42081cb71d697376c088a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a435ef289c3ec3ce98899d229e5649"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a71a435ef289c3ec3ce98899d229e5649">cvec_TYPE_heap</a> (<a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> size, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> capacity, void(*elem_free)(void *), int(*elem_init)(void *, void *))</td></tr>
+<tr class="separator:a71a435ef289c3ec3ce98899d229e5649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5de469ace1b3a85373f8299123419d3a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a5de469ace1b3a85373f8299123419d3a">cvec_init_TYPE_heap</a> (TYPE *vals, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> num, void(*elem_free)(void *), int(*elem_init)(void *, void *))</td></tr>
+<tr class="separator:a5de469ace1b3a85373f8299123419d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2c5997a7f146766ab8957e4b4b853a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#ab2c5997a7f146766ab8957e4b4b853a6">cvec_copyc_TYPE</a> (void *dest, void *src)</td></tr>
 <tr class="separator:ab2c5997a7f146766ab8957e4b4b853a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a157b85dd4ede5281ba00fda246d62db6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a157b85dd4ede5281ba00fda246d62db6">cvec_copy_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *dest, <a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *src)</td></tr>
@@ -103,28 +117,28 @@ Functions</h2></td></tr>
 <tr class="separator:a2f65d30c42e9ab68da88cba5c64d331e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c6185794dfa7a0344fd0c7fc8c831f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a2c6185794dfa7a0344fd0c7fc8c831f6">cvec_popm_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, TYPE *ret)</td></tr>
 <tr class="separator:a2c6185794dfa7a0344fd0c7fc8c831f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac43977c957cd13a60744892c7d8ebd4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#aac43977c957cd13a60744892c7d8ebd4">cvec_insertm_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, size_t i, TYPE *a)</td></tr>
-<tr class="separator:aac43977c957cd13a60744892c7d8ebd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a407eceb9320d5f23fe77c6f0f683e0b3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a407eceb9320d5f23fe77c6f0f683e0b3">cvec_insert_arraym_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, size_t i, TYPE *a, size_t num)</td></tr>
-<tr class="separator:a407eceb9320d5f23fe77c6f0f683e0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f2759616c9108d1a2c6d72cfcf61aff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a0f2759616c9108d1a2c6d72cfcf61aff">cvec_replacem_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, size_t i, TYPE *a, TYPE *ret)</td></tr>
-<tr class="separator:a0f2759616c9108d1a2c6d72cfcf61aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa02c7c18bc135c5be689442183c5ea8f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#aa02c7c18bc135c5be689442183c5ea8f">cvec_extend_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, size_t num)</td></tr>
-<tr class="separator:aa02c7c18bc135c5be689442183c5ea8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a695ca4c34f23fdf73dd83e0a7f6a302e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a695ca4c34f23fdf73dd83e0a7f6a302e">cvec_insert_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, size_t i, TYPE *a)</td></tr>
-<tr class="separator:a695ca4c34f23fdf73dd83e0a7f6a302e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1088ccc9b298b8a285fa77a79e8cceb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#ab1088ccc9b298b8a285fa77a79e8cceb">cvec_insert_array_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, size_t i, TYPE *a, size_t num)</td></tr>
-<tr class="separator:ab1088ccc9b298b8a285fa77a79e8cceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a024c1d50673234a311bd33c9dd49ae6c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a024c1d50673234a311bd33c9dd49ae6c">cvec_replace_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, size_t i, TYPE *a, TYPE *ret)</td></tr>
-<tr class="separator:a024c1d50673234a311bd33c9dd49ae6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bff035a6e0c7a29d39b8da3783138f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a5bff035a6e0c7a29d39b8da3783138f9">cvec_erase_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, size_t start, size_t end)</td></tr>
-<tr class="separator:a5bff035a6e0c7a29d39b8da3783138f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65bd46187040c1e5ee4ddb21f6900f7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a65bd46187040c1e5ee4ddb21f6900f7a">cvec_remove_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, size_t start, size_t end)</td></tr>
-<tr class="separator:a65bd46187040c1e5ee4ddb21f6900f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d66b1c4aa743d9b073a1091e02f7a98"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a6d66b1c4aa743d9b073a1091e02f7a98">cvec_reserve_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, size_t size)</td></tr>
-<tr class="separator:a6d66b1c4aa743d9b073a1091e02f7a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac9b26ded1ef7a6e4c0af62cfe6b7b87"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#aac9b26ded1ef7a6e4c0af62cfe6b7b87">cvec_set_cap_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, size_t size)</td></tr>
-<tr class="separator:aac9b26ded1ef7a6e4c0af62cfe6b7b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23e8cc55db91f089db97aad1b3e631a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a23e8cc55db91f089db97aad1b3e631a0">cvec_insertm_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> i, TYPE *a)</td></tr>
+<tr class="separator:a23e8cc55db91f089db97aad1b3e631a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e3731b7f79e960d601ecc935add4f49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a7e3731b7f79e960d601ecc935add4f49">cvec_insert_arraym_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> i, TYPE *a, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> num)</td></tr>
+<tr class="separator:a7e3731b7f79e960d601ecc935add4f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ebef9f1ec4153bf9161793883a284d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a7ebef9f1ec4153bf9161793883a284d4">cvec_replacem_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> i, TYPE *a, TYPE *ret)</td></tr>
+<tr class="separator:a7ebef9f1ec4153bf9161793883a284d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afea4b44fd6c169988b05ba7da3b9ed35"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#afea4b44fd6c169988b05ba7da3b9ed35">cvec_extend_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> num)</td></tr>
+<tr class="separator:afea4b44fd6c169988b05ba7da3b9ed35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a287ad8c764e03e248d5350a8a7686306"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a287ad8c764e03e248d5350a8a7686306">cvec_insert_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> i, TYPE *a)</td></tr>
+<tr class="separator:a287ad8c764e03e248d5350a8a7686306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaee1edf8be5781b963b76c5764b2e2cd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#aaee1edf8be5781b963b76c5764b2e2cd">cvec_insert_array_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> i, TYPE *a, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> num)</td></tr>
+<tr class="separator:aaee1edf8be5781b963b76c5764b2e2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8012b37712ea895c2effd1ecbbae2527"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a8012b37712ea895c2effd1ecbbae2527">cvec_replace_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> i, TYPE *a, TYPE *ret)</td></tr>
+<tr class="separator:a8012b37712ea895c2effd1ecbbae2527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c3ba475968830e3c8a7140a312179b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a1c3ba475968830e3c8a7140a312179b0">cvec_erase_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> start, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> end)</td></tr>
+<tr class="separator:a1c3ba475968830e3c8a7140a312179b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af86bbd4039cce785aa7dfd06bea29e3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#af86bbd4039cce785aa7dfd06bea29e3b">cvec_remove_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> start, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> end)</td></tr>
+<tr class="separator:af86bbd4039cce785aa7dfd06bea29e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08fca5b2758b29ded74cb711a5d071b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a08fca5b2758b29ded74cb711a5d071b1">cvec_reserve_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> size)</td></tr>
+<tr class="separator:a08fca5b2758b29ded74cb711a5d071b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0648fe94209ce3652826918f242ff810"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a0648fe94209ce3652826918f242ff810">cvec_set_cap_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> size)</td></tr>
+<tr class="separator:a0648fe94209ce3652826918f242ff810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4969de6643a01b65dd721b4337ae52e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a4969de6643a01b65dd721b4337ae52e1">cvec_set_val_sz_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, TYPE *val)</td></tr>
 <tr class="separator:a4969de6643a01b65dd721b4337ae52e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ae52dd5920f9ff39dc28075fc436b52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a1ae52dd5920f9ff39dc28075fc436b52">cvec_set_val_cap_TYPE</a> (<a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a> *vec, TYPE *val)</td></tr>
@@ -140,9 +154,59 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a97063e8a744dfd4849902d0a872d0a5e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#a97063e8a744dfd4849902d0a872d0a5e">CVEC_TYPE_SZ</a></td></tr>
-<tr class="separator:a97063e8a744dfd4849902d0a872d0a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec74e97e085471283d25c98ee2f6c157"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cvector__template2_8h.html#aec74e97e085471283d25c98ee2f6c157">CVEC_TYPE_SZ</a></td></tr>
+<tr class="separator:aec74e97e085471283d25c98ee2f6c157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ae18e53794b433f6d3b970aa240ed2937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae18e53794b433f6d3b970aa240ed2937">&#9670;&nbsp;</a></span>CVEC_SIZE_T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CVEC_SIZE_T&#160;&#160;&#160;size_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cvector__template2_8h_source.html#l00007">7</a> of file <a class="el" href="cvector__template2_8h_source.html">cvector_template2.h</a>.</p>
+
+</div>
+</div>
+<a id="a074664af3128f7e8318739754a51d9c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a074664af3128f7e8318739754a51d9c8">&#9670;&nbsp;</a></span>CVEC_SZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CVEC_SZ</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cvector__template2_8h_source.html#l00011">11</a> of file <a class="el" href="cvector__template2_8h_source.html">cvector_template2.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="aab4c685d088225e2c59c4c91833d93ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab4c685d088225e2c59c4c91833d93ab">&#9670;&nbsp;</a></span>cvec_sz</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="cvector__void_8h.html#ae18e53794b433f6d3b970aa240ed2937">CVEC_SIZE_T</a> <a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="cvector__template2_8h_source.html#l00012">12</a> of file <a class="el" href="cvector__template2_8h_source.html">cvector_template2.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a0eab61ddcbc837fe3217447de1ed22ba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0eab61ddcbc837fe3217447de1ed22ba">&#9670;&nbsp;</a></span>cvec_back_TYPE()</h2>
@@ -236,8 +300,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a5bff035a6e0c7a29d39b8da3783138f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bff035a6e0c7a29d39b8da3783138f9">&#9670;&nbsp;</a></span>cvec_erase_TYPE()</h2>
+<a id="a1c3ba475968830e3c8a7140a312179b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c3ba475968830e3c8a7140a312179b0">&#9670;&nbsp;</a></span>cvec_erase_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -251,13 +315,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>start</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>end</em>&#160;</td>
         </tr>
         <tr>
@@ -270,8 +334,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aa02c7c18bc135c5be689442183c5ea8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa02c7c18bc135c5be689442183c5ea8f">&#9670;&nbsp;</a></span>cvec_extend_TYPE()</h2>
+<a id="afea4b44fd6c169988b05ba7da3b9ed35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afea4b44fd6c169988b05ba7da3b9ed35">&#9670;&nbsp;</a></span>cvec_extend_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -285,7 +349,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>num</em>&#160;</td>
         </tr>
         <tr>
@@ -334,8 +398,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aa9e1a4767cddd5f74a1ac80512a68e9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9e1a4767cddd5f74a1ac80512a68e9b">&#9670;&nbsp;</a></span>cvec_init_TYPE()</h2>
+<a id="a6091e88ca1c42081cb71d697376c088a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6091e88ca1c42081cb71d697376c088a">&#9670;&nbsp;</a></span>cvec_init_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -355,7 +419,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>num</em>, </td>
         </tr>
         <tr>
@@ -380,8 +444,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ac76d85dd820ac4cf433ba91d780b60a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac76d85dd820ac4cf433ba91d780b60a0">&#9670;&nbsp;</a></span>cvec_init_TYPE_heap()</h2>
+<a id="a5de469ace1b3a85373f8299123419d3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5de469ace1b3a85373f8299123419d3a">&#9670;&nbsp;</a></span>cvec_init_TYPE_heap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -395,7 +459,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>num</em>, </td>
         </tr>
         <tr>
@@ -420,8 +484,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab1088ccc9b298b8a285fa77a79e8cceb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1088ccc9b298b8a285fa77a79e8cceb">&#9670;&nbsp;</a></span>cvec_insert_array_TYPE()</h2>
+<a id="aaee1edf8be5781b963b76c5764b2e2cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaee1edf8be5781b963b76c5764b2e2cd">&#9670;&nbsp;</a></span>cvec_insert_array_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -435,7 +499,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
@@ -447,7 +511,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>num</em>&#160;</td>
         </tr>
         <tr>
@@ -460,8 +524,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a407eceb9320d5f23fe77c6f0f683e0b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a407eceb9320d5f23fe77c6f0f683e0b3">&#9670;&nbsp;</a></span>cvec_insert_arraym_TYPE()</h2>
+<a id="a7e3731b7f79e960d601ecc935add4f49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e3731b7f79e960d601ecc935add4f49">&#9670;&nbsp;</a></span>cvec_insert_arraym_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -475,7 +539,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
@@ -487,7 +551,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>num</em>&#160;</td>
         </tr>
         <tr>
@@ -500,8 +564,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a695ca4c34f23fdf73dd83e0a7f6a302e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a695ca4c34f23fdf73dd83e0a7f6a302e">&#9670;&nbsp;</a></span>cvec_insert_TYPE()</h2>
+<a id="a287ad8c764e03e248d5350a8a7686306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a287ad8c764e03e248d5350a8a7686306">&#9670;&nbsp;</a></span>cvec_insert_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -515,7 +579,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
@@ -534,8 +598,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aac43977c957cd13a60744892c7d8ebd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac43977c957cd13a60744892c7d8ebd4">&#9670;&nbsp;</a></span>cvec_insertm_TYPE()</h2>
+<a id="a23e8cc55db91f089db97aad1b3e631a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23e8cc55db91f089db97aad1b3e631a0">&#9670;&nbsp;</a></span>cvec_insertm_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -549,7 +613,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
@@ -680,8 +744,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a65bd46187040c1e5ee4ddb21f6900f7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65bd46187040c1e5ee4ddb21f6900f7a">&#9670;&nbsp;</a></span>cvec_remove_TYPE()</h2>
+<a id="af86bbd4039cce785aa7dfd06bea29e3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af86bbd4039cce785aa7dfd06bea29e3b">&#9670;&nbsp;</a></span>cvec_remove_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -695,13 +759,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>start</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>end</em>&#160;</td>
         </tr>
         <tr>
@@ -714,8 +778,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a024c1d50673234a311bd33c9dd49ae6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a024c1d50673234a311bd33c9dd49ae6c">&#9670;&nbsp;</a></span>cvec_replace_TYPE()</h2>
+<a id="a8012b37712ea895c2effd1ecbbae2527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8012b37712ea895c2effd1ecbbae2527">&#9670;&nbsp;</a></span>cvec_replace_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -729,7 +793,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
@@ -754,8 +818,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a0f2759616c9108d1a2c6d72cfcf61aff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f2759616c9108d1a2c6d72cfcf61aff">&#9670;&nbsp;</a></span>cvec_replacem_TYPE()</h2>
+<a id="a7ebef9f1ec4153bf9161793883a284d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ebef9f1ec4153bf9161793883a284d4">&#9670;&nbsp;</a></span>cvec_replacem_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -769,7 +833,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
@@ -794,8 +858,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a6d66b1c4aa743d9b073a1091e02f7a98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d66b1c4aa743d9b073a1091e02f7a98">&#9670;&nbsp;</a></span>cvec_reserve_TYPE()</h2>
+<a id="a08fca5b2758b29ded74cb711a5d071b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08fca5b2758b29ded74cb711a5d071b1">&#9670;&nbsp;</a></span>cvec_reserve_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -809,7 +873,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>size</em>&#160;</td>
         </tr>
         <tr>
@@ -822,8 +886,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aac9b26ded1ef7a6e4c0af62cfe6b7b87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac9b26ded1ef7a6e4c0af62cfe6b7b87">&#9670;&nbsp;</a></span>cvec_set_cap_TYPE()</h2>
+<a id="a0648fe94209ce3652826918f242ff810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0648fe94209ce3652826918f242ff810">&#9670;&nbsp;</a></span>cvec_set_cap_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -837,7 +901,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>size</em>&#160;</td>
         </tr>
         <tr>
@@ -906,8 +970,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab5121a077902b3b29eb7d532d59ecfbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5121a077902b3b29eb7d532d59ecfbd">&#9670;&nbsp;</a></span>cvec_TYPE()</h2>
+<a id="aa76f10e30b6482dedf50c0529671a822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa76f10e30b6482dedf50c0529671a822">&#9670;&nbsp;</a></span>cvec_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -921,13 +985,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>capacity</em>, </td>
         </tr>
         <tr>
@@ -952,8 +1016,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ac09eebc951e58aa1cb46cded79a6e353"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac09eebc951e58aa1cb46cded79a6e353">&#9670;&nbsp;</a></span>cvec_TYPE_heap()</h2>
+<a id="a71a435ef289c3ec3ce98899d229e5649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a435ef289c3ec3ce98899d229e5649">&#9670;&nbsp;</a></span>cvec_TYPE_heap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -961,13 +1025,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structcvector___t_y_p_e.html">cvector_TYPE</a>* cvec_TYPE_heap </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a>&#160;</td>
           <td class="paramname"><em>capacity</em>, </td>
         </tr>
         <tr>
@@ -993,8 +1057,8 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a97063e8a744dfd4849902d0a872d0a5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97063e8a744dfd4849902d0a872d0a5e">&#9670;&nbsp;</a></span>CVEC_TYPE_SZ</h2>
+<a id="aec74e97e085471283d25c98ee2f6c157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec74e97e085471283d25c98ee2f6c157">&#9670;&nbsp;</a></span>CVEC_TYPE_SZ</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1003,7 +1067,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t CVEC_TYPE_SZ</td>
+          <td class="memname"><a class="el" href="cvector_8h.html#aab4c685d088225e2c59c4c91833d93ab">cvec_sz</a> CVEC_TYPE_SZ</td>
         </tr>
       </table>
   </td>
@@ -1018,7 +1082,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 21 2022 14:19:29 for CVector by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Mar 15 2023 02:59:49 for CVector by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">CVector
-   &#160;<span id="projectnumber">4.0.1</span>
+   &#160;<span id="projectnumber">4.1.0</span>
    </div>
    <div id="projectbrief">A C++ style vector library in strict ANSI C (C89)</div>
   </td>
@@ -72,10 +72,10 @@ Intro</h1>
 <p>This is a relatively simple ANSI compliant C vector library with specific structures and functions for int's, double's and string's and support for all other types using either a generic structure where the type is passed in as void* and stored in a cvec_u8 array (to avoid dereferencing void* warnings and frequent casting) or generated type-specific vectors using a macro or template system (see below).</p>
 <p>The generic vector is very flexible and allows you to provide free and init functions if you like that it will call at appropriate times similar to the way C++ containers will call destructors/constructors.</p>
 <p>Other modifiable parameters are at the top of the respective cvector.c's </p><pre>
-size_t CVEC_I_START_SZ = 50;
-size_t CVEC_D_START_SZ = 50;
-size_t CVEC_STR_START_SZ = 20;
-size_t CVEC_VOID_START_SZ = 20;
+cvec_sz CVEC_I_START_SZ = 50;
+cvec_sz CVEC_D_START_SZ = 50;
+cvec_sz CVEC_STR_START_SZ = 20;
+cvec_sz CVEC_VOID_START_SZ = 20;
 
 #define <a class="el" href="cvector__i_8c.html#a1c3b4d9cc9c546a4cc52ad391f4d8e6e">CVEC_I_ALLOCATOR(x)</a> ((x+1) * 2)
 #define <a class="el" href="cvector__d_8c.html#ac8fb90dc7cfcf6456fc114b469454711">CVEC_D_ALLOCATOR(x)</a> ((x+1) * 2)
@@ -83,6 +83,7 @@ size_t CVEC_VOID_START_SZ = 20;
 #define <a class="el" href="cvector__void_8c.html#a216578f1df3db043455ff44621713ba7">CVEC_VOID_ALLOCATOR(x)</a> ((x+1) * 2)
 </pre><p> The allocator macros are used in all functions that increase the size by 1. In others (constructors, insert_array, reserve) CVEC_X_START_SZ is the amount extra allocated.</p>
 <p>Note that the (x+1) portion allows you to use the non-void vectors without calling any of the init functions first <em>if</em> you zero them out. This means size, capacity, and a are 0/NULL which is valid because realloc acts like malloc when given a NULL pointer. With <a class="el" href="structcvector__void.html" title="Data structure for generic type (cast to void) vectors.">cvector_void</a> you still have to set elem_size, and optionally elem_free/elem_init. See the zero_init_x_test()'s in <a class="el" href="cvector__tests_8c.html">cvector_tests.c</a> for example of that use.</p>
+<p>The <code>cvec_sz</code> type defaults to size_t but if you define CVEC_SIZE_T before including the header which is then <code>typedef</code>'d to <code>cvec_sz</code>. It has to be defined before every header inclusion since it is used in both the header (struct definiton) and the implementation.</p>
 <p>There are also 2 templates, one for basic types and one for types that contain dynamically allocated memory and you might want a free and/or init function. In other words the first template is based off <a class="el" href="structcvector__i.html" title="Data structure for int vector.">cvector_i</a> and the second is based off of <a class="el" href="structcvector__void.html" title="Data structure for generic type (cast to void) vectors.">cvector_void</a>, so look at the corresponding documentation for behavior.</p>
 <p>There are 2 ways to use/create your own cvector types. The easiest way is to use the macros defined in <a class="el" href="cvector__macro_8h.html">cvector_macro.h</a> which are also included in the all-in-one header <a class="el" href="cvector_8h.html">cvector.h</a>. You can see how to use them in <a class="el" href="cvector__tests_8c.html">cvector_tests.c</a>: </p><pre class="fragment">#define RESIZE(a) (((a)+1)*2)
 
@@ -95,7 +96,7 @@ CVEC_NEW_DEFS2(f_struct, RESIZE)
 <p>The other way, and the only way in previous versions of CVector, is to generate your own files from the template files which are located in <a class="el" href="cvector__template_8h.html">cvector_template.h</a> and <a class="el" href="cvector__template2_8h.html">cvector_template2.h</a>.</p>
 <p>To generate your own cvector files for a type just run: </p><pre class="fragment">python3 generate_code.py yourtype
 </pre><p> which will generate the results for both templates so just delete the one you don't want.</p>
-<p><a class="el" href="structcvector__short.html" title="Data structure for short vector.">cvector_short</a> and <a class="el" href="structcvector__f__struct.html">cvector_f_struct</a> are examples of the generated files. While I now test the macros instead of the files, it's the same code, and you can still see how I used to test them.</p>
+<p><a class="el" href="cvector__short_8h.html">cvector_short.h</a> and <a class="el" href="cvector__f__struct_8h.html">cvector_f_struct.h</a> are examples of the generated files.</p>
 <h1><a class="anchor" id="des_notes"></a>
 Design Notes</h1>
 <p>With the exception of CVEC_STRDUP calls in <a class="el" href="structcvector__str.html" title="Data structure for string vector.">cvector_str</a>, memory allocations are checked and asserted. I decided that the likelihood of individual string allocations failing is low enough that it wasn't worth the slowdown or extra code. However, the equivalent calls to elem_init in vector_void and generated vector_TYPEs are checked/asserted (since they're more likely to be large enough to possibly fail). If not in debug mode (ie NDEBUG is defined) 0 is returned on allocation failure.</p>
@@ -109,7 +110,7 @@ Building</h1>
 <p>There is no output of any kind, no errors or warnings.</p>
 <p>It has been relatively well tested using CUnit tests which all pass. I've also run it under valgrind and there are no memory leaks.</p>
 <pre>
-valgrind --leak-check=full -v ./cvector
+$ valgrind --leak-check=full -v ./cvector
 ==116175==
 ==116175== HEAP SUMMARY:
 ==116175==     in use at exit: 0 bytes in 0 blocks
@@ -118,6 +119,10 @@ valgrind --leak-check=full -v ./cvector
 ==116175== All heap blocks were freed -- no leaks are possible
 ==116175==
 ==116175== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+$ grep FAIL CUnitAutomated-Results.xml
+&lt;FAILED&gt; 0 &lt;/FAILED&gt; 
+&lt;FAILED&gt; 0 &lt;/FAILED&gt; 
+&lt;FAILED&gt; 0 &lt;/FAILED&gt; 
 </pre><p>You can probably get Cunit from your package manager but if you want to get the most up to date version of CUnit go here:</p>
 <p><a href="http://cunit.sourceforge.net/index.html">http://cunit.sourceforge.net/index.html</a> <a href="http://sourceforge.net/projects/cunit/">http://sourceforge.net/projects/cunit/</a></p>
 <p>I'm using version 2.1-3.</p>
@@ -127,7 +132,7 @@ Usage</h1>
 <h1><a class="anchor" id="LICENSE"></a>
 LICENSE</h1>
 <p>CVector is licensed under the MIT License.</p>
-<p>Copyright (c) 2011-2022 Robert Winkler</p>
+<p>Copyright (c) 2011-2023 Robert Winkler</p>
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
 <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. </p>
@@ -135,7 +140,7 @@ LICENSE</h1>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 21 2022 14:19:29 for CVector by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Mar 15 2023 02:59:49 for CVector by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
