@@ -61,7 +61,7 @@ ${next.body()}
 	</div>
 </div>
 <p class="container" style="font-size:0.75em;color:#b3b3b3;text-align:center;">
-	© Robert Winkler, 2010 - 2022. Site design based on an old version of
+	© Robert Winkler, 2010 - 2023. Site design based on an old version of
 	<a href="http://www.michaelfogleman.com/">Michael Fogelman's awesome site</a>.
 </p>
 </%block>

@@ -34,12 +34,10 @@ some HS students, a business man who just wanted to learn Python etc.
 <ul>
 	<li>C</li>
 	<li>Python 3</li>
-	<li>Assembly (MIPS R2000/R3000, RISC-V Intel x86_64 on Linux, LC-3)</li>
+	<li>Assembly (MIPS R2000/R3000, RISC-V, Intel x86_64 on Linux)</li>
 	<li>C++</li>
 	<li>Scheme/Racket</li>
-	<li>Java</li>
-	<li>Linux/*nix (general use, development toolchain etc.)</li>
-##	<li>Calculus</li>
+	<li>Linux/*nix (general/terminal use, development toolchain (gcc/clang/(neo)vim) etc.)</li>
 </ul>
 <h3>ASU Courses I've helped students with</h3>
 <p>
@@ -57,6 +55,13 @@ have changed since I took them.
 </ul>
 
 <h3>Reviews</h3>
+"Robert's Expertise in Assembly Made My Project a Breeze!"
+- Nafas Los Angeles, CA on 7/21/2023
+I had the privilege of working with Robert on what seemed to be the most daunting project in assembly programming, and I can confidently say that I wouldn't have made it through without his unwavering support and expertise. Robert's outstanding qualities as a mentor truly shone throughout the entire process, making the journey smooth, engaging, and ultimately successful. From the outset, it was evident that Robert is a hardworking individual with an immense passion for his craft. His dedication to ensuring my understanding and progress was inspiring, and he consistently went the extra mile to provide guidance beyond the project's scope. Despite the complexity of the subject matter, he never wavered in his commitment to seeing me succeed. One of the aspects that truly stood out was Robert's genuine care for my success. It wasn't just about completing the project; he wanted me to grasp the concepts fully. His encouraging words and reassurance were invaluable during times of frustration, instilling in me the confidence to overcome challenges. Robert's extensive knowledge and professionalism in the field of assembly programming are truly awe-inspiring. He possesses a remarkable ability to break down complex concepts into simple and understandable explanations. His clarity and effective communication skills made even the most intricate assembly principles accessible to me, helping me gain a profound comprehension of the subject matter. I cannot express my gratitude enough for Robert's mentorship during this project. His hard work, patience, caring nature, fairness, knowledge, and professionalism combined to create an unforgettable learning experience. If you have the opportunity to work with Robert, consider yourself fortunate. He is a mentor par excellence, and I wholeheartedly recommend him to anyone seeking guidance in the world of assembly programming or any technical endeavor.
+
+"EXCELLENT!!!"
+- Lila Wilmington, NC on 4/1/2023
+Robert is the tutor you want. Go no further. My son said to me, this is the best I’ve felt in weeks. Another review called him the GOAT. My son agreed.
 
 "Very thorough, nice"
 - Terrell Fredericksburg, TX on 12/5/2022
@@ -220,6 +225,15 @@ Another session with Robert, very helpful and full of useful tips. Finished my w
 =======================
 Same reviews below but without date or location info and with number of sessions (at the time of copying)
 =======================
+Robert's Expertise in Assembly Made My Project a Breeze!
+I had the privilege of working with Robert on what seemed to be the most daunting project in assembly programming, and I can confidently say that I wouldn't have made it through without his unwavering support and expertise. Robert's outstanding qualities as a mentor truly shone throughout the entire process, making the journey smooth, engaging, and ultimately successful. From the outset, it was evident that Robert is a hardworking individual with an immense passion for his craft. His dedication to ensuring my understanding and progress was inspiring, and he consistently went the extra mile to provide guidance beyond the project's scope. Despite the complexity of the subject matter, he never wavered in his commitment to seeing me succeed. One of the aspects that truly stood out was Robert's genuine care for my success. It wasn't just about completing the project; he wanted me to grasp the concepts fully. His encouraging words and reassurance were invaluable during times of frustration, instilling in me the confidence to overcome challenges. Robert's extensive knowledge and professionalism in the field of assembly programming are truly awe-inspiring. He possesses a remarkable ability to break down complex concepts into simple and understandable explanations. His clarity and effective communication skills made even the most intricate assembly principles accessible to me, helping me gain a profound comprehension of the subject matter. I cannot express my gratitude enough for Robert's mentorship during this project. His hard work, patience, caring nature, fairness, knowledge, and professionalism combined to create an unforgettable learning experience. If you have the opportunity to work with Robert, consider yourself fortunate. He is a mentor par excellence, and I wholeheartedly recommend him to anyone seeking guidance in the world of assembly programming or any technical endeavor.
+Nafas, 4 lessons with Robert
+
+EXCELLENT!!!
+Robert is the tutor you want. Go no further. My son said to me, this is the best I’ve felt in weeks. Another review called him the GOAT. My son agreed.
+Lila , 11 lessons with Robert
+
+
 Very thorough, nice
 Robert helped me with a really nasty (not to him so much) project that was due same day. He got through the whole thing in a couple of sessions. Well done and thanks Robert!
 
