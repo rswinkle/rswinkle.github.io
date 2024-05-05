@@ -1,11 +1,11 @@
 PortableGL
 ==========
 
-"Because of the nature of Moore's law, anything that an extremely clever graphics programmer can do at one point can be replicated by a merely competent programmer some number of years later." - John Carmack
+***"Because of the nature of Moore's law, anything that an extremely clever graphics programmer can do at one point can be replicated by a merely competent programmer some number of years later."*** -John Carmack
 
 
-In a nutshell, PortableGL is an implementation of OpenGL 3.x core in clean C99 as a single header library (in the style of the
-[stb libraries](https://github.com/nothings/stb)).
+In a nutshell, PortableGL is an implementation of OpenGL 3.x core (mostly; see [GL Version](https://github.com/rswinkle/PortableGL#gl-version))
+in clean C99 as a single header library (in the style of the [stb libraries](https://github.com/nothings/stb)).
 
 It can theoretically be used with anything that takes a framebuffer/texture as input (including just writing images to disk manually or using something like stb_image_write) but all the demos use SDL2 and it currently only supports 8-bits per channel RGBA as a target (and also for textures).
 
@@ -17,7 +17,7 @@ Its goals are,
 4. Straightforward code
 5. Speed
 
-Obviously there are tradeoffs between several of those.  An example where 4 trumps 2 (and arguably 3) is with shaders.  Rather than
+Obviously there are trade-offs between several of those.  An example where 4 trumps 2 (and arguably 3) is with shaders.  Rather than
 write or include a GLSL parser and have a built in compiler or interpreter, shaders are special C functions that match a specific prototype.
 Uniforms are another example where 3 and 4 beat 2 because it made no sense to match the API because we can do things so much simpler by
 passing a pointer to a user defined struct (see the examples).
@@ -25,6 +25,8 @@ passing a pointer to a user defined struct (see the examples).
 Download
 ========
 Get the source from [Github](https://github.com/rswinkle/PortableGL).
+
+You can also install it via [Homebrew](https://formulae.brew.sh/formula/portablegl).
 
 Gallery
 =======
@@ -80,16 +82,28 @@ useful alternative to Mesa3D or similar.
 Another special case is hobby OS's.  The hardware they run on might have a GPU but it might be impossible or more trouble than it's worth to get Mesa3D
 to run on some systems.  If they have a C99 compliant compiler and standard library, they could use PortableGL to get at least some OpenGL-ish 3D support.
 
+### Why C
+I recently came across a comment regarding PortableGL that essentially asked, "why implement a dead technology
+in a dying language?"
+
+While I would argue that OpenGL is far from dead and C [isn't even close to dying](https://www.tiobe.com/tiobe-index/),
+there are many [good reasons](https://chipmunk-physics.net/release/ChipmunkLatest-Docs/#Intro-WhyC) to write a library
+in C.  Beyond those, OpenGL is a C API so it would be weird if you couldn't use it from C.  Writing it in clean C means it
+compiles as C++ too.  Lastly, I just like C.  It was my first language and is still my favorite for a host of reasons.
+Hey, if it's good enough for Bellard, it's certainly good enough for me.
+
+
 Documentation
 =============
 
-There is the documentation in the comments at the top of the file (from src/header_docs.txt) but there is currently
-no formal documentation.  Looking at the examples and demos (and comparing them to
+There is the documentation in the comments at the top of the
+[file](https://raw.githubusercontent.com/rswinkle/PortableGL/master/src/header_docs.txt) but there
+is currently no formal documentation.  Looking at the examples and demos (and comparing them to
 [opengl_reference](https://github.com/rswinkle/opengl_reference)) should be helpful.
 
 I've also started porting the [learnopengl](https://learnopengl.com/) tutorial code [here](https://github.com/rswinkle/LearnPortableGL)
 which is or will be the best resource, combining his tutorials explaining the OpenGL aspects and my comments in the ported code
-explaining the differences ond PGL limitations (at least in the first time they appear).
+explaining PortableGL's differences and limitations (at least in the first time they appear).
 
 Honestly, the official OpenGL docs
 and [reference pages](https://www.khronos.org/registry/OpenGL-Refpages/gl4/) are good for 90-95% of it as far as basic usage:
@@ -98,19 +112,109 @@ and [reference pages](https://www.khronos.org/registry/OpenGL-Refpages/gl4/) are
 [4.5 comprehensive reference](https://www.khronos.org/registry/OpenGL-Refpages/gl4/)
 [tutorials and guides](https://www.khronos.org/opengl/wiki/Getting_Started#Tutorials_and_How_To_Guides)
 
+### GL Version
+
+You may have noticed that I link to OpenGL 4 references above, even though I describe PortableGL as "3.x-ish".
+There is a good reason for that.
+
+When I first started PortableGL I originally wanted to target OpenGL 3.3 Core profile since that's what I knew, and
+for the history of this project I've described it as 3.x-ish core, but that's not entirely accurate.  While I
+don't include any of the old fixed function stuff (no glBegin/glEnd or anything that goes with them), right away
+I found that I supported some things from the compatibility profile (like a default VAO) for free.  Later I
+realized there was no reason not to add many of the 4.x DSA functions which are also simple to implement as everything
+is in RAM anyway.  Mapping buffers is free for the same reason, and textures too (see
+[pgl_ext.c](https://raw.githubusercontent.com/rswinkle/PortableGL/master/src/pgl_ext.c)).
+
+Recently I've been working with OpenGL ES 2.  I've worked with it before but in the past it seemed
+so similar to what I already knew, I mostly skimmed the book, assuming most differences were just fewer formats
+and smaller limits.  Obviously that's not quite true.  In digging deeper, I learned about "client arrays" and they explain
+so why the last parameter to VertexAttribPointer is `GLVoid* pointer` and not `GLsizei offset`.
+Of course the name should have given it away too.  Turns out even OpenGL 3.3 (compatibility) and ES 3.0 still
+support client arrays, as long as the current VAO is 0.  So now I technically match their spec but as a software
+renderer, there's really no downside to using client arrays if you prefer that.  You can easily change
+the [if statement](https://github.com/rswinkle/PortableGL/blob/master/src/gl_impl.c#L1271)  or just
+use `portablegl_unsafe.h` instead.
+
+So what version of OpenGL is PortableGL?  _Shrug_, it's still mostly 3.x but I will add things outside of
+3.x as long as it makes sense to me and is in line with the goals and priorities of the project.
+
 Building
 ========
-If you have SDL2 installed you should be able to cd into examples, demos, or testing, and just run `make` or `make config=release` for optimized builds.
-I use premake generated makefiles that I include in the repo, but you should be able to compile it on Windows or Mac too, there's nothing Linux
-specific about the code.  I'll fill out this section more later.
+
+There are no dependencies for PortableGL itself, other than a compliant C99/C++ compiler.  The examples, demos,
+and the performance test use SDL2 for the window/input/getting a framebuffer to the screen.
+If you just want to do a quick test that it compiles and runs:
+
+	cd testing
+	make run_tests
+	...
+	./run_tests
+	...
+	All tests passed
+
+You can look in testing/test_output to see the png's generated by `run_tests` which are compared with those in testing/expected_output.
+For each test that fails, two files will be generated: testname_diff.png and testname_diff.txt.  The first is a black image with any pixels
+that didn't match the expected output being white.  The second lists the exact pixel values and their expected values in the format:
+
+	Diff from (195, 67) to (195, 67):
+	(252 253 248 255)
+	(251 253 248 255)
+	Diff from (330, 67) to (331, 67):
+	(253 254 249 255) (252 253 249 255)
+	(253 253 249 255) (253 253 249 255)
+
+This format is subject to change but for now it lists runs of consecutive mismatching pixels with the produced output on the first line
+and the expected output on the second line.  The coordinates are image coordinates, from the top left, not the bottom left like when
+PGL actually generated the image.
+
+For the rest, on Debian/Ubuntu based distributions you can install SDL2 using the following command:
+
+`sudo apt install libsdl2-dev`
+
+On Mac you can download the DMG file from their [releases page](https://github.com/libsdl-org/SDL/releases/tag/release-2.24.1) or install it through
+a package manager like [Homebrew](https://brew.sh/), [MacPorts](https://ports.macports.org/), or [Fink](https://www.finkproject.org/).  Note, I do
+not own a mac and have never tested PortableGL on one.  Worst case, you can always just compile SDL2 from source but one of the above options should work.
+
+Once you have SDL2 installed you should be able to cd into examples, demos, or testing, and just run `make` or `make config=release` for optimized builds.
+
+On Windows you can grab the zip you want from the same releases page linked above.
+
+I use premake generated makefiles that I include in the repo which I use on Linux.  I have used these same Makefiles
+to build under [MSYS2](https://www.msys2.org/) on Windows.  However, at least for now, even though PortableGL and all the
+examples and demos are cross platform, I don't officially support building them on other platforms.  I've thought about
+removing the premake scripts from the repo entirely and just leaving the Makefiles to make that clearer but decided not to
+for the benefit of those who want to modify it for themselves to handle different platforms and build systems.
+
+To sum up, the only thing that should be guaranteed to build and run anywhere out of the box with no extra effort on your part
+are the regression tests since they don't depend on anything.
+
+Directory Structure
+===================
+- `demos`: More advanced open ended programs demonstrating a wide variety of features
+- `examples`: Very basic "hello triangle" type examples in C and C++
+- `glcommon`: Collection of helper libraries I use for graphics programming
+- `media`: Parent directory for all external resources
+    - `models`: Models in my own simplified text format (created with `demos/assimp_convert`)
+    - `screenshots`: All screenshots used in the various README files
+    - `textures`: All textures used in any program in the repo
+- `src`: Contains the actual source files of `portablegl.h` which are amalgamated with `generate_gl_h.py`
+- `testing`: Contains a more formal regression and performance test suite
+    - `expected_output`: The expected output frames for each of the regression tests
+- `portablegl.h` : Current dev version of PortableGL
+- `portablegl_unsafe.h` : Current dev version of PortableGL without most GL error checking
+
+While I try not to introduce bugs, they do occasionally slip in, as well as (rarely) breaking
+changes.  After the official 0.98.0 release I'll move to more frequent point releases for fixes
+and non-breaking changes and when I eventually reach 1.0 I'll make it 1.0.0 and be closer
+to semantic versioning.
 
 Modifying
 =========
-portablegl.h (and portablegl_unsafe.h) is generated in the src subdirectory with the python script generate_gl_h.py.
+`portablegl.h` (and `portablegl_unsafe.h`) is generated in the src subdirectory with the python script `generate_gl_h.py`.
 You can see how it's put together and either modify the script to leave out or add files, or actually edit any of the code.
-Make sure if you edit gl_impl.c that you also edit gl_impl_unsafe.c.
+Make sure if you edit `gl_impl.c` that you also edit `gl_impl_unsafe.c`.
 
-Additionally, there is a growing set of more formal tests in /testing, one set of regression/feature tests, and one for
+Additionally, there is a growing set of more formal tests in `testing`, one set of regression/feature tests, and one for
 performance.  If you make any changes to core algorithms or data structures, you should definitely run those and make
 sure nothing broke or got drastically slower.  The demos can also function as performance tests, so if one of those
 would be especially affected by a change, it might be worth comparing its before/after performance too.
@@ -162,8 +266,7 @@ I'll probably add others to this list as I find them.
 
 [TinyGL](https://bellard.org/TinyGL/) is Fabrice Bellard's implementation of a subset of OpenGL 1.x.  If you want something like PortableGL
 but don't want to write shaders, just want old style glBegin/glEnd/glVertex etc. this is the closest I know of.  Also I shamelessly copied his
-clipping code because I'm not 1/10th the programmer Bellard was even as an undergrad and I knew it would "just work".  I've included his copyright
-and BSD license in LICENSE just in case.
+clipping code because I'm not 1/10th the programmer Bellard was even as an undergrad and I knew it would "just work".
 
 [TinyGL Updated](https://github.com/C-Chads/tinygl): An updated and cleaned up version of TinyGL that adds several fixes and features, including performance
 tuning and limited multithreading.
@@ -172,7 +275,6 @@ tuning and limited multithreading.
 and Mike Sartain.  You can read a [series](https://www.drdobbs.com/architecture-and-design/optimizing-pixomatic-for-x86-processors/184405765)
 [of](https://www.drdobbs.com/optimizing-pixomatic-for-modern-x86-proc/184405807)
 [articles](https://www.drdobbs.com/optimizing-pixomatic-for-modern-x86-proc/184405848) about it written by Abrash for Dr. Dobbs.
-
 
 [TTSIOD](https://www.thanassis.space/renderer.html) is an advanced software renderer written in C++.
 
@@ -183,15 +285,20 @@ algorithm do its job, same as graphics hardware does.  While the inheritance + t
 every time you think of some new feature you want to interpolate, you need to define a new struct and a new template function specialization.
 Having a function/pipeline that just takes an arbitrary amount of float data to operate on takes less code *and* even has less runtime overhead
 since it's a single function that interpolates all the features at once rather than having to call a function for each feature.  See lines ~1200-1250
-of gl_internals.c.  Obviously it looks more complicated with all the other openGL stuff going on but you can see a simpler version on line 308 that's
+of `src/gl_internals`.  Obviously it looks more complicated with all the other openGL stuff going on but you can see a simpler version on line 308 that's
 used for interpolating between line endpoints instead of over a triangle.  This is closer to his example but still longer because it has to support
 SMOOTH, PERSPECTIVE and FLAT.  You can see the shape of a straightforward implementation even there though, and the benefits of decoupling the
 algorithm from the data it operates on.
 
 [Mesa3D](https://mesa3d.org/) is an open source implementation of OpenGL, Vulkan and other graphics APIs.  It includes several different software renderers including the Gallium rasterizer (softpipe or llvmpipe depending on whether llvm is used) and Intel's OpenSWR.
 
-[bbgl](https://github.com/graphitemaster/bbgl) is just a very interesting concept.  When I first saw it soon after it was published I was very frightened that it was exactly what PortableGL is but far more polished and from a better programmer.  Fortunately, it is not.
+[libosmesa](https://github.com/starseeker/osmesa) is an extraction and clean-up of the subset of Mesa3D 7.0.4 needed to support the old "swrast"
+software rasterizer and OSMesa offscreen renderer (both of which were removed from upstream Mesa3D in 2020.)  libosmesa's intended purpose is to
+allow programs to offer a last-resort fallback renderer when system OpenGL capabilities are unavailable (or inadequate), while being fully self
+contained and buildable as simple C with no external dependencies (which is why the 7.0.4 version was chosen for ths purpose.)  As that version
+of Mesa targets OpenGL v2.1, libosmesa may be a useful middle ground between PortableGL's OpenGL 3.x target and TinyGL's minimalist subset.
 
+[bbgl](https://github.com/graphitemaster/bbgl) is just a very interesting concept.  When I first saw it soon after it was published I was very frightened that it was exactly what PortableGL is but far more polished and from a better programmer.  Fortunately, it is not.
 
 [pixman](http://pixman.org/) I feel like you could use them together or combine useful parts of pixman with PortableGL.
 
@@ -199,13 +306,25 @@ algorithm from the data it operates on.
 
 [swGL](https://github.com/h0MER247/swGL) A GPL2 multithreaded software implementation of OpenGL 1.3(ish) in C++. x86 and Windows only.
 
+[SoftGLRender](https://github.com/keith2018/SoftGLRender) A OpenGL renderer/rasterizer in modern C++.  The very impressive
+demo lets you toggle and change various features and settings including switching seamlessly between the GPU and the software
+renderer.  AFAIK, this is the only project that lets you write shaders in C++ like PortableGL, however the process is more complicated
+since it has to work with the same class/API structure as real OpenGL and can't take the shortcuts that PortableGL does.
+An advantage of all the extra plumbing and complexity is the actual C++ shader code is more standardized, looks a little cleaner, and more like GLSL.
+Besides supporting many more features (though I didn't see gl_FragDepth?), it is also optimized with threading, and SIMD on x86.
+Given all the abstraction and extra overhead necessary to do what it does, it's impressive it manages to still be as fast as it is.
+As best I can tell, disabling features to get vaguely close to an apples to apples comparison, it's about as fast as PortableGL.
+So if you want OpenGL, don't need to use C, like modern C++/OOP style, and want software rendering while still being able to write your
+own shaders and avoid the old fixed-function mess, this might be the best option on this list (or a generic C++ OpenGL wrapper library
+linked with modern Mesa+llvmpipe).
+
 
 LICENSE
 =======
 PortableGL is licensed under the MIT License (MIT)
 
-The code used for clipping is copyright (c) Fabrice Bellard from TinyGL under the
-BSD License, see LICENSE.
+The code used for clipping is copyright (c) Fabrice Bellard from TinyGL also under
+the MIT License, see LICENSE.
 
 
 TODO/IDEAS
@@ -218,9 +337,10 @@ TODO/IDEAS
 - [x] Unsafe mode (ie no gl error checking for speedup)
 - [ ] ~~Finish duplicating NeHe style tutorial programs from [learningwebgl](https://github.com/rswinkle/webgl-lessons) to [opengl_reference](https://github.com/rswinkle/opengl_reference) and then porting those to use PortableGL~~ Port [learnopengl](https://learnopengl.com/) instead, repo [here](https://github.com/rswinkle/LearnPortableGL) WIP.
 - [x] Port medium to large open source game project as correctness/performance/API coverage test (Craft done)
-- [ ] Fix bug in cubemap demo
+- [x] Fix bug in cubemap demo
 - [ ] More texture and render target formats
 - [ ] Logo
+- [ ] Update premake scripts to Premake5 and handle other platforms once 5 is out of beta
 - [x] Formal regression testing (WIP)
 - [x] Formal performance testing (WIP)
 - [ ] Formal/organized documentation

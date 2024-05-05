@@ -1,6 +1,5 @@
 CVECTOR
 =======
-[![Build Status](https://travis-ci.org/rswinkle/CVector.svg?branch=master)](https://travis-ci.org/rswinkle/CVector)
 
 [Download](https://github.com/rswinkle/cvector)
 
@@ -35,10 +34,13 @@ malloc when given a NULL pointer.  With cvector_void you still have to set
 elem_size, and optionally elem_free/elem_init. See the zero_init_x_test()'s
 in cvector_tests.c for example of that use.
 
-The `cvec_sz` type defaults to size_t but if you define CVEC_SIZE_T before including
+The `cvec_sz` type defaults to `size_t` but if you define CVEC_SIZE_T before including
 the header which is then `typedef`'d to `cvec_sz`.  It has to be defined before
 every header inclusion since it is used in both the header (struct definiton)
-and the implementation.
+and the implementation.  Note, if you use a signed type, passing a negative value
+is undefined behavior (ie it'll likely crash immediately).  Of course if you
+passed a negative while using the default `size_t` you'd probably crash anyway
+as it would wrap around to 2^64.
 
 There are also 2 templates, one for basic types and one for types that contain
 dynamically allocated memory and you might want a free and/or init function.
@@ -148,7 +150,7 @@ LICENSE
 =======
 CVector is licensed under the MIT License.
 
-Copyright (c) 2011-2023 Robert Winkler
+Copyright (c) 2011-2024 Robert Winkler
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation

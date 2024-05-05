@@ -1,7 +1,6 @@
 sdl_img
 =======
 
-[![Build Status](https://travis-ci.org/rswinkle/sdl_img.svg?branch=master)](https://travis-ci.org/rswinkle/sdl_img)
 [![Coverity Scan Build Status](https://scan.coverity.com/projects/15740/badge.svg)](https://scan.coverity.com/projects/rswinkle-sdl_img)
 
 A "simple" image viewer based on [stb_image.h](https://github.com/nothings/stb/blob/master/stb_image.h) (with the suggested animated GIF API extension).
@@ -32,49 +31,71 @@ to be sdl_img.exe and then double clicking any image of that type will open it
 with sdl_img.  Left and right will go through images in the same directory in
 alphabetical order.
 
+| Basic Controls      | Description |
+| --------------------|-------------|
+| Left (or Up)        | Previous image(s) or pan if appropriate |
+| Right (or Down)     | Next image(s) or pan if appropriate |
+| Space               | Next image(s) |
+| CTRL+Space          | Previous image(s) |
+| CTRL + Direction    | Next or previous image(s) even when zoomed in |
+| +/-                 | Zoom in/out |
+| Mouse Wheel         | Zoom in/out |
+| Left click + drag   | Pan around a zoomed in image |
+| A                   | Actual size |
+| F                   | Toggle fill screen mode |
+| Home                | Go to first image in the list |
+| M                   | Shuffle (Mix) the images (only in single mode) |
+| N                   | Sort the images by file name (only in single mode) |
+| CTRL+N              | Sort the images by file path (only in single mode) |
+| Z                   | Sort the images by size (only in single mode) |
+| T                   | Sort the images by last modified (only in single mode) |
+| CTRL + F or F11     | Toggle Fullscreen |
+| ESC                 | Exit or "Back" similar to Android |
+| L/R                 | Rotate the current image left/right |
+| H/V                 | Flip the current image horizontally/vertically |
+| Delete              | Delete the current image and move to the next (only in single mode) |
+| Backspace           | Remove the current image and move to the next (only in single mode) |
+| CTRL + 1            | Single image mode |
+| CTRL + 2            | Double image mode |
+| CTRL + 4            | Quad image mode   |
+| CTRL + 8            | 8 image mode      |
+| CTRL + U            | Thumbnail mode    |
+| CTRL + I            | List mode    |
+| F1 - F10            | Start a slideshow with 1 - 10 second delay |
 
-| Controls          | Description |
-| ------------------|-------------|
-| Left (or Up)      | Previous image(s) or pan if appropriate |
-| Right (or Down)   | Next image(s) or pan if appropriate |
-| Space             | Next image(s) |
-| CTRL+Space        | Previous image(s) |
-| +/-               | Zoom in/out |
-| CTRL + +/-        | Speed up or slow down an animated gif |
-| CTRL + Direction  | Next or previous image(s) even when zoomed in |
-| Mouse Wheel       | Zoom in/out |
-| Left click + drag | Pan around a zoomed in image |
-| A                 | Actual size |
-| F                 | Toggle fill screen mode |
-| M                 | Shuffle (Mix) the images (only in single mode) |
-| N                 | Sort the images by file name (only in single mode) |
-| CTRL+N            | Sort the images by file path (only in single mode) |
-| Z                 | Sort the images by size (only in single mode) |
-| T                 | Sort the images by last modified (only in single mode) |
-| P                 | Pause/Unpause gif |
-| CTRL + F or F11   | Toggle Fullscreen |
-| ESC               | Exit or "Back" similar to Android |
-| L/R               | Rotate the current image left/right |
-| H/V               | Flip the current image horizontally/vertically |
-| Delete            | Delete the current image and move to the next (only in single mode) |
-| Backspace         | Remove the current image and move to the next (only in single mode) |
-| CTRL + 1          | Single image mode |
-| CTRL + 2          | Double image mode |
-| CTRL + 4          | Quad image mode   |
-| CTRL + 8          | 8 image mode      |
-| CTRL + U          | Thumbnail mode    |
-| CTRL + I          | List mode    |
-| F1 - F10          | Start a slideshow with 1 - 10 second delay |
+For GIFS there are extra controls, though the progress bar is only
+displayed if you are viewing a GIF in single image mode:
 
-The most obvious unique features are the multi-image modes but others include
-slowing/speeding/pausing gifs, vim inspired thumbnail mode, shuffle/sort etc.
+| GIF Controls            | Description |
+| --------------------    |-------------|
+| CTRL + +/-              | Speed up or slow down an animated gif |
+| CTRL + Mouse Wheel      | Speed up or slow down an animated gif |
+| P                       | Pause/Unpause gif |
+| Mouse over progress bar | Pause |
+| Wheel over progress bar | Scroll through frames |
+| click/drag progress bar | select/scroll frames |
+
+The most obvious unique features are the multi-image modes but others include the
+extra GIF features, the vim inspired thumbnail mode, the list mode, shuffle/sort etc.
 
 Within each image mode the basic controls work on all images simultaneously
 unless a specific image is selected by hitting 1-n and then they operate only
 on that image, ie cycling, zooming, fit will only effect that image.
-To return to "all at once" mode, hit 0.  In this way you can compare multiple
-images simultaneously with a single viewer instance (even if they aren't sequential
-alphabetically).  Switching from a higher mode to a lower will show the first n images
+To return to "all at once" mode, hit 0.
+
+By default, when you hit next/prev in n-image mode, it will display the n sequential
+images immediately after the nth image or before the 1st image.  This is annoying if
+you're trying to compare a sequence of tuples that aren't interleaved when sorted.  For
+example if you have files abc01.jpg, abc02.jpg,... and xyz01.jpg, xyz02.jpg..., all of
+the former would sort first.  If you wanted to compare abcX with xyzX in 2-image mode
+every time you hit next, you'd go from [abcX,xyzX] to [xyzX+1,xyzX+2].  To solve this
+you can go to preferences and select the toggle "Preserve relative offsets in multimode
+movement" which would lead to [abcX,xyzX] to [abcX+1,xyzX+1] behavior.  I'm open to
+a better name/description ("Independent movement mode"?) and to making that the default
+behavior.
+
+Switching from a lower to a higher mode will load images to the right of the last image
+currently viewed.  Switching from a higher to a lower will show the first n images
 of the higher mode where n is the lower number.  An exception is if you have an
 image selected and go to single mode, that is the image that will be used.
 
@@ -84,7 +105,7 @@ All other controls work while in slideshow mode, meaning starting a slideshow do
 automatically toggle to fullscreen, it will run in double, quad or oct-image mode, or
 even on a single image selected within those modes.
 
-Something to note about the rotation functionality are that while it will rotate any
+Something to note about the rotation functionality is that while it will rotate any
 image, it will only ask whether you're sure you want to save single frame images because
 stb_image_write does not support gifs at all, let alone animated gifs.  It will try to
 detect the type from the extension and output that type if possible, otherwise jpg is
@@ -114,6 +135,43 @@ There is also the -c/--cache option which allows you to specify a custom cache
 location (only for this instance) which can be useful if you know you want to
 save these images and don't want to bother copying them from the normal cache later.
 
+Vim Inspired Thumb Mode
+=======================
+Switch with CTRL+U to viewing all your current images as thumbnails on a vertically
+scrolling plane.  Animated GIF thumbnails are generated from the first frame.
+You can use the arrows and mouse and scrollwheel to move around
+and select an image but if you're a vim user you'll feel right at home.
+
+| Thumbmode Controls      | Description |
+| --------------------    |-------------|
+| Arrow Keys or HJKL      | Move around |
+| Mouse Wheel             | Move up and down |
+| Click                   | Move to that image |
+| Enter or Double Click   | Change to normal mode on current image |
+| CTRL + HJKL             | Adjust the number of rows and columns shown |
+| Backspace or R          | Removes current selection from the list |
+| X                       | Removes and possibly Deletes current selection |
+| CTRL + Backspace/R/X    | Invert action (remove/delete unselected items) |
+| /                       | Start typing a search |
+| /pattern + ENTER        | Enter "Results mode" (cycle with n/N) |
+| CTRL + ENTER            | (in results mode) View results |
+| ESC                     | Exit or "Back" similar to Android |
+
+The number of rows and columns can also be set in Preferences, as well as whether X deletes
+instead of just removing the selection.
+
+List Mode
+=========
+Switch with CTRL+I to view a list of all your current images with columns showing the size
+and last modified time.  You can select the column headings to sort by that ascending or
+descending.  You can scroll through the list or use up and down.  Hitting Enter or double
+clicking will go back to normal mode on that image.
+
+Type something in the search bar at the top and hit enter to show a list of files that match.
+Same controls as normal list mode, but if you hit enter or double click you will be in "View
+Results" mode, which is normal mode but only viewing the results (same as from thumb search).
+ESC to backs out of View Results, Results, and list mode entirely.
+
 Building
 ========
 On Linux, just run `./build.sh` for debug, `./build_release.sh` for release.
@@ -142,8 +200,7 @@ so I chose sdl_img rather than stb_img.  Unfortunately, SDL_image and SDL2_image
 (libsdl-image1.2 and libsdl2-image in repos) also exist so there's a minor clash there too.
 
 Now I'm using the following libraries:
-[SDL2](https://www.libsdl.org), [SDL2_gfx](http://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/)
-stb_image, stb_image_write, stb_image_resize
+[SDL2](https://www.libsdl.org), stb_image, stb_image_write, stb_image_resize
 [libcurl](https://curl.haxx.se/libcurl/)
 [nuklear](https://github.com/vurtun/nuklear) (immediate mode GUI library)
 [WjCryptLibMd5](https://github.com/WaterJuice/WjCryptLib)
