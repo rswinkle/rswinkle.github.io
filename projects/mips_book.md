@@ -9,10 +9,15 @@ make the programming portion of such classes much easier.
 
 ## Read It
 
-Read the latest version in html or pdf:
+Read the latest version in html, pdf, or epub:
 
 - [html page](http://www.robertwinkler.com/projects/mips_book/mips_book.html)
 - [pdf](http://www.robertwinkler.com/projects/mips_book/mips_book.pdf)
+- [epub](http://www.robertwinkler.com/projects/mips_book/mips_book.epub)
+
+It is also available on Leanpub:
+<iframe width='160' height='400' src='https://leanpub.com/mipsassemblyprogrammming/embed' frameborder='0' allowtransparency='true'></iframe>
+
 
 ## Source
 
@@ -21,7 +26,7 @@ Get the asciidoc source from [Github](https://github.com/rswinkle/mips_book)
 ## Exercise Solutions
 
 Support the book and buy the solutions to the chapter exercises
-[here](https://store.robertwinkler.com/).
+at [my store](https://store.robertwinkler.com/) or at [Leanpub](https://leanpub.com/mipsassemblyprogrammming)
 
 ## Contact Me/Tutoring
 
