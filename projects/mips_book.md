@@ -11,9 +11,9 @@ make the programming portion of such classes much easier.
 
 Read the latest version in html, pdf, or epub:
 
-- [html page](http://www.robertwinkler.com/projects/mips_book/mips_book.html)
-- [pdf](http://www.robertwinkler.com/projects/mips_book/mips_book.pdf)
-- [epub](http://www.robertwinkler.com/projects/mips_book/mips_book.epub)
+- [html page](https://www.robertwinkler.com/projects/mips_book/mips_book.html)
+- [pdf](https://www.robertwinkler.com/projects/mips_book/mips_book.pdf)
+- [epub](https://www.robertwinkler.com/projects/mips_book/mips_book.epub)
 
 It is also available on Leanpub:
 <iframe width='160' height='400' src='https://leanpub.com/mipsassemblyprogrammming/embed' frameborder='0' allowtransparency='true'></iframe>
