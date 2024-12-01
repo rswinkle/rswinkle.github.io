@@ -16,7 +16,7 @@ Read the latest version in html, pdf, or epub:
 - [epub](https://www.robertwinkler.com/projects/riscv_book/riscv_book.epub)
 
 It is also available on Leanpub:
-<iframe width='160' height='400' src='https://leanpub.com/riscvassemblyprogrammming/embed' frameborder='0' allowtransparency='true'></iframe>
+<iframe width='160' height='400' src='https://leanpub.com/riscvassemblyprogramming/embed' frameborder='0' allowtransparency='true'></iframe>
 
 ## Source
 
@@ -25,7 +25,7 @@ Get the asciidoc source from [Github](https://github.com/rswinkle/riscv_book)
 ## Exercise Solutions
 
 Support the book and buy the solutions to the chapter exercises
-at [my store](https://store.robertwinkler.com/) or at [Leanpub](https://leanpub.com/riscvassemblyprogrammming)
+at [my store](https://store.robertwinkler.com/) or at [Leanpub](https://leanpub.com/riscvassemblyprogramming)
 
 ## Contact Me/Tutoring
 

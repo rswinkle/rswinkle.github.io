@@ -18,7 +18,6 @@ Read the latest version in html, pdf, or epub:
 It is also available on Leanpub:
 <iframe width='160' height='400' src='https://leanpub.com/mipsassemblyprogrammming/embed' frameborder='0' allowtransparency='true'></iframe>
 
-
 ## Source
 
 Get the asciidoc source from [Github](https://github.com/rswinkle/mips_book)
