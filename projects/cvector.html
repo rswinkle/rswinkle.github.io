@@ -66,13 +66,13 @@ means size, capacity, and a are 0/NULL which is valid because realloc, acts like
 malloc when given a NULL pointer.  With cvector_void you still have to set
 elem_size, and optionally elem_free/elem_init. See the zero_init_x_test()'s
 in cvector_tests.c for example of that use.</p>
-<p>The <code>cvec_sz</code> type defaults to <code>size_t</code> but if you define CVEC_SIZE_T before including
-the header which is then <code>typedef</code>'d to <code>cvec_sz</code>.  It has to be defined before
-every header inclusion since it is used in both the header (struct definiton)
-and the implementation.  Note, if you use a signed type, passing a negative value
-is undefined behavior (ie it'll likely crash immediately).  Of course if you
-passed a negative while using the default <code>size_t</code> you'd probably crash anyway
-as it would wrap around to 2^64.</p>
+<p>The <code>cvec_sz</code> type defaults to <code>size_t</code> but you can define CVEC_SIZE_T to your
+preferred type before including the header which in turn is then <code>typedef</code>'d
+to <code>cvec_sz</code>.  It has to be defined before every header inclusion.  Note, if
+you use a signed type, passing a negative value is undefined behavior
+(ie it'll likely crash immediately).  Of course if you passed a negative while
+using the default <code>size_t</code> you'd probably crash anyway as it would wrap around
+to a problematically large number.</p>
 <p>There are also 2 templates, one for basic types and one for types that contain
 dynamically allocated memory and you might want a free and/or init function.
 In other words the first template is based off cvector_i and the second is based
@@ -156,7 +156,7 @@ not every commit), you can see it
 <a href="http://www.robertwinkler.com/projects/cvector/CUnitAutomated-Results.xml">here</a>.</p>
 <h1>LICENSE</h1>
 <p>CVector is licensed under the MIT License.</p>
-<p>Copyright (c) 2011-2024 Robert Winkler</p>
+<p>Copyright (c) 2011-2025 Robert Winkler</p>
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation
 the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
