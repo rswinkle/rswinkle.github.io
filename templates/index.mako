@@ -11,9 +11,10 @@
 
 		<ul>
 			<li><a href="http://portablegl.com">PortableGL</a>: OpenGL 3.x-ish in Clean C99 as a single header library</li>
+			<li><a href="http://shaderworkshop.com">Shader Workshop</a>: A PortableGL based <a href="https://www.shadertoy.com/">shadertoy</a> application</li>
 			<li><a href="http://mips.robertwinkler.com/">"MIPS Assembly Programming"</a>: A free ebook targeted at college students</li>
 			<li><a href="http://riscv.robertwinkler.com/">"RISC-V assembly programming"</a>: A free ebook targeted at college students</li>
-			<li><a href="https://github.com/rswinkle/sdl_img">sdl_img</a>: A cool image viewer I've been dogfooding for 7 years</li>
+			<li><a href="https://github.com/rswinkle/sdl_img">sdl_img</a>: A cool image viewer I've been using as my default image viewer for 9 years</li>
 			<li><a href="https://github.com/rswinkle/C_Interpreter">C_Interpreter</a>: A C interpreter implemented in C (unfinished)</li>
 			<li><a href="https://github.com/rswinkle/CVector">CVector</a>: A C vector library similar to the C++ STL vector</li>
 		</ul>
