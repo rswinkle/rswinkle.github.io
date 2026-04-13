@@ -49,10 +49,10 @@ You can also install it via [Homebrew](https://formulae.brew.sh/formula/portable
 
 Gallery
 =======
-![gears](examples/classic/gears.png)
-![sphereworld](media/screenshots/sphereworld.png)
-[![backpack](media/screenshots/backpack_model.png)](https://github.com/rswinkle/LearnPortableGL/blob/main/src/3.model_loading/model_loading.cpp)
-![craft](media/screenshots/craft.png)
+![gears](https://raw.githubusercontent.com/rswinkle/PortableGL/refs/heads/master/examples/classic/gears.png)
+![sphereworld](https://raw.githubusercontent.com/rswinkle/PortableGL/refs/heads/master/media/screenshots/sphereworld.png)
+[![backpack](https://raw.githubusercontent.com/rswinkle/PortableGL/refs/heads/master/media/screenshots/backpack_model.png)](https://github.com/rswinkle/LearnPortableGL/blob/main/src/3.model_loading/model_loading.cpp)
+![craft](https://raw.githubusercontent.com/rswinkle/PortableGL/refs/heads/master/media/screenshots/craft.png)
 
 The last is a [PortableGL port](https://github.com/rswinkle/Craft/tree/portablegl) of Michael Fogleman's [Craft](https://www.michaelfogleman.com/projects/craft/).
 
