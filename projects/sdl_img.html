@@ -50,17 +50,21 @@ but it has tons of extra and unique features for power users, especially on Linu
 <li>Implement features I've always wanted in an image viewer</li>
 <li>Relatively simple, short, readable code</li>
 <li>Learn/Practice/Fun</li>
-<li>Not really focused on speed, if it's fast enough on my chromebook it's good enough</li>
+<li>Not really focused on speed but keep it reasonably fast and light weight</li>
 </ul>
 <h1>Controls/Basic Usage</h1>
-<pre><code>./sdl_img image_name.jpg
-./sdl_img -f image_name.jpg  (to start in full screen mode)
+<pre><code>sdl_img
+sdl_img image_name.jpg
+sdl_img -f image_name.jpg  (to start in full screen mode)
 </code></pre>
-<p>Will open image_name.jpg.  On Windows that would be <code>sdl_img.exe</code>, but better
-to just right click on an image of each type and change the default application
-to be sdl_img.exe and then double clicking any image of that type will open it
-with sdl_img.  Left and right will go through images in the same directory in
-alphabetical order.</p>
+<p>The first will open in "File Selection" mode since you didn't provide it any
+images. The second will open image_name.jpg and all files with recognized image
+extensions in the same directory. On Windows that would be <code>sdl_img.exe</code>, but
+better to just right click on an image of each type and change the default
+application to be sdl_img.exe and then double clicking any image of that type
+will open it with sdl_img.  Left and right will go through images in the same
+directory in <a href="http://stereopsis.com/strcmp4humans.html">alphabetical</a>
+<a href="https://github.com/rswinkle/sdl_img/blob/master/src/string_compare.c">order</a>.</p>
 <table>
 <thead>
 <tr>
@@ -82,7 +86,7 @@ alphabetical order.</p>
 <td>Next image(s)</td>
 </tr>
 <tr>
-<td>CTRL+Space</td>
+<td>CTRL + Space</td>
 <td>Previous image(s)</td>
 </tr>
 <tr>
@@ -114,6 +118,10 @@ alphabetical order.</p>
 <td>Go to first image in the list</td>
 </tr>
 <tr>
+<td>End</td>
+<td>Go to last image in the list</td>
+</tr>
+<tr>
 <td>M</td>
 <td>Shuffle (Mix) the images (only in single mode)</td>
 </tr>
@@ -143,11 +151,31 @@ alphabetical order.</p>
 </tr>
 <tr>
 <td>L/R</td>
-<td>Rotate the current image left/right</td>
+<td>Rotate the current image 90 degrees left/right</td>
+</tr>
+<tr>
+<td>CTRL + L/R</td>
+<td>Rotate the current image arbitrary degrees (popup GUI)</td>
 </tr>
 <tr>
 <td>H/V</td>
 <td>Flip the current image horizontally/vertically</td>
+</tr>
+<tr>
+<td>S</td>
+<td>Save current image(s) to current playlist</td>
+</tr>
+<tr>
+<td>CTRL + S</td>
+<td>Remove current image(s) from current playlist</td>
+</tr>
+<tr>
+<td>O</td>
+<td>File Open New</td>
+</tr>
+<tr>
+<td>CTRL + O</td>
+<td>File Open More</td>
 </tr>
 <tr>
 <td>Delete</td>
@@ -179,7 +207,7 @@ alphabetical order.</p>
 </tr>
 <tr>
 <td>CTRL + I</td>
-<td>List mode</td>
+<td>Library mode</td>
 </tr>
 <tr>
 <td>F1 - F10</td>
@@ -224,7 +252,8 @@ displayed if you are viewing a GIF in single image mode:</p>
 </tbody>
 </table>
 <p>The most obvious unique features are the multi-image modes but others include the
-extra GIF features, the vim inspired thumbnail mode, the list mode, shuffle/sort etc.</p>
+extra GIF features, the vim inspired thumbnail mode, the music player inspired
+library mode, shuffle/sort etc.</p>
 <p>Within each image mode the basic controls work on all images simultaneously
 unless a specific image is selected by hitting 1-n and then they operate only
 on that image, ie cycling, zooming, fit will only effect that image.
@@ -254,21 +283,28 @@ stb_image_write does not support gifs at all, let alone animated gifs.  It will 
 detect the type from the extension and output that type if possible, otherwise jpg is
 the default.</p>
 <h1>Advanced Usage</h1>
-<pre><code>./sdl_img -l list_of_images (urls or local paths or mixed, doesn't matter)
-./sdl_img image1.jpg image2.png
-./sdl_img image1.jpg -s 4
-./sdl_img -l list_of_urls -c ./custom_cache_dir
+<pre><code>sdl_img -l list_of_images (urls or local paths or mixed, doesn't matter)
+sdl_img --list list_of_images
+sdl_img -p playlist_name (will open a playlist by that name if one exists)
+sdl_img --playlist playlist_name
+sdl_img dir (scan dir for images)
+sdl_img -r dir (scan dir recursively for images)
+sdl_img dir1 -r dir2 dir3 (scan dir1, dir2 recursively, dir3 )
+sdl_img dir1 -R dir2 dir3 (scan dir1, then dir2 and dir3 recursively)
+sdl_img image1.jpg image2.png
+sdl_img image1.jpg -s 4
+sdl_img -l list_of_urls -c ./custom_cache_dir
 </code></pre>
 <p>Or any combination of those options, ie</p>
-<pre><code>./sdl_img image.jpg -l list1 -s 8 example.com/image.jpg -l list3 image4.gif -f
+<pre><code>sdl_img image.jpg -p playlist_name -s 8 ~/some/dir example.com/image.jpg -l list3 image4.gif -f
 </code></pre>
 <p>The option -s [delay] means start in slideshow mode with the given delay in seconds.
 If delay is not 1-10 or is missing, delay will be set to 3 seconds.</p>
-<p>When using any of these modes, all the images will be collected in a list in the
-order they're given (not sorted like basic usage).  For now, if you have multiple
-url images with the same name, downloaded on the same day, the one downloaded last
-will simply overwrite the earlier ones in the cache.  This is because the cache does
-create subdirectories by date of the form YYYY-MM-DD for easy browsing/cleaning.</p>
+<p>When using any of these modes, all the images will be collected in a list then sorted by name.
+For now, if you have multiple url images with the same name, downloaded on the same day,
+the one downloaded last will simply overwrite the earlier ones in the cache.
+This is because the cache does create subdirectories by date of the form YYYY-MM-DD
+for easy browsing/cleaning.</p>
 <p>There is also the -c/--cache option which allows you to specify a custom cache
 location (only for this instance) which can be useful if you know you want to
 save these images and don't want to bother copying them from the normal cache later.</p>
@@ -276,7 +312,13 @@ save these images and don't want to bother copying them from the normal cache la
 <p>Switch with CTRL+U to viewing all your current images as thumbnails on a vertically
 scrolling plane.  Animated GIF thumbnails are generated from the first frame.
 You can use the arrows and mouse and scrollwheel to move around
-and select an image but if you're a vim user you'll feel right at home.</p>
+and select an image but if you're a vim user you'll feel right at home.
+Note the basic controls above are based on scancode (ie what you see on the
+physical key, what the hardware actually sends, not any custom layout you have in
+software) while the Thumbmode controls are based on keycode and do respect your
+layout (otherwise you lose all that vim muscle memory).  This is irrelevant
+to most people but for people like myself who use Dvorak and <em>don't</em> change
+the default Vim keybinds, HJKL, are JCVP physically.</p>
 <table>
 <thead>
 <tr>
@@ -294,8 +336,24 @@ and select an image but if you're a vim user you'll feel right at home.</p>
 <td>Move up and down</td>
 </tr>
 <tr>
+<td>g or Home</td>
+<td>Move to first image</td>
+</tr>
+<tr>
+<td>G or End</td>
+<td>Move to last image</td>
+</tr>
+<tr>
 <td>Click</td>
 <td>Move to that image</td>
+</tr>
+<tr>
+<td>CTRL + Click</td>
+<td>Select multiple arbitrary images</td>
+</tr>
+<tr>
+<td>SHIFT + Click</td>
+<td>Select a contiguous range of images</td>
 </tr>
 <tr>
 <td>Enter or Double Click</td>
@@ -304,6 +362,14 @@ and select an image but if you're a vim user you'll feel right at home.</p>
 <tr>
 <td>CTRL + HJKL</td>
 <td>Adjust the number of rows and columns shown</td>
+</tr>
+<tr>
+<td>V</td>
+<td>Enter Visual Selection Mode</td>
+</tr>
+<tr>
+<td>SHIFT + V</td>
+<td>Enter Visual Line Selection Mode</td>
 </tr>
 <tr>
 <td>Backspace or R</td>
@@ -316,6 +382,14 @@ and select an image but if you're a vim user you'll feel right at home.</p>
 <tr>
 <td>CTRL + Backspace/R/X</td>
 <td>Invert action (remove/delete unselected items)</td>
+</tr>
+<tr>
+<td>S</td>
+<td>Save current image(s) to current playlist</td>
+</tr>
+<tr>
+<td>CTRL + S</td>
+<td>Remove current image(s) from current playlist</td>
 </tr>
 <tr>
 <td>/</td>
@@ -333,25 +407,114 @@ and select an image but if you're a vim user you'll feel right at home.</p>
 <td>ESC</td>
 <td>Exit or "Back" similar to Android</td>
 </tr>
+<tr>
+<td>CTRL + C</td>
+<td>Same as Vim, almost the same as ESC but can't exit thumbmode</td>
+</tr>
 </tbody>
 </table>
 <p>The number of rows and columns can also be set in Preferences, as well as whether X deletes
 instead of just removing the selection.</p>
-<h1>List Mode</h1>
-<p>Switch with CTRL+I to view a list of all your current images with columns showing the size
-and last modified time.  You can select the column headings to sort by that ascending or
-descending.  You can scroll through the list or use up and down.  Hitting Enter or double
-clicking will go back to normal mode on that image.</p>
-<p>Type something in the search bar at the top and hit enter to show a list of files that match.
-Same controls as normal list mode, but if you hit enter or double click you will be in "View
+<h1>Library Mode</h1>
+<p>Switch with CTRL+I to for a view inspired by music player/organizers like iTunes or Rhythmbox.
+Like the inspiration, this is where you can create, delete, and rename playlists, add images
+to playlists, as well as see/search your currently open images, your entire library, or
+individual playlists. Currently the list columns are name, size, and last modified time,
+though I might expand that later. You can select the column headings to sort by that,
+ascending or descending. You can scroll through the list or use up/down or j/k.</p>
+<p>Hitting Enter or double clicking on an image in your current images will go back to normal mode
+on that image. If you do that on an image while seeing search results, you will be in "View
 Results" mode, which is normal mode but only viewing the results (same as from thumb search).
-ESC to backs out of View Results, Results, and list mode entirely.</p>
+ESC to backs out of View Results, Results, and Lib mode entirely. The following</p>
+<table>
+<thead>
+<tr>
+<th>Library Controls</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Up/Down or JK</td>
+<td>Move up/down the list</td>
+</tr>
+<tr>
+<td>Mouse Wheel</td>
+<td>Move up/down the list</td>
+</tr>
+<tr>
+<td>Home/End</td>
+<td>Move to first/last image in list <em>if</em> mouse is hovering over it</td>
+</tr>
+<tr>
+<td>Page Up/Down</td>
+<td>Move up/down a page in list <em>if</em> mouse is hovering over it</td>
+</tr>
+<tr>
+<td>Click</td>
+<td>Select that image</td>
+</tr>
+<tr>
+<td>Enter or Double Click</td>
+<td>Change to normal mode on current image <em>if</em> in Current</td>
+</tr>
+<tr>
+<td>Backspace</td>
+<td>Removes current selection from the library</td>
+</tr>
+<tr>
+<td>S</td>
+<td>Save current image(s) to current playlist</td>
+</tr>
+<tr>
+<td>CTRL + S</td>
+<td>Remove current image(s) from current playlist</td>
+</tr>
+<tr>
+<td>O</td>
+<td>File Open New</td>
+</tr>
+<tr>
+<td>CTRL + O</td>
+<td>File Open More</td>
+</tr>
+<tr>
+<td>ESC</td>
+<td>Exit, "Back", Cancel similar to Android</td>
+</tr>
+</tbody>
+</table>
+<p>Note: Enter/double clicking on an image when <em>not</em> in current images is currently a no-op.
+Still trying to decide what that should do, if anything. I can see arguments for adding
+it to current, saving to the active playlist (same as hitting 's'), or replacing the entire
+currently open list with whatever list you're currently viewing, jumping right into "View
+Results" if you're in a search.</p>
+<p>Note 2: Like in thumb mode the controls are key codes, not scancodes, which is a bit confusing
+for the controls/actions that are the "same" in normal mode. Things in the drop down menu
+that show the keyboard shortcuts no mean the keycode so save/unsave/file open etc. respect
+layout in lib mode but not normal mode. This is a tough decision but I think it's the right
+one because while it's less obvious than thumb mode, your hands are more likely to be on
+the keyboard here, for searching, creating/renaming playlists, and like I said above vim j/k
+working like down/up. I think having the menu actions be using scancodes when other things
+aren't is actually worse than having the menu action keyboard shortcuts be possibly inconsistent
+between normal mode and library mode.  And this only applies to a relatively small number of
+users who actually use a keyboard layout different than the actual keyboard they're using.
+For 99.9% of people this whole note is irrelevant.</p>
 <h1>Building</h1>
-<p>On Linux, just run <code>./build.sh</code> for debug, <code>./build_release.sh</code> for release.</p>
-<p>On Windows I use <a href="https://github.com/msys2/msys2/wiki/MSYS2-installation">MSYS2</a>.  I don't
-like/use IDE's and I can't stand the Window's command line.  MSYS2 allows me to have the
-same environment and tools as Linux.  So it's basically the same, <code>./build_win.sh</code> and
-<code>./build_win_release.sh</code>.</p>
+<p>There's a Makefile which is not great but gets the job done.</p>
+<p>On Linux just running <code>make</code> will create a debug build,
+while <code>make config=release</code> (after a <code>make clean</code>) will create an optimized build.</p>
+<p>For Windows builds I use the cross compiling environment
+<a href="https://github.com/HolyBlackCat/quasi-msys2">quasi-msys2</a>. I'm using the default setup
+which is native clang with a UCRT environment.  Do <code>make PLAT=cross_win</code> for that.</p>
+<p>On Windows you can use the equivalent UCRT environment of
+<a href="https://github.com/msys2/msys2/wiki/MSYS2-installation">MSYS2</a> (none of the other
+environments work curently) with <code>make PLAT=msys2</code> or just change the default
+at the top of the makefile so you don't have to specify it every time. Unfortunately it
+is broken for other MSYS2 environments (ie mingw64, clang64).  I think it's a
+platform mismatch issue with SDL2 but UCRT is the recommended environment so even
+if I figured it out I'd probably keep using UCRT.</p>
+<p>There are other targets for creating packages (ie installers) for each platform.</p>
 <h1>Packaging</h1>
 <p>I'll expand this section later, once I get to 1.0 and have packages and
 more finalized packaging processes but I'm using
@@ -365,44 +528,25 @@ and <a href="https://github.com/nothings/stb-imv">stb_imv</a> already exist,
 so I chose sdl_img rather than stb_img.  Unfortunately, SDL_image and SDL2_image
 (libsdl-image1.2 and libsdl2-image in repos) also exist so there's a minor clash there too.</p>
 <p>Now I'm using the following libraries:
-<a href="https://www.libsdl.org">SDL2</a>, stb_image, stb_image_write, stb_image_resize
+<a href="https://www.libsdl.org">SDL2</a>, stb_image, stb_image_write, stb_image_resize2
 <a href="https://curl.haxx.se/libcurl/">libcurl</a>
 <a href="https://github.com/vurtun/nuklear">nuklear</a> (immediate mode GUI library)
-<a href="https://github.com/WaterJuice/WjCryptLib">WjCryptLibMd5</a></p>
+<a href="https://github.com/WaterJuice/WjCryptLib">WjCryptLibMd5</a>
+<a href="https://lua.org/">Lua</a> in the form of <a href="https://github.com/edubart/minilua">minilua</a></p>
 <p>So potential names are stb_img, sdl_img, sdl2_img, sdl_imv, nuklear_img, or
 some cool original name that I'm not creative enough to think of.  I'm open to
 suggestions.</p>
 <h1>TODO/IDEAS</h1>
 <ul>
-<li>[x] Let user adjust gif delay up/down with ALT + +/-</li>
-<li>[x] Make initial window size based on initial image dimensions</li>
-<li>[x] Take a text list of image paths as an arg and browse those</li>
-<li>[x] Same as above, but allow URL's (download into a tmp/cache directory)</li>
-<li>[x] Don't waste CPU cycles/battery when viewing static images</li>
-<li>[x] Can delete current image in single image mode</li>
-<li>[x] Can rotate images (and save the changes if not animated gifs)</li>
-<li>[x] Handle quoted paths/urls in -l files</li>
-<li>[x] Handle being given a directory as an argument(s)</li>
-<li>[x] Add argument -s [1-10] to start in slideshow mode</li>
 <li>[ ] Add window icon (either static or based on current image(s))</li>
-<li>[x] Thumbnail generating and browsing</li>
-<li>[ ] Install icon in deb package</li>
+<li>[x] Install icon in deb package</li>
 <li>[ ] WebM support with mbew?</li>
-<li>[ ] MP4 support?</li>
-<li>[x] Speed up initial startup when a directory has a large number of images</li>
-<li>[x] Change sorting to use strcmp for humans (could use gnu strverscmp)</li>
-<li>[x] Recursive directory scanning with -r/-R</li>
-<li>[x] shuffle/sort (m / o for mix/order)</li>
-<li>[x] Use image extensions as a filter most common use cases</li>
-<li>[x] Nuklear GUI</li>
-<li>[ ] save to favorites or more general "collection" saving</li>
 <li>[ ] Clean up code a bit (ongoing)</li>
-<li>[ ] Save memory by aliasing when viewing the same image more than once in multimode</li>
 <li>[ ] Save memory by having the main thread update images as they're loaded</li>
-<li>[ ] AppImage and/or Flatpak</li>
+<li>[x] AppImage and/or Flatpak (needs more work/testing)</li>
 <li>[ ] Automatic updating</li>
-<li>[x] Travis-CI</li>
-<li>[x] Coverity</li>
+<li>[ ] Travis-CI or Github Actions</li>
+<li>[x] Coverity (Really out of date, need to run again)</li>
 <li>[x] Figure out why certain rare animated gifs don't load all the frames</li>
 </ul>
 
