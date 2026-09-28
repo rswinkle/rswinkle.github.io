@@ -25,7 +25,8 @@ Get the asciidoc source from [Github](https://github.com/rswinkle/riscv_book)
 ## Exercise Solutions
 
 Support the book and buy the solutions to the chapter exercises
-at [my store](https://store.robertwinkler.com/) or at [Leanpub](https://leanpub.com/riscvassemblyprogramming)
+from [my store](https://store.robertwinkler.com/), [Leanpub](https://leanpub.com/riscvassemblyprogramming),
+or [itch.io](https://rswinkle.itch.io/).
 
 ## Contact Me/Tutoring
 

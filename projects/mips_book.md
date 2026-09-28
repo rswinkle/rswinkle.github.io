@@ -25,7 +25,8 @@ Get the asciidoc source from [Github](https://github.com/rswinkle/mips_book)
 ## Exercise Solutions
 
 Support the book and buy the solutions to the chapter exercises
-at [my store](https://store.robertwinkler.com/) or at [Leanpub](https://leanpub.com/mipsassemblyprogrammming)
+from [my store](https://store.robertwinkler.com/), [Leanpub](https://leanpub.com/mipsassemblyprogrammming),
+or [itch.io](https://rswinkle.itch.io/).
 
 ## Contact Me/Tutoring
 
