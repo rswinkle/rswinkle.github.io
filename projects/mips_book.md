@@ -9,14 +9,15 @@ make the programming portion of such classes much easier.
 
 ## Read It
 
-Read the latest version in html, pdf, or epub:
+Read the latest version in HTML, PDF, or EPUB:
 
-- [html page](https://www.robertwinkler.com/projects/mips_book/mips_book.html)
-- [pdf](https://www.robertwinkler.com/projects/mips_book/mips_book.pdf)
-- [epub](https://www.robertwinkler.com/projects/mips_book/mips_book.epub)
+- [HTML page](https://www.robertwinkler.com/projects/mips_book/mips_book.html)
+- [PDF](https://www.robertwinkler.com/projects/mips_book/mips_book.pdf)
+- [EPUB](https://www.robertwinkler.com/projects/mips_book/mips_book.epub)
 
-It is also available on Leanpub:
-<iframe width='160' height='400' src='https://leanpub.com/mipsassemblyprogrammming/embed' frameborder='0' allowtransparency='true'></iframe>
+It is also available on Leanpub and Itch:
+<iframe width='178' height='325' src='https://leanpub.com/mipsassemblyprogrammming/embed' frameborder='0' allowtransparency='true'></iframe>
+<iframe frameborder="0" src="https://itch.io/embed/4471448?linkback=true" width="552" height="167"><a href="https://rswinkle.itch.io/mips-assembly-programming">MIPS Assembly Programming by Robert Winkler</a></iframe>
 
 ## Source
 
