@@ -15,8 +15,9 @@ Read the latest version in HTML, PDF, or EPUB:
 - [PDF](https://www.robertwinkler.com/projects/riscv_book/riscv_book.pdf)
 - [EPUB](https://www.robertwinkler.com/projects/riscv_book/riscv_book.epub)
 
-It is also available on Leanpub:
+It is also available on Leanpub and Itch:
 <iframe width='178' height='325' src='https://leanpub.com/riscvassemblyprogramming/embed' frameborder='0' allowtransparency='true'></iframe>
+
 <iframe frameborder="0" src="https://itch.io/embed/4471720?linkback=true" width="552" height="167"><a href="https://rswinkle.itch.io/risc-v-assembly-programming">RISC-V Assembly Programming by Robert Winkler</a></iframe>
 
 ## Source
@@ -26,7 +27,7 @@ Get the asciidoc source from [Github](https://github.com/rswinkle/riscv_book)
 ## Exercise Solutions
 
 Support the book and buy the solutions to the chapter exercises
-from [my store](https://store.robertwinkler.com/), [Leanpub](https://leanpub.com/riscvassemblyprogramming),
+from [my store](https://store.robertwinkler.com/), [Leanpub](https://leanpub.com/riscvassemblyprogramming/c/D11F255CAF86),
 or [itch.io](https://rswinkle.itch.io/).
 
 ## Contact Me/Tutoring
